@@ -128,6 +128,16 @@
   .pillar-list { list-style: none; color: var(--text-muted); font-size: 13.5px; line-height: 1.7; }
   .pillar-list li { margin-bottom: 6px; padding-left: 18px; position: relative; }
   .pillar-list li::before { content: '•'; position: absolute; left: 0; color: var(--purple-primary); font-size: 16px; font-weight: bold; }
+  
+  /* Ongoing Cadence Flywheel Cards */
+  .flywheel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-bottom: 28px; }
+  .flywheel-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 22px; position: relative; overflow: hidden; border-top: 3px solid var(--purple-primary); box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+  .flywheel-cadence { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--purple-light); margin-bottom: 6px; }
+  .flywheel-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+  .flywheel-list { list-style: none; color: var(--text-muted); font-size: 13.5px; line-height: 1.6; }
+  .flywheel-list li { margin-bottom: 6px; padding-left: 18px; position: relative; }
+  .flywheel-list li::before { content: '↻'; position: absolute; left: 0; color: var(--purple-primary); font-weight: 800; }
+
   .timeline { display: flex; flex-direction: column; gap: 18px; margin-bottom: 36px; }
   .timeline-item { background: var(--bg-card); border-left: 4px solid var(--purple-primary); border-radius: 0 14px 14px 0; padding: 24px; border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
   .timeline-phase { font-size: 12px; font-weight: 800; color: var(--purple-light); text-transform: uppercase; letter-spacing: 1px; }
@@ -143,9 +153,9 @@
   @media print {
     body { background-color: #fff !important; color: #000 !important; padding: 0 !important; }
     .header-nav .export-btn, .theme-toggle-btn { display: none !important; }
-    .card, .hero-card, .geogrid-container, .timeline-item, .pricing-hero, .price-item, .pillar-card, .keyword-hero-box, .health-score-hero, .diag-card { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+    .card, .hero-card, .geogrid-container, .timeline-item, .pricing-hero, .price-item, .pillar-card, .keyword-hero-box, .health-score-hero, .diag-card, .flywheel-card { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; }
     .hero-title, .timeline-title, .stat-huge, .section-heading, .brand-logo, .pillar-title { color: #000 !important; }
-    .hero-desc, .text-muted, .stat-context, .timeline-list, .pillar-list, .section-sub { color: #444 !important; }
+    .hero-desc, .text-muted, .stat-context, .timeline-list, .pillar-list, .section-sub, .flywheel-list { color: #444 !important; }
     .kw-tag, .pill { background: #f0f0f0 !important; color: #000 !important; border: 1px solid #ddd !important; }
     .custom-table th { background: #f5f5f5 !important; color: #000 !important; }
     .custom-table td { color: #000 !important; }
@@ -173,12 +183,12 @@
   <div class="hero-card">
     <div class="hero-tag">Verified Local SEO & Google 3-Pack Growth Blueprint</div>
     <h1 class="hero-title">Local Market Dominance & High-Intent Dispatch Growth</h1>
-    <p class="hero-desc">Prepared for <strong>Zeppelin Cleaning Services (zepservices.com)</strong> by Auto8. A specialized Google Business Profile optimization and local authority framework engineered to maximize Google Maps 3-Pack rankings and capture high-intent phone dispatches across St. Clair Shores, Birmingham, and Southeast Michigan.</p>
+    <p class="hero-desc">Prepared for <strong>Zeppelin Cleaning Services (zepservices.com)</strong> by Auto8. A specialized Google Business Profile optimization and continuous local authority engine designed to systematically expand your Google Maps 3-Pack heatmaps and capture high-intent phone dispatches across St. Clair Shores, Birmingham, and Southeast Michigan on an ongoing monthly basis.</p>
     <div class="meta-pills">
       <div class="pill">Client: <strong>Zeppelin Cleaning Services</strong></div>
       <div class="pill">Website: <strong>zepservices.com</strong></div>
       <div class="pill">Locations (2): <strong>St. Clair Shores HQ & Birmingham Branch</strong></div>
-      <div class="pill">Scope: <strong>Full-Service GBP Optimization & Automation</strong></div>
+      <div class="pill">Program: <strong>Ongoing Monthly GBP Dominance & Heatmap Expansion Engine</strong></div>
       <div class="pill">Investment: <strong>$498 / location / month ($996 total)</strong></div>
     </div>
     <div class="keyword-hero-box">
@@ -209,7 +219,7 @@
       <div class="score-circle"><div class="score-val">88</div><div class="score-total">/ 100</div></div>
       <div class="score-details">
         <h3>Local Health Grade: Strong Foundation</h3>
-        <p>Outstanding <strong>5.0★ rating across 1,996 verified reviews</strong>. Primary growth opportunity is expanding Top-3 proximity radius on high-intent non-branded service searches.</p>
+        <p>Outstanding <strong>5.0★ rating across 1,996 verified reviews</strong>. Primary growth opportunity is continuously expanding and defending your Top-3 proximity radius on high-intent non-branded service searches.</p>
       </div>
     </div>
     <div class="sub-scores-grid">
@@ -239,7 +249,7 @@
   <div class="section-heading"><span class="section-num">02</span> Google Maps 3-Pack Geo-Grid Proximity Audit</div>
   <p class="section-sub">Analysis of how distance decay impacts local search rankings across Oakland and Macomb counties.</p>
   <div class="geogrid-container">
-    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px;"><strong>Understanding Local Geo-Grid Tracking:</strong> When a homeowner or facility manager searches for services like <em>"air duct cleaning"</em>, <em>"carpet cleaning"</em>, or <em>"dryer vent cleaning"</em>, Google calculates rankings based on physical distance, profile authority, and local citations. As shown below, a business may rank #1 right outside their front door, but drop to position 15+ just three miles away. Auto8's system strengthens profile authority signals to expand your top-ranking radius across the entire service area.</p>
+    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px;"><strong>Understanding Local Geo-Grid Tracking:</strong> When a homeowner or facility manager searches for services like <em>"air duct cleaning"</em>, <em>"carpet cleaning"</em>, or <em>"dryer vent cleaning"</em>, Google calculates rankings based on physical distance, profile authority, and local citations. As shown below, a business may rank #1 right outside their front door, but drop to position 15+ just three miles away. Auto8's continuous optimization engine strengthens profile authority signals to expand and hold your top-ranking green grid across the entire service area.</p>
     <div class="geogrid-wrapper">
       <div class="geogrid-box">
         <div class="geogrid-label" style="color: var(--rose-accent);">Current Baseline (Fragmented Proximity Radius)</div>
@@ -253,7 +263,7 @@
         <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;"><strong>Status:</strong> High drop-off outside 2–3 miles of office locations. Red/yellow zones lose calls to local competitors.</p>
       </div>
       <div class="geogrid-box">
-        <div class="geogrid-label" style="color: var(--green-accent);">Auto8 90-Day Target (3-Pack Proximity Dominance)</div>
+        <div class="geogrid-label" style="color: var(--green-accent);">Target State (Ongoing 3-Pack Proximity Dominance)</div>
         <div class="grid-matrix">
           <div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">3</div><div class="grid-cell rank-top3">3</div>
           <div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">2</div>
@@ -261,7 +271,7 @@
           <div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">3</div>
           <div class="grid-cell rank-top3">3</div><div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">3</div><div class="grid-cell rank-top3">3</div><div class="grid-cell rank-top3">3</div>
         </div>
-        <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;"><strong>Target:</strong> Consistent Top-3 green rankings across 10–15+ mile radius covering both Oakland & Macomb counties.</p>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;"><strong>Target:</strong> Consistent Top-3 green rankings across 10–15+ mile radius maintained month after month.</p>
       </div>
     </div>
   </div>
@@ -276,12 +286,12 @@
     <div class="diag-card">
       <div class="diag-title">Total Media Uploads</div>
       <div class="diag-metric" style="color: var(--amber-accent);">263 Photos</div>
-      <div class="diag-sub">50% media score — needs regular geo-tagged truck/equipment uploads.</div>
+      <div class="diag-sub">50% media score — needs regular ongoing geo-tagged truck/equipment uploads.</div>
     </div>
     <div class="diag-card">
       <div class="diag-title">Historical Posts</div>
       <div class="diag-metric" style="color: var(--purple-light);">250 Posts</div>
-      <div class="diag-sub">Strong historical volume; requires ongoing 2x weekly AI schedule.</div>
+      <div class="diag-sub">Strong historical volume; requires ongoing 2x weekly publishing cadence.</div>
     </div>
     <div class="diag-card">
       <div class="diag-title">Citation Health</div>
@@ -292,7 +302,7 @@
   <div class="card" style="margin-bottom: 36px; overflow-x: auto;">
     <table class="custom-table">
       <thead>
-        <tr><th style="width: 22%;">Audit Factor</th><th style="width: 38%;">Verified Profile Status</th><th style="width: 12%;">Impact</th><th style="width: 28%;">Auto8 Fulfillment Plan</th></tr>
+        <tr><th style="width: 22%;">Audit Factor</th><th style="width: 38%;">Verified Profile Status</th><th style="width: 12%;">Impact</th><th style="width: 28%;">Auto8 Ongoing Plan</th></tr>
       </thead>
       <tbody>
         <tr><td><strong>Business Verification</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● Verified Location</span><span class="badge-status-desc">21210 Harper Ave, St Clair Shores, MI</span></div></td><td><span style="font-weight: 600; color: var(--purple-light);">High</span></td><td>Maintain active verification and expand service area polygon boundaries.</td></tr>
@@ -300,7 +310,7 @@
         <tr><td><strong>Photos & Media Signals</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 50% Media Score</span><span class="badge-status-desc">263 total photos. Low recent truck & job site upload cadence.</span></div></td><td><span style="font-weight: 600; color: var(--purple-light);">High</span></td><td>Upload regular geo-tagged photos of trucks, job sites, and team dispatches to profile.</td></tr>
         <tr><td><strong>Post Velocity & Offers</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● 250 Historical Posts</span><span class="badge-status-desc">Strong historical archive. Requires ongoing weekly promotional frequency.</span></div></td><td><span style="font-weight: 600; color: var(--purple-light);">High</span></td><td>Publish 2x weekly localized promotional updates and core service spotlights via AI automation.</td></tr>
         <tr><td><strong>Citation Network Health</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 75.0 / 100 Score</span><span class="badge-status-desc">Inconsistencies detected across regional and trade directories.</span></div></td><td><span style="font-weight: 600; color: var(--purple-light);">High</span></td><td>Sync NAP consistency across Google, Apple Maps, Bing, and major aggregator networks.</td></tr>
-        <tr><td><strong>Service Menu Completeness</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ Incomplete Menu</span><span class="badge-status-desc">Catalog requires full item pricing, custom descriptions, and sub-services.</span></div></td><td><span style="font-weight: 600; color: var(--text-muted);">Medium</span></td><td>Build comprehensive product/service catalog (Air Duct, Carpet, Grout, Janitorial, Dryer Vent).</td></tr>
+        <tr><td><strong>Service Menu Completeness</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ Incomplete Menu</span><span class="badge-status-desc">Catalog requires full item pricing, custom descriptions, and sub-services.</span></div></td><td><span style="font-weight: 600; color: var(--text-muted);">Medium</span></td><td>Build and continuously tune product/service catalog (Air Duct, Carpet, Grout, Janitorial, Dryer Vent).</td></tr>
       </tbody>
     </table>
   </div>
@@ -372,13 +382,72 @@
     <div class="pillar-card"><div class="pillar-num">Pillar 05</div><div class="pillar-title">Directory & NAP Sync</div><ul class="pillar-list"><li>Synchronize core NAP (Name, Address, Phone) consistency.</li><li>Directory syndication across Google, Apple Maps, Bing, and top platforms.</li><li>Duplicate and incorrect listing suppression.</li><li>Maintain consistent location data across both branches.</li><li>Foundational local entity trust building.</li></ul></div>
     <div class="pillar-card"><div class="pillar-num">Pillar 06</div><div class="pillar-title">Geo-Grid Heatmaps & Reporting</div><ul class="pillar-list"><li>Bi-weekly 7x7 and 9x9 geo-grid proximity heatmap generation.</li><li>Radius rank tracking across all core service keywords.</li><li>Monthly executive dashboard tracking calls, clicks, and direction requests.</li><li>Competitor market share of voice analytics.</li><li>Dedicated account growth reviews and strategic adjustments.</li></ul></div>
   </div>
-  <div class="section-heading"><span class="section-num">08</span> 90-Day Local Dominance Execution Roadmap</div>
-  <p class="section-sub">Structured into three high-impact 30-day phases to deliver rapid 3-Pack capture and call volume growth.</p>
-  <div class="timeline">
-    <div class="timeline-item"><div class="timeline-phase">Month 1: Profile Overhaul, Category Alignment & Baseline Calibration</div><div class="timeline-title">Audit Cleanup, Service Menu Buildout & Baseline Heatmap Calibration</div><ul class="timeline-list"><li>Perform complete profile overhaul for St. Clair Shores HQ and Birmingham branch.</li><li>Restructure primary/secondary GBP categories for Air Duct, Carpet, and Janitorial services.</li><li>Deploy full 750-character keyword-rich business descriptions and service catalog.</li><li>Seed foundational high-intent Q&A pairs on both Google profiles.</li><li>Establish baseline 9x9 geo-grid heatmaps across all core service terms.</li></ul></div>
-    <div class="timeline-item"><div class="timeline-phase">Month 2: Activity Velocity, Review Replies & Striking-Distance Push</div><div class="timeline-title">2x Weekly Posts, Review Reply Acceleration & Page 2 Keyword Elevation</div><ul class="timeline-list"><li>Deploy 2x weekly keyword-optimized promotional Google updates with custom visuals.</li><li>Activate 100% review reply protocol with embedded service keyword phrasing.</li><li>Target 69 striking-distance Page 2 keywords for local prominence.</li><li>Seed secondary seasonal Q&A content (commercial janitorial & dryer vent safety).</li><li>Run mid-point geo-grid scans to measure proximity radius expansion.</li></ul></div>
-    <div class="timeline-item"><div class="timeline-phase">Month 3: Proximity Expansion, 3-Pack Dominance & Territory Scaling</div><div class="timeline-title">Google 3-Pack Territory Capture, Local Scaling & ROI Review</div><ul class="timeline-list"><li>Achieve dominant Top-3 rankings across target 10–15+ mile radius for both business profiles.</li><li>Scale B2B commercial janitorial and facility cleaning inquiries across Wayne & Oakland counties.</li><li>Strengthen Google entity authority signals that feed ChatGPT and Gemini AI recommendations.</li><li>Conduct comprehensive Q1 ROI review, call volume attribution, and seasonal campaign planning.</li></ul></div>
+
+  <!-- Section 08: Continuous Local Dominance Engine & Heatmap Expansion Cadence -->
+  <div class="section-heading"><span class="section-num">08</span> Continuous Heatmap Expansion Engine & Ongoing Cadence</div>
+  <p class="section-sub">Why Google Maps 3-Pack rankings are an ongoing operational engine — not a one-time project.</p>
+
+  <!-- Educational Concept Card -->
+  <div class="card" style="margin-bottom: 24px; border-left: 4px solid var(--purple-primary);">
+    <h3 style="font-size: 17px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">The Reality of Google 3-Pack Heatmaps: Dynamic & Ongoing</h3>
+    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">
+      Google’s local ranking algorithm constantly recalibrates based on <strong>freshness, review response velocity, weekly post engagement, and active proximity signals</strong>. If optimization stops, competitor activity immediately compresses your green ranking radius back toward your office doors. Auto8 operates as your permanent local growth engine, continuously updating, tuning, and defending your territory month after month.
+    </p>
   </div>
+
+  <!-- Ongoing Cadence Flywheel Cards -->
+  <div class="flywheel-grid">
+    <div class="flywheel-card">
+      <div class="flywheel-cadence">Weekly Cadence</div>
+      <div class="flywheel-title">Activity & Engagement Engine</div>
+      <ul class="flywheel-list">
+        <li>Publish 2x weekly geo-targeted Google promotional posts with custom AI visuals.</li>
+        <li>100% personalized, keyword-infused responses to every incoming review within 24h.</li>
+        <li>Continuous media signal updates (trucks, equipment, job dispatches).</li>
+      </ul>
+    </div>
+    <div class="flywheel-card">
+      <div class="flywheel-cadence">Bi-Weekly Cadence</div>
+      <div class="flywheel-title">Geo-Grid Heatmap Calibration</div>
+      <ul class="flywheel-list">
+        <li>Run fresh 9x9 geo-grid proximity scans across core service keywords.</li>
+        <li>Identify yellow/red territory pockets where competitors are gaining share.</li>
+        <li>Adjust post copy and Q&A targeting to push green rankings into weak zip codes.</li>
+      </ul>
+    </div>
+    <div class="flywheel-card">
+      <div class="flywheel-cadence">Monthly Cadence</div>
+      <div class="flywheel-title">Territory Expansion & Optimization</div>
+      <ul class="flywheel-list">
+        <li>Category & service catalog seasonal updates (HVAC prep, Spring duct flushes).</li>
+        <li>New high-intent Q&A seeding based on customer search trend shifts.</li>
+        <li>Executive performance report tracking call volume, clicks, and ROI attribution.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Two-Phase Roadmap: Initial 90-Day Ramp + Perpetual Monthly Dominance Cycle -->
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-phase">Phase 1 (Months 1–3): Initial Calibration & Radius Ramp</div>
+      <div class="timeline-title">Baseline Setup, Category Realignment & Rapid 3-Pack Territory Expansion</div>
+      <ul class="timeline-list">
+        <li><strong>Month 1:</strong> Complete GBP profile overhaul, category restructuring, service menu buildout, baseline 9x9 heatmap mapping, and directory synchronization.</li>
+        <li><strong>Month 2:</strong> Launch 2x weekly promotional posts, activate 100% review reply protocol, and target 69 striking-distance Page 2 terms to break into local Top 10.</li>
+        <li><strong>Month 3:</strong> Push green Top-3 rankings outward across a 10–15+ mile radius, scale commercial janitorial B2B inquiry capture, and complete Q1 performance benchmark.</li>
+      </ul>
+    </div>
+    <div class="timeline-item" style="border-left-color: var(--green-accent);">
+      <div class="timeline-phase" style="color: var(--green-accent);">Phase 2 (Month 4 & Ongoing): Perpetual Optimization & Territory Defense Cycle</div>
+      <div class="timeline-title">Continuous Radius Expansion, Competitor Displacement & Maximum Call Capture</div>
+      <ul class="timeline-list">
+        <li><strong>Perpetual Heatmap Defense:</strong> Bi-weekly scans continuously monitor competitor moves; any rank drop in adjacent cities triggers immediate localized posting and Q&A countermeasures.</li>
+        <li><strong>Seasonal Campaign Shifts:</strong> Dynamic adjustment of profile offers and content for residential HVAC seasonal peaks (Fall/Spring) and commercial janitorial contract cycles.</li>
+        <li><strong>Compounding AI Search Prominence:</strong> As your Google entity authority accumulates over months of unbroken activity, ChatGPT and Gemini share of voice expands permanently.</li>
+      </ul>
+    </div>
+  </div>
+
   <div class="section-heading"><span class="section-num">09</span> Transparent Investment & ROI Economics</div>
   <p class="section-sub">A simple, transparent pricing structure engineered to deliver an immediate multiple on investment.</p>
   <div class="pricing-hero">
