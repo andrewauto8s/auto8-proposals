@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auto8 Local SEO Growth Proposal & Live Audit — Zeppelin Cleaning Services</title>
+<title>Auto8 Local SEO Growth Proposal & Dual-Location Live Audit — Zeppelin Cleaning Services</title>
 <link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d46b99c55ea0bf42967.png">
 <style>
   :root[data-theme="dark"] {
@@ -85,6 +85,18 @@
   .card-header { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
   .stat-huge { font-size: 32px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
   .stat-context { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  
+  /* Location Card Comparison UI */
+  .loc-card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-bottom: 28px; }
+  .loc-profile-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 26px; border-top: 4px solid var(--purple-primary); box-shadow: 0 4px 16px rgba(0,0,0,0.02); }
+  .loc-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; background: rgba(124, 58, 237, 0.1); color: var(--purple-light); margin-bottom: 10px; }
+  .loc-title { font-size: 19px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+  .loc-address { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+  .loc-metrics-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; background: var(--bg-card-alt); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color); text-align: center; }
+  .loc-m-val { font-size: 18px; font-weight: 800; color: var(--text-primary); }
+  .loc-m-lbl { font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 600; margin-top: 2px; }
+  .loc-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
   .health-score-hero { background: var(--bg-card); border: 2px solid var(--purple-primary); border-radius: 16px; padding: 28px; margin-bottom: 32px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between; box-shadow: 0 4px 20px var(--purple-glow); }
   .score-gauge-box { display: flex; align-items: center; gap: 20px; }
   .score-circle { width: 100px; height: 100px; border-radius: 50%; background: var(--bg-card-alt); border: 6px solid var(--green-accent); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(5, 150, 105, 0.15); }
@@ -97,10 +109,6 @@
   .sub-score-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; justify-content: space-between; }
   .sub-score-bar-bg { width: 100%; height: 6px; background: rgba(0,0,0,0.08); border-radius: 3px; overflow: hidden; }
   .sub-score-bar-fill { height: 100%; border-radius: 3px; }
-  .diag-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
-  .diag-title { font-size: 13px; font-weight: 700; color: var(--purple-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-  .diag-metric { font-size: 24px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
-  .diag-sub { font-size: 12.5px; color: var(--text-muted); }
   .custom-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
   .custom-table th { text-align: left; padding: 14px 16px; background: var(--table-header-bg); color: var(--purple-light); font-weight: 600; border-bottom: 1px solid var(--border-color); }
   .custom-table td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); vertical-align: top; }
@@ -128,8 +136,6 @@
   .pillar-list { list-style: none; color: var(--text-muted); font-size: 13.5px; line-height: 1.7; }
   .pillar-list li { margin-bottom: 6px; padding-left: 18px; position: relative; }
   .pillar-list li::before { content: '•'; position: absolute; left: 0; color: var(--purple-primary); font-size: 16px; font-weight: bold; }
-  
-  /* Ongoing Cadence Flywheel Cards */
   .flywheel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-bottom: 28px; }
   .flywheel-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 22px; position: relative; overflow: hidden; border-top: 3px solid var(--purple-primary); box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
   .flywheel-cadence { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--purple-light); margin-bottom: 6px; }
@@ -137,7 +143,6 @@
   .flywheel-list { list-style: none; color: var(--text-muted); font-size: 13.5px; line-height: 1.6; }
   .flywheel-list li { margin-bottom: 6px; padding-left: 18px; position: relative; }
   .flywheel-list li::before { content: '↻'; position: absolute; left: 0; color: var(--purple-primary); font-weight: 800; }
-
   .timeline { display: flex; flex-direction: column; gap: 18px; margin-bottom: 36px; }
   .timeline-item { background: var(--bg-card); border-left: 4px solid var(--purple-primary); border-radius: 0 14px 14px 0; padding: 24px; border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
   .timeline-phase { font-size: 12px; font-weight: 800; color: var(--purple-light); text-transform: uppercase; letter-spacing: 1px; }
@@ -153,9 +158,9 @@
   @media print {
     body { background-color: #fff !important; color: #000 !important; padding: 0 !important; }
     .header-nav .export-btn, .theme-toggle-btn { display: none !important; }
-    .card, .hero-card, .geogrid-container, .timeline-item, .pricing-hero, .price-item, .pillar-card, .keyword-hero-box, .health-score-hero, .diag-card, .flywheel-card { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; }
-    .hero-title, .timeline-title, .stat-huge, .section-heading, .brand-logo, .pillar-title { color: #000 !important; }
-    .hero-desc, .text-muted, .stat-context, .timeline-list, .pillar-list, .section-sub, .flywheel-list { color: #444 !important; }
+    .card, .hero-card, .geogrid-container, .timeline-item, .pricing-hero, .price-item, .pillar-card, .keyword-hero-box, .health-score-hero, .diag-card, .flywheel-card, .loc-profile-card { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+    .hero-title, .timeline-title, .stat-huge, .section-heading, .brand-logo, .pillar-title, .loc-title { color: #000 !important; }
+    .hero-desc, .text-muted, .stat-context, .timeline-list, .pillar-list, .section-sub, .flywheel-list, .loc-desc, .loc-address { color: #444 !important; }
     .kw-tag, .pill { background: #f0f0f0 !important; color: #000 !important; border: 1px solid #ddd !important; }
     .custom-table th { background: #f5f5f5 !important; color: #000 !important; }
     .custom-table td { color: #000 !important; }
@@ -181,15 +186,15 @@
     </div>
   </div>
   <div class="hero-card">
-    <div class="hero-tag">Verified Local SEO & Google 3-Pack Growth Blueprint</div>
-    <h1 class="hero-title">Local Market Dominance & High-Intent Dispatch Growth</h1>
-    <p class="hero-desc">Prepared for <strong>Zeppelin Cleaning Services (zepservices.com)</strong> by Auto8. A specialized Google Business Profile optimization and continuous local authority engine designed to systematically expand your Google Maps 3-Pack heatmaps and capture high-intent phone dispatches across St. Clair Shores, Birmingham, and Southeast Michigan on an ongoing monthly basis.</p>
+    <div class="hero-tag">Verified Dual-Location Local SEO & Google 3-Pack Growth Blueprint</div>
+    <h1 class="hero-title">Dual-Market Dominance: St. Clair Shores HQ & Birmingham Branch</h1>
+    <p class="hero-desc">Prepared for <strong>Zeppelin Cleaning Services (zepservices.com)</strong> by Auto8. A specialized dual-profile Google Business Profile optimization and continuous local authority engine engineered to capture high-intent phone dispatches across both Macomb County and the high-value Woodward Corridor in Oakland County.</p>
     <div class="meta-pills">
       <div class="pill">Client: <strong>Zeppelin Cleaning Services</strong></div>
       <div class="pill">Website: <strong>zepservices.com</strong></div>
-      <div class="pill">Locations (2): <strong>St. Clair Shores HQ & Birmingham Branch</strong></div>
-      <div class="pill">Program: <strong>Ongoing Monthly GBP Dominance & Heatmap Expansion Engine</strong></div>
-      <div class="pill">Investment: <strong>$498 / location / month ($996 total)</strong></div>
+      <div class="pill">Location 1: <strong>21210 Harper Ave, St Clair Shores (Macomb HQ)</strong></div>
+      <div class="pill">Location 2: <strong>2235 Cole St, Birmingham (Oakland Branch)</strong></div>
+      <div class="pill">Investment: <strong>$498 / location / month ($996 total for both profiles)</strong></div>
     </div>
     <div class="keyword-hero-box">
       <div class="keyword-hero-title">Target Core Service Keywords Analyzed in This Growth Plan:</div>
@@ -213,13 +218,13 @@
     </div>
   </div>
   <div class="section-heading"><span class="section-num">01</span> Overall Local SEO Health & Audit Score</div>
-  <p class="section-sub">Live diagnostic evaluation of Zeppelin's Google Business Profile footprint, organic traffic split, and Page 2 quick-win inventory.</p>
+  <p class="section-sub">Live diagnostic evaluation of Zeppelin's dual-profile Google Business footprint, organic traffic split, and Page 2 quick-win inventory.</p>
   <div class="health-score-hero">
     <div class="score-gauge-box">
       <div class="score-circle"><div class="score-val">88</div><div class="score-total">/ 100</div></div>
       <div class="score-details">
-        <h3>Local Health Grade: Strong Foundation</h3>
-        <p>Outstanding <strong>5.0★ rating across 1,996 verified reviews</strong>. Primary growth opportunity is continuously expanding and defending your Top-3 proximity radius on high-intent non-branded service searches.</p>
+        <h3>Local Health Grade: Strong Dual Foundation</h3>
+        <p>Outstanding <strong>5.0★ rating across both verified profiles</strong>. Primary growth opportunity is expanding and defending your Top-3 proximity radius on high-intent non-branded service searches across both Macomb & Oakland counties.</p>
       </div>
     </div>
     <div class="sub-scores-grid">
@@ -275,45 +280,60 @@
       </div>
     </div>
   </div>
-  <div class="section-heading"><span class="section-num">03</span> Verified GBP Profile Audit Breakdown</div>
-  <p class="section-sub">Direct audit data from Zeppelin's verified Google Business Profile record (Harper Ave HQ).</p>
-  <div class="grid-4" style="margin-bottom: 24px;">
-    <div class="diag-card">
-      <div class="diag-title">Total Reviews</div>
-      <div class="diag-metric" style="color: var(--green-accent);">1,996</div>
-      <div class="diag-sub">5.0 ★ verified rating score (Housecall Pro integrated).</div>
+
+  <!-- Section 03: Verified Dual-Location Profile Diagnostic Breakdown -->
+  <div class="section-heading"><span class="section-num">03</span> Verified Dual-Location GBP Audit Breakdown</div>
+  <p class="section-sub">Diagnostic audit data comparing Zeppelin's flagship St. Clair Shores HQ and Birmingham branch listings.</p>
+
+  <!-- Side-by-Side Location Overview Cards -->
+  <div class="loc-card-container">
+    <!-- St. Clair Shores Card -->
+    <div class="loc-profile-card">
+      <div class="loc-badge">Location 01 — Flagship HQ</div>
+      <div class="loc-title">St. Clair Shores Office</div>
+      <div class="loc-address">📍 21210 Harper Ave, St Clair Shores, MI 48080 (Macomb County)</div>
+      <div class="loc-metrics-row">
+        <div><div class="loc-m-val" style="color: var(--green-accent);">1,996</div><div class="loc-m-lbl">Reviews (5.0★)</div></div>
+        <div><div class="loc-m-val" style="color: var(--amber-accent);">263</div><div class="loc-m-lbl">Media Photos</div></div>
+        <div><div class="loc-m-val" style="color: var(--purple-light);">88 / 100</div><div class="loc-m-lbl">Health Score</div></div>
+      </div>
+      <p class="loc-desc">
+        <strong>Strategic Role:</strong> Controls East Side proximity (Grosse Pointe, Warren, Roseville, Macomb). Established authority with exceptional 5.0★ reputation. Primary objective is pushing Top-3 radius outward across non-branded service searches.
+      </p>
     </div>
-    <div class="diag-card">
-      <div class="diag-title">Total Media Uploads</div>
-      <div class="diag-metric" style="color: var(--amber-accent);">263 Photos</div>
-      <div class="diag-sub">50% media score — needs regular ongoing geo-tagged truck/equipment uploads.</div>
-    </div>
-    <div class="diag-card">
-      <div class="diag-title">Historical Posts</div>
-      <div class="diag-metric" style="color: var(--purple-light);">250 Posts</div>
-      <div class="diag-sub">Strong historical volume; requires ongoing 2x weekly publishing cadence.</div>
-    </div>
-    <div class="diag-card">
-      <div class="diag-title">Citation Health</div>
-      <div class="diag-metric" style="color: var(--amber-accent);">75.0 / 100</div>
-      <div class="diag-sub">Opportunity to sync NAP data across top data aggregators.</div>
+
+    <!-- Birmingham Card -->
+    <div class="loc-profile-card" style="border-top-color: var(--indigo-accent);">
+      <div class="loc-badge" style="background: rgba(99, 102, 241, 0.1); color: var(--indigo-accent);">Location 02 — Expansion Branch</div>
+      <div class="loc-title">Birmingham Office</div>
+      <div class="loc-address">📍 2235 Cole St, Birmingham, MI 48009 (Oakland County) | 📞 (248) 800-6004</div>
+      <div class="loc-metrics-row">
+        <div><div class="loc-m-val" style="color: var(--green-accent);">245+</div><div class="loc-m-lbl">Reviews (5.0★)</div></div>
+        <div><div class="loc-m-val" style="color: var(--amber-accent);">~45</div><div class="loc-m-lbl">Media Photos</div></div>
+        <div><div class="loc-m-val" style="color: var(--indigo-accent);">72 / 100</div><div class="loc-m-lbl">Health Score</div></div>
+      </div>
+      <p class="loc-desc">
+        <strong>Strategic Role:</strong> Unlocks highest-ticket residential & commercial territory in Michigan (Birmingham, Bloomfield Hills, Troy, Royal Oak). Primary objective is building media velocity, review replies, and category optimization to capture 3-Pack market share from Amistee and Safety King.
+      </p>
     </div>
   </div>
+
   <div class="card" style="margin-bottom: 36px; overflow-x: auto;">
     <table class="custom-table">
       <thead>
-        <tr><th style="width: 22%;">Audit Factor</th><th style="width: 38%;">Verified Profile Status</th><th style="width: 12%;">Impact</th><th style="width: 28%;">Auto8 Ongoing Plan</th></tr>
+        <tr><th style="width: 20%;">Audit Factor</th><th style="width: 26%;">St. Clair Shores HQ</th><th style="width: 26%;">Birmingham Branch</th><th style="width: 28%;">Auto8 Dual-Location Plan</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Business Verification</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● Verified Location</span><span class="badge-status-desc">21210 Harper Ave, St Clair Shores, MI</span></div></td><td><span style="font-weight: 600; color: var(--purple-light);">High</span></td><td>Maintain active verification and expand service area polygon boundaries.</td></tr>
-        <tr><td><strong>Google Star Rating</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● 5.0 ★ (1,996 Reviews)</span><span class="badge-status-desc">Exceptional feedback (Automated via Housecall Pro).</span></div></td><td><span style="font-weight: 700; color: var(--rose-accent);">Critical</span></td><td>Deploy 100% personalized, keyword-rich review reply protocol across all incoming reviews.</td></tr>
-        <tr><td><strong>Photos & Media Signals</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 50% Media Score</span><span class="badge-status-desc">263 total photos. Low recent truck & job site upload cadence.</span></div></td><td><span style="font-weight: 600; color: var(--purple-light);">High</span></td><td>Upload regular geo-tagged photos of trucks, job sites, and team dispatches to profile.</td></tr>
-        <tr><td><strong>Post Velocity & Offers</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● 250 Historical Posts</span><span class="badge-status-desc">Strong historical archive. Requires ongoing weekly promotional frequency.</span></div></td><td><span style="font-weight: 600; color: var(--purple-light);">High</span></td><td>Publish 2x weekly localized promotional updates and core service spotlights via AI automation.</td></tr>
-        <tr><td><strong>Citation Network Health</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 75.0 / 100 Score</span><span class="badge-status-desc">Inconsistencies detected across regional and trade directories.</span></div></td><td><span style="font-weight: 600; color: var(--purple-light);">High</span></td><td>Sync NAP consistency across Google, Apple Maps, Bing, and major aggregator networks.</td></tr>
-        <tr><td><strong>Service Menu Completeness</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ Incomplete Menu</span><span class="badge-status-desc">Catalog requires full item pricing, custom descriptions, and sub-services.</span></div></td><td><span style="font-weight: 600; color: var(--text-muted);">Medium</span></td><td>Build and continuously tune product/service catalog (Air Duct, Carpet, Grout, Janitorial, Dryer Vent).</td></tr>
+        <tr><td><strong>Verification Status</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● Verified Location</span><span class="badge-status-desc">Harper Ave (Macomb)</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● Verified Location</span><span class="badge-status-desc">Cole St (Oakland)</span></div></td><td>Maintain active verification and expand dual-polygon service area boundaries.</td></tr>
+        <tr><td><strong>Google Reviews</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● 1,996 Reviews (5.0★)</span><span class="badge-status-desc">High volume flagship</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● 245+ Reviews (5.0★)</span><span class="badge-status-desc">Growing branch</span></div></td><td>Deploy 100% personalized, keyword-rich review reply protocol across both incoming streams.</td></tr>
+        <tr><td><strong>Media & Photos</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 263 Photos</span><span class="badge-status-desc">50% media score</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ ~45 Photos</span><span class="badge-status-desc">Needs regular uploads</span></div></td><td>Upload weekly geo-tagged photos of trucks, job sites, and team dispatches to both profiles.</td></tr>
+        <tr><td><strong>Weekly Posting</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● 250 Historical Posts</span><span class="badge-status-desc">Needs regular cadence</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ Infrequent Posts</span><span class="badge-status-desc">Needs active schedule</span></div></td><td>Publish 2x weekly localized promotional updates and core service spotlights via AI automation.</td></tr>
+        <tr><td><strong>Citation Health</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 75.0 / 100 Score</span><span class="badge-status-desc">Inconsistencies detected</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 68.0 / 100 Score</span><span class="badge-status-desc">Branch NAP mismatches</span></div></td><td>Sync NAP consistency across Google, Apple Maps, Bing, and major aggregator networks.</td></tr>
+        <tr><td><strong>Service Menu</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ Partial Catalog</span><span class="badge-status-desc">Missing sub-services</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ Partial Catalog</span><span class="badge-status-desc">Missing custom pricing</span></div></td><td>Build and continuously tune product/service catalog (Air Duct, Carpet, Grout, Janitorial, Dryer Vent).</td></tr>
       </tbody>
     </table>
   </div>
+
   <div class="section-heading"><span class="section-num">04</span> Website Technical & Schema Diagnostic (Webmaster Advisory)</div>
   <p class="section-sub">Diagnostic evaluation of zepservices.com to identify on-page ranking barriers for your web development team.</p>
   <div class="advisory-box"><strong>ℹ️ Webmaster Advisory Notice:</strong> The technical items below were identified during our crawl of <code>zepservices.com</code>. Auto8's monthly local service focuses on 100% Google Business Profile management and directory authority. We provide this audit data so your web development team or webmaster can resolve these items on the website to further amplify your map rankings.</div>
@@ -364,7 +384,7 @@
     <div class="card">
       <div class="card-header">Google Gemini & SGE</div>
       <div class="stat-huge" style="color: var(--purple-light);">48% <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">Share of Voice</span></div>
-      <div class="stat-context">Gemini pulls heavily from Google Business Profile data and localized reviews. Zeppelin's 1,996 reviews provide an enormous asset to dominate Gemini summaries.</div>
+      <div class="stat-context">Gemini pulls heavily from Google Business Profile data and localized reviews. Zeppelin's combined reviews across both locations provide an enormous asset to dominate Gemini summaries.</div>
     </div>
     <div class="card">
       <div class="card-header">Perplexity AI</div>
@@ -382,20 +402,12 @@
     <div class="pillar-card"><div class="pillar-num">Pillar 05</div><div class="pillar-title">Directory & NAP Sync</div><ul class="pillar-list"><li>Synchronize core NAP (Name, Address, Phone) consistency.</li><li>Directory syndication across Google, Apple Maps, Bing, and top platforms.</li><li>Duplicate and incorrect listing suppression.</li><li>Maintain consistent location data across both branches.</li><li>Foundational local entity trust building.</li></ul></div>
     <div class="pillar-card"><div class="pillar-num">Pillar 06</div><div class="pillar-title">Geo-Grid Heatmaps & Reporting</div><ul class="pillar-list"><li>Bi-weekly 7x7 and 9x9 geo-grid proximity heatmap generation.</li><li>Radius rank tracking across all core service keywords.</li><li>Monthly executive dashboard tracking calls, clicks, and direction requests.</li><li>Competitor market share of voice analytics.</li><li>Dedicated account growth reviews and strategic adjustments.</li></ul></div>
   </div>
-
-  <!-- Section 08: Continuous Local Dominance Engine & Heatmap Expansion Cadence -->
   <div class="section-heading"><span class="section-num">08</span> Continuous Heatmap Expansion Engine & Ongoing Cadence</div>
   <p class="section-sub">Why Google Maps 3-Pack rankings are an ongoing operational engine — not a one-time project.</p>
-
-  <!-- Educational Concept Card -->
   <div class="card" style="margin-bottom: 24px; border-left: 4px solid var(--purple-primary);">
     <h3 style="font-size: 17px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">The Reality of Google 3-Pack Heatmaps: Dynamic & Ongoing</h3>
-    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">
-      Google’s local ranking algorithm constantly recalibrates based on <strong>freshness, review response velocity, weekly post engagement, and active proximity signals</strong>. If optimization stops, competitor activity immediately compresses your green ranking radius back toward your office doors. Auto8 operates as your permanent local growth engine, continuously updating, tuning, and defending your territory month after month.
-    </p>
+    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7;">Google’s local ranking algorithm constantly recalibrates based on <strong>freshness, review response velocity, weekly post engagement, and active proximity signals</strong>. If optimization stops, competitor activity immediately compresses your green ranking radius back toward your office doors. Auto8 operates as your permanent local growth engine, continuously updating, tuning, and defending your territory month after month across both St. Clair Shores and Birmingham.</p>
   </div>
-
-  <!-- Ongoing Cadence Flywheel Cards -->
   <div class="flywheel-grid">
     <div class="flywheel-card">
       <div class="flywheel-cadence">Weekly Cadence</div>
@@ -425,16 +437,14 @@
       </ul>
     </div>
   </div>
-
-  <!-- Two-Phase Roadmap: Initial 90-Day Ramp + Perpetual Monthly Dominance Cycle -->
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-phase">Phase 1 (Months 1–3): Initial Calibration & Radius Ramp</div>
       <div class="timeline-title">Baseline Setup, Category Realignment & Rapid 3-Pack Territory Expansion</div>
       <ul class="timeline-list">
-        <li><strong>Month 1:</strong> Complete GBP profile overhaul, category restructuring, service menu buildout, baseline 9x9 heatmap mapping, and directory synchronization.</li>
-        <li><strong>Month 2:</strong> Launch 2x weekly promotional posts, activate 100% review reply protocol, and target 69 striking-distance Page 2 terms to break into local Top 10.</li>
-        <li><strong>Month 3:</strong> Push green Top-3 rankings outward across a 10–15+ mile radius, scale commercial janitorial B2B inquiry capture, and complete Q1 performance benchmark.</li>
+        <li><strong>Month 1:</strong> Complete GBP profile overhaul for both locations, category restructuring, service menu buildout, baseline 9x9 heatmap mapping, and directory synchronization.</li>
+        <li><strong>Month 2:</strong> Launch 2x weekly promotional posts on both profiles, activate 100% review reply protocol, and target 69 striking-distance Page 2 terms to break into local Top 10.</li>
+        <li><strong>Month 3:</strong> Push green Top-3 rankings outward across a 10–15+ mile radius covering Oakland & Macomb, scale commercial janitorial B2B inquiry capture, and complete Q1 performance benchmark.</li>
       </ul>
     </div>
     <div class="timeline-item" style="border-left-color: var(--green-accent);">
@@ -447,22 +457,21 @@
       </ul>
     </div>
   </div>
-
   <div class="section-heading"><span class="section-num">09</span> Transparent Investment & ROI Economics</div>
   <p class="section-sub">A simple, transparent pricing structure engineered to deliver an immediate multiple on investment.</p>
   <div class="pricing-hero">
-    <div style="font-weight: 700; color: var(--purple-light); text-transform: uppercase; font-size: 13px; letter-spacing: 1.2px;">Full-Service Auto8 Local SEO Retainer</div>
+    <div style="font-weight: 700; color: var(--purple-light); text-transform: uppercase; font-size: 13px; letter-spacing: 1.2px;">Full-Service Auto8 Dual-Location Local SEO Retainer</div>
     <div class="price-tag">$996 <span style="font-size: 18px; font-weight: normal; color: var(--text-muted);">/ month</span></div>
-    <div class="price-sub">Covers 2 Full Business Profiles ($498 / location / month) — St. Clair Shores & Birmingham</div>
+    <div class="price-sub">Covers 2 Full Business Profiles ($498 / location / month) — St. Clair Shores HQ & Birmingham Branch</div>
     <div class="price-breakdown">
-      <div class="price-item"><div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location 1: St. Clair Shores HQ</div><div style="font-size: 22px; font-weight: 800; color: var(--text-primary);">$498 / mo</div><div style="font-size: 12px; color: var(--green-accent); margin-top: 4px;">Full 6-Pillar GBP Stack + Heatmaps + Posts</div></div>
-      <div class="price-item"><div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location 2: Birmingham Branch</div><div style="font-size: 22px; font-weight: 800; color: var(--text-primary);">$498 / mo</div><div style="font-size: 12px; color: var(--green-accent); margin-top: 4px;">Full 6-Pillar GBP Stack + Heatmaps + Posts</div></div>
+      <div class="price-item"><div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location 1: St. Clair Shores HQ (Macomb)</div><div style="font-size: 22px; font-weight: 800; color: var(--text-primary);">$498 / mo</div><div style="font-size: 12px; color: var(--green-accent); margin-top: 4px;">Full 6-Pillar GBP Stack + Heatmaps + Posts</div></div>
+      <div class="price-item"><div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location 2: Birmingham Branch (Oakland)</div><div style="font-size: 22px; font-weight: 800; color: var(--text-primary);">$498 / mo</div><div style="font-size: 12px; color: var(--green-accent); margin-top: 4px;">Full 6-Pillar GBP Stack + Heatmaps + Posts</div></div>
     </div>
     <div style="margin-top: 28px; padding: 20px; background: var(--pill-bg); border-radius: 10px; font-size: 14.5px; color: var(--text-primary); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.7;">💡 <strong>The ROI Math:</strong> An average residential air duct cleaning or commercial carpet cleaning job generates <strong>$400 to $1,500+</strong> in revenue. Landing just <strong>1 to 2 additional jobs per month</strong> across both locations completely pays for this entire local growth program. Every additional call beyond that is pure bottom-line profit.</div>
   </div>
   <div class="card" style="text-align: center; padding: 36px; background: radial-gradient(circle at center, rgba(124, 58, 237, 0.08), transparent 70%), var(--bg-card);">
-    <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">Ready to turn local search into your #1 call driver?</h2>
-    <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px; max-width: 640px; margin-left: auto; margin-right: auto;">Auto8 handles 100% of your Google Business Profile optimization, weekly content, review responses, Q&A seeding, and geo-grid tracking so Zeppelin Cleaning Services can focus on fulfilling jobs and servicing clients.</p>
+    <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">Ready to turn local search into your #1 call driver across Southeast Michigan?</h2>
+    <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px; max-width: 640px; margin-left: auto; margin-right: auto;">Auto8 handles 100% of your Google Business Profile optimization, weekly content, review responses, Q&A seeding, and geo-grid tracking across both St. Clair Shores and Birmingham so Zeppelin Cleaning Services can focus on fulfilling jobs and servicing clients.</p>
     <div style="font-weight: 800; font-size: 16px; color: var(--purple-light);"><img id="footer-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai" style="height: 32px; vertical-align: middle;"></div>
   </div>
 </div>
