@@ -31,15 +31,14 @@
   
   /* Top Header */
   .header-nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid var(--border-color); margin-bottom: 36px; }
-  .brand-group { display: flex; align-items: center; gap: 12px; }
-  .brand-logo { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
-  .brand-logo span { color: var(--purple-primary); }
+  .brand-group { display: flex; align-items: center; gap: 14px; }
+  .brand-logo-img { height: 38px; width: auto; object-fit: contain; }
   .brand-badge { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.8px; color: #fff; }
   .lock-indicator { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); background: rgba(39, 33, 71, 0.6); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border-color); }
 
   /* Auth Gate Modal / Screen */
   #auth-gate { width: 100%; max-width: 440px; margin: 60px auto 0; background: radial-gradient(circle at top, rgba(139, 92, 246, 0.15), transparent 70%), var(--bg-card); border: 2px solid var(--border-highlight); border-radius: 20px; padding: 36px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
-  .auth-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(139, 92, 246, 0.15); border: 1px solid var(--purple-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: var(--purple-light); }
+  .auth-logo-center { height: 48px; width: auto; object-fit: contain; margin-bottom: 16px; }
   .auth-title { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
   .auth-sub { font-size: 13.5px; color: var(--text-muted); margin-bottom: 24px; }
   .auth-input-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
@@ -50,7 +49,7 @@
   .auth-error { font-size: 13px; color: var(--rose-accent); margin-top: 8px; display: none; }
   .auth-hint { font-size: 11.5px; color: var(--text-dim); margin-top: 16px; }
 
-  /* Portal Main Content (Hidden until unlocked) */
+  /* Portal Main Content */
   #portal-content { display: none; width: 100%; }
   .portal-hero { background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15), transparent 60%), linear-gradient(180deg, #181330, #120e24); border: 1px solid var(--border-highlight); border-radius: 20px; padding: 36px; margin-bottom: 32px; }
   .portal-tag { color: var(--purple-light); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; display: inline-flex; align-items: center; gap: 6px; }
@@ -84,7 +83,7 @@
   <!-- Header Navigation -->
   <div class="header-nav">
     <div class="brand-group">
-      <div class="brand-logo">Auto8 <span>.ai</span></div>
+      <img src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f8762.png" alt="Auto8.ai Logo" class="brand-logo-img">
       <span class="brand-badge">Growth Hub</span>
     </div>
     <div class="lock-indicator" id="lock-status">
@@ -95,9 +94,7 @@
 
   <!-- Password Gate (Default View) -->
   <div id="auth-gate">
-    <div class="auth-icon">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-    </div>
+    <img src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f8762.png" alt="Auto8.ai Logo" class="auth-logo-center">
     <h2 class="auth-title">Client Growth Portal</h2>
     <p class="auth-sub">Please enter your access passcode to view active Auto8 proposals and strategy blueprints.</p>
     
@@ -153,8 +150,6 @@
 </div>
 
 <script>
-  // Simple SHA-256 password hash check for client-side protection
-  // Default password: "auto8growth" (Hash below)
   const HASH = "5d2146e2f07297e682d334547b7194f4a4d6df19671676f6b57d6be3dfdf4429";
 
   async function sha256(message) {
@@ -169,7 +164,6 @@
     const errorEl = document.getElementById('auth-error');
     const hash = await sha256(input);
     
-    // Fallback simple check or hashed match ("auto8" or "auto8growth")
     if (input === 'auto8' || input === 'auto8growth' || hash === HASH) {
       sessionStorage.setItem('auto8_portal_auth', 'true');
       renderUnlocked();
@@ -190,7 +184,6 @@
     window.location.reload();
   }
 
-  // Check if previously authenticated in this browser session
   if (sessionStorage.getItem('auto8_portal_auth') === 'true') {
     renderUnlocked();
   }
