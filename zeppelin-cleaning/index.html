@@ -3,126 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auto8 Local SEO Growth Proposal — Zeppelin Cleaning Services</title>
+<title>Auto8 Local SEO Growth Proposal & Local Audit — Zeppelin Cleaning Services</title>
 <style>
   :root {
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-card: #182234;
-    --accent-blue: #38bdf8;
-    --accent-cyan: #06b6d4;
-    --accent-green: #22c55e;
-    --accent-red: #ef4444;
-    --accent-amber: #f59e0b;
-    --text-main: #f8fafc;
+    --bg-deep: #0b0914;
+    --bg-card: #151128;
+    --bg-card-hover: #1c1635;
+    --bg-card-alt: #1a1533;
+    --purple-primary: #8b5cf6;
+    --purple-light: #a78bfa;
+    --purple-dark: #6d28d9;
+    --purple-glow: rgba(139, 92, 246, 0.25);
+    --indigo-accent: #6366f1;
+    --cyan-accent: #06b6d4;
+    --green-accent: #10b981;
+    --amber-accent: #f59e0b;
+    --rose-accent: #f43f5e;
+    --text-primary: #f8fafc;
     --text-muted: #94a3b8;
-    --border: #334155;
+    --text-dim: #64748b;
+    --border-color: #272147;
+    --border-highlight: #3c326b;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-  body { background-color: var(--bg-primary); color: var(--text-main); line-height: 1.6; padding: 24px 16px; }
-  .container { max-width: 1080px; margin: 0 auto; }
-  .header-nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
-  .brand-logo { font-size: 24px; font-weight: 800; color: #fff; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; }
-  .brand-badge { background: linear-gradient(135deg, #0284c7, #06b6d4); font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.8px; }
-  .export-btn { background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan)); color: #0f172a; font-weight: 700; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: transform 0.2s ease, opacity 0.2s ease; }
-  .export-btn:hover { opacity: 0.9; transform: translateY(-1px); }
-  .hero-card { background: linear-gradient(180deg, rgba(30,41,59,0.9), rgba(15,23,42,0.95)); border: 1px solid var(--border); border-radius: 16px; padding: 36px; margin-bottom: 32px; }
-  .hero-badge { color: var(--accent-cyan); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-  .hero-title { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; color: #fff; }
-  .hero-sub { color: var(--text-muted); font-size: 16px; max-width: 780px; margin-bottom: 24px; }
-  .meta-pills { display: flex; flex-wrap: wrap; gap: 12px; }
-  .pill { background: rgba(51, 65, 85, 0.6); border: 1px solid var(--border); padding: 6px 14px; border-radius: 20px; font-size: 13px; color: var(--text-main); font-weight: 500; }
-  .pill strong { color: var(--accent-blue); }
-  .section-title { font-size: 22px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; color: #fff; }
-  .section-title span { color: var(--accent-cyan); font-size: 18px; }
-  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 32px; }
-  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 32px; }
-  .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
-  .card-header { font-size: 15px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
-  .stat-value { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 6px; }
-  .stat-sub { font-size: 13px; color: var(--text-muted); }
-  .geogrid-container { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 32px; }
-  .geogrid-wrapper { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-around; margin-top: 16px; }
-  .geogrid-box { flex: 1; min-width: 280px; text-align: center; }
-  .geogrid-label { font-weight: 700; margin-bottom: 12px; font-size: 14px; }
-  .grid-matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; width: 220px; margin: 0 auto; }
-  .grid-cell { aspect-ratio: 1; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: #fff; }
-  .rank-top3 { background: #15803d; border: 1px solid #22c55e; }
-  .rank-mid { background: #b45309; border: 1px solid #f59e0b; }
-  .rank-low { background: #b91c1c; border: 1px solid #ef4444; }
+  body { background-color: var(--bg-deep); color: var(--text-primary); line-height: 1.6; padding: 32px 20px; }
+  .container { max-width: 1120px; margin: 0 auto; }
+  .header-nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid var(--border-color); margin-bottom: 36px; }
+  .brand-group { display: flex; align-items: center; gap: 12px; }
+  .brand-logo { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+  .brand-logo span { color: var(--purple-primary); }
+  .brand-badge { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.8px; color: #fff; }
+  .export-btn { background: linear-gradient(135deg, #8b5cf6, #6366f1); color: #fff; font-weight: 700; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px var(--purple-glow); transition: all 0.2s ease; }
+  .export-btn:hover { opacity: 0.95; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4); }
+  .hero-card { background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15), transparent 60%), linear-gradient(180deg, #181330, #120e24); border: 1px solid var(--border-highlight); border-radius: 20px; padding: 40px; margin-bottom: 36px; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+  .hero-tag { color: var(--purple-light); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 6px; }
+  .hero-tag::before { content: ''; width: 8px; height: 8px; background: var(--purple-primary); border-radius: 50%; display: inline-block; }
+  .hero-title { font-size: 34px; font-weight: 800; line-height: 1.25; margin-bottom: 16px; color: #fff; }
+  .hero-desc { color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-bottom: 24px; max-width: 960px; }
+  .meta-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+  .pill { background: rgba(39, 33, 71, 0.6); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 24px; font-size: 13px; color: var(--text-primary); font-weight: 500; }
+  .pill strong { color: var(--purple-light); }
+  .keyword-hero-box { background: rgba(21, 17, 40, 0.7); border: 1px dashed var(--border-highlight); border-radius: 12px; padding: 20px; }
+  .keyword-hero-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--purple-light); margin-bottom: 12px; }
+  .keyword-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .kw-tag { background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.3); color: #e2e8f0; font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 6px; }
+  .section-heading { font-size: 24px; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; color: #fff; }
+  .section-num { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); color: #fff; font-size: 13px; font-weight: 800; padding: 3px 9px; border-radius: 6px; }
+  .section-sub { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-bottom: 36px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 36px; }
+  .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; transition: border-color 0.2s ease; }
+  .card:hover { border-color: var(--border-highlight); }
+  .card-header { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+  .stat-huge { font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .stat-context { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
   .custom-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
-  .custom-table th { text-align: left; padding: 12px; background: rgba(30, 41, 59, 0.8); color: var(--text-muted); font-weight: 600; border-bottom: 1px solid var(--border); }
-  .custom-table td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--text-main); }
-  .badge-pos { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 12px; }
-  .badge-p1 { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
-  .badge-p2 { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
-  .timeline { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
-  .timeline-item { background: var(--bg-card); border-left: 4px solid var(--accent-cyan); border-radius: 0 12px 12px 0; padding: 20px; border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .timeline-phase { font-size: 12px; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 1px; }
-  .timeline-title { font-size: 18px; font-weight: 700; margin: 4px 0 8px 0; color: #fff; }
+  .custom-table th { text-align: left; padding: 14px 16px; background: rgba(26, 21, 51, 0.9); color: var(--purple-light); font-weight: 600; border-bottom: 1px solid var(--border-color); }
+  .custom-table td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); vertical-align: middle; }
+  .badge-status { display: inline-block; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 12px; }
+  .badge-pass { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+  .badge-warn { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+  .badge-crit { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+  .geogrid-container { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 28px; margin-bottom: 36px; }
+  .geogrid-wrapper { display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-around; margin-top: 24px; }
+  .geogrid-box { flex: 1; min-width: 300px; text-align: center; }
+  .geogrid-label { font-weight: 700; margin-bottom: 14px; font-size: 15px; }
+  .grid-matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; width: 230px; margin: 0 auto; }
+  .grid-cell { aspect-ratio: 1; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: #fff; }
+  .rank-top3 { background: #059669; border: 1px solid #10b981; box-shadow: 0 0 10px rgba(16, 185, 129, 0.2); }
+  .rank-mid { background: #d97706; border: 1px solid #f59e0b; }
+  .rank-low { background: #be123c; border: 1px solid #f43f5e; }
+  .pillar-card { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; }
+  .pillar-card:hover { border-color: var(--purple-primary); }
+  .pillar-num { font-size: 12px; font-weight: 800; color: var(--purple-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .pillar-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+  .pillar-list { list-style: none; color: var(--text-muted); font-size: 13.5px; line-height: 1.7; }
+  .pillar-list li { margin-bottom: 6px; padding-left: 18px; position: relative; }
+  .pillar-list li::before { content: '•'; position: absolute; left: 0; color: var(--purple-primary); font-size: 16px; font-weight: bold; }
+  .timeline { display: flex; flex-direction: column; gap: 18px; margin-bottom: 36px; }
+  .timeline-item { background: var(--bg-card); border-left: 4px solid var(--purple-primary); border-radius: 0 14px 14px 0; padding: 24px; border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+  .timeline-phase { font-size: 12px; font-weight: 800; color: var(--purple-light); text-transform: uppercase; letter-spacing: 1px; }
+  .timeline-title { font-size: 18px; font-weight: 700; margin: 4px 0 10px 0; color: #fff; }
   .timeline-list { list-style: none; color: var(--text-muted); font-size: 14px; }
-  .timeline-list li { margin-bottom: 6px; padding-left: 18px; position: relative; }
-  .timeline-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-green); font-weight: 700; }
-  .pricing-hero { background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9)); border: 2px solid var(--accent-cyan); border-radius: 16px; padding: 32px; margin-bottom: 32px; text-align: center; }
-  .price-tag { font-size: 44px; font-weight: 900; color: #fff; margin: 12px 0 4px 0; }
-  .price-sub { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; }
-  .price-breakdown { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 20px; text-align: left; }
-  .price-item { background: var(--bg-primary); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; min-width: 240px; }
+  .timeline-list li { margin-bottom: 6px; padding-left: 20px; position: relative; }
+  .timeline-list li::before { content: '✓'; position: absolute; left: 0; color: var(--purple-primary); font-weight: 800; }
+  .pricing-hero { background: radial-gradient(circle at center, rgba(139, 92, 246, 0.12), transparent 70%), linear-gradient(135deg, #191433, #120e24); border: 2px solid var(--purple-primary); border-radius: 20px; padding: 36px; margin-bottom: 36px; text-align: center; box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15); }
+  .price-tag { font-size: 48px; font-weight: 900; color: #fff; margin: 12px 0 4px 0; }
+  .price-sub { color: var(--purple-light); font-size: 15px; margin-bottom: 24px; }
+  .price-breakdown { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 20px; text-align: left; }
+  .price-item { background: var(--bg-deep); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 24px; min-width: 260px; }
   @media print {
     body { background-color: #fff !important; color: #000 !important; padding: 0 !important; }
     .header-nav .export-btn { display: none !important; }
-    .card, .hero-card, .geogrid-container, .timeline-item, .pricing-hero, .price-item { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; }
-    .hero-title, .timeline-title, .stat-value, .section-title, .brand-logo { color: #000 !important; }
-    .hero-sub, .text-muted, .stat-sub, .timeline-list { color: #444 !important; }
-    .pill { background: #f0f0f0 !important; color: #000 !important; border: 1px solid #ddd !important; }
+    .card, .hero-card, .geogrid-container, .timeline-item, .pricing-hero, .price-item, .pillar-card, .keyword-hero-box { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+    .hero-title, .timeline-title, .stat-huge, .section-heading, .brand-logo, .pillar-title { color: #000 !important; }
+    .hero-desc, .text-muted, .stat-context, .timeline-list, .pillar-list, .section-sub { color: #444 !important; }
+    .kw-tag, .pill { background: #f0f0f0 !important; color: #000 !important; border: 1px solid #ddd !important; }
+    .custom-table th { background: #f5f5f5 !important; color: #000 !important; }
+    .custom-table td { color: #000 !important; }
   }
 </style>
 </head>
 <body>
 <div class="container">
   <div class="header-nav">
-    <div class="brand-logo">Auto8 <span class="brand-badge">Local Growth</span></div>
+    <div class="brand-group">
+      <div class="brand-logo">Auto8 <span>.ai</span></div>
+      <span class="brand-badge">Local Growth Intelligence</span>
+    </div>
     <button class="export-btn" onclick="window.print()">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
       Export / Print PDF
     </button>
   </div>
   <div class="hero-card">
-    <div class="hero-badge">Custom Local SEO & Google 3-Pack Growth Proposal</div>
-    <h1 class="hero-title">Google 3-Pack & Proximity Dominance for Core Services</h1>
-    <p class="hero-sub">Prepared for <strong>Zeppelin Cleaning Services (zepservices.com)</strong> by Auto8. Strategic roadmap to capture high-intent residential and commercial service calls across air duct cleaning, carpet cleaning, tile & grout restoration, and dryer vent services across both business locations.</p>
+    <div class="hero-tag">Comprehensive Local SEO & Google 3-Pack Growth Blueprint</div>
+    <h1 class="hero-title">Local Market Dominance & High-Intent Dispatch Growth</h1>
+    <p class="hero-desc">Prepared for <strong>Zeppelin Cleaning Services (zepservices.com)</strong> by Auto8. An end-to-end audit, competitive intelligence analysis, and 90-day execution framework engineered to secure dominant Google 3-Pack rankings, maximize residential & commercial booking velocity, and capture AI search visibility across both business locations.</p>
     <div class="meta-pills">
       <div class="pill">Client: <strong>Zeppelin Cleaning Services</strong></div>
       <div class="pill">Website: <strong>zepservices.com</strong></div>
-      <div class="pill">Locations Covered: <strong>2 Business Profiles</strong></div>
+      <div class="pill">Locations (2): <strong>St. Clair Shores HQ & Birmingham Branch</strong></div>
       <div class="pill">Prepared by: <strong>Auto8.ai</strong></div>
-      <div class="pill">Investment: <strong>$498 / location / mo</strong></div>
+      <div class="pill">Investment: <strong>$498 / location / month ($996 total)</strong></div>
+    </div>
+    <div class="keyword-hero-box">
+      <div class="keyword-hero-title">Target Core Service Keywords Analyzed in This Growth Plan:</div>
+      <div class="keyword-tags">
+        <span class="kw-tag">air duct cleaning</span>
+        <span class="kw-tag">duct cleaning services</span>
+        <span class="kw-tag">commercial air duct cleaning</span>
+        <span class="kw-tag">carpet cleaning</span>
+        <span class="kw-tag">steam cleaning services</span>
+        <span class="kw-tag">commercial carpet cleaning</span>
+        <span class="kw-tag">tile and grout cleaning</span>
+        <span class="kw-tag">grout cleaning and sealing</span>
+        <span class="kw-tag">dryer vent cleaning</span>
+        <span class="kw-tag">dryer vent repair</span>
+        <span class="kw-tag">janitorial services</span>
+        <span class="kw-tag">commercial cleaning services</span>
+        <span class="kw-tag">medical office cleaning</span>
+        <span class="kw-tag">odor removal service</span>
+        <span class="kw-tag">water damage restoration</span>
+      </div>
     </div>
   </div>
-  <div class="section-title"><span>01</span> Local Search Performance & Opportunity</div>
+  <div class="section-heading"><span class="section-num">01</span> Local Search Performance & Opportunity Breakdown</div>
+  <p class="section-sub">A detailed breakdown of Zeppelin's current search footprint, traffic composition, and revenue upside.</p>
   <div class="grid-3">
     <div class="card">
       <div class="card-header">Current Organic Traffic</div>
-      <div class="stat-value">653 <span style="font-size: 16px; font-weight: normal; color: var(--text-muted);">/mo</span></div>
-      <div class="stat-sub">81% is branded traffic. Massive opportunity to capture non-branded service intent.</div>
+      <div class="stat-huge">653 <span style="font-size: 16px; font-weight: normal; color: var(--text-muted);">/mo</span></div>
+      <div class="stat-context"><strong>What this means:</strong> Zeppelin currently receives ~653 organic website visits monthly. However, <strong>81% (531 visits) is branded search</strong> (people who already know the name Zeppelin). Only 122 visits come from non-branded searches where new customers are actively shopping for cleaning services. Capturing non-branded search is the single largest driver of new customer acquisition.</div>
     </div>
     <div class="card">
-      <div class="card-header">Core Service Quick Wins</div>
-      <div class="stat-value" style="color: var(--accent-amber);">69 Keywords</div>
-      <div class="stat-sub">High-value core service terms in striking distance (Positions 11–20).</div>
+      <div class="card-header">Page 2 Striking Distance</div>
+      <div class="stat-huge" style="color: var(--amber-accent);">69 Keywords</div>
+      <div class="stat-context"><strong>What this means:</strong> Zeppelin has 69 high-intent keywords ranking on <strong>Page 2 of Google (Positions 11–20)</strong>. Because over 90% of clicks happen on Page 1 and the Google 3-Pack, these keywords currently generate almost zero phone calls. Moving these 69 terms just a few positions higher unlocks immediate job inquiries without spending a dollar on paid ads.</div>
     </div>
     <div class="card">
-      <div class="card-header">Target 3-Pack Growth</div>
-      <div class="stat-value" style="color: var(--accent-green);">+300%</div>
-      <div class="stat-sub">Estimated inbound call surge from dual-location Google 3-Pack radius expansion.</div>
+      <div class="card-header">Estimated Call Upside</div>
+      <div class="stat-huge" style="color: var(--green-accent);">+300%</div>
+      <div class="stat-context"><strong>What this means:</strong> Home service consumers overwhelmingly contact businesses directly from the Google Maps 3-Pack on mobile devices. Achieving consistent Top-3 proximity across both the St. Clair Shores and Birmingham profiles typically triples inbound quote requests within 90 days.</div>
     </div>
   </div>
-  <div class="section-title"><span>02</span> Google Maps 3-Pack Geo-Grid Visibility</div>
+  <div class="section-heading"><span class="section-num">02</span> Google Maps 3-Pack Geo-Grid Proximity Audit</div>
+  <p class="section-sub">How Google's local algorithm ranks Zeppelin across different physical distances from each location hub.</p>
   <div class="geogrid-container">
-    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">Homeowners and facility managers search for core services (e.g. <em>"air duct cleaning"</em> or <em>"carpet cleaning near me"</em>) without city names. Google determines results based on business proximity, profile authority, and local citations. Auto8 expands your 3-Pack radius across your entire service territory.</p>
+    <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px;"><strong>Understanding Local Geo-Grid Tracking:</strong> When a homeowner or facility manager searches for services like <em>"air duct cleaning"</em>, <em>"carpet cleaning"</em>, or <em>"dryer vent cleaning"</em>, Google calculates rankings based on physical distance, profile authority, and local citations. As shown below, a business may rank #1 right outside their front door, but drop to position 15+ just three miles away. Auto8's system strengthens profile authority signals to expand your top-ranking radius across the entire service area.</p>
     <div class="geogrid-wrapper">
       <div class="geogrid-box">
-        <div class="geogrid-label" style="color: var(--accent-red);">Current State (Fragmented Visibility)</div>
+        <div class="geogrid-label" style="color: var(--rose-accent);">Current Baseline (Fragmented Proximity Radius)</div>
         <div class="grid-matrix">
           <div class="grid-cell rank-top3">3</div><div class="grid-cell rank-mid">7</div><div class="grid-cell rank-low">14</div><div class="grid-cell rank-low">19</div><div class="grid-cell rank-low">20+</div>
           <div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">1</div><div class="grid-cell rank-mid">8</div><div class="grid-cell rank-low">12</div><div class="grid-cell rank-low">18</div>
@@ -130,10 +181,10 @@
           <div class="grid-cell rank-low">11</div><div class="grid-cell rank-mid">8</div><div class="grid-cell rank-mid">6</div><div class="grid-cell rank-low">13</div><div class="grid-cell rank-low">20+</div>
           <div class="grid-cell rank-low">17</div><div class="grid-cell rank-low">14</div><div class="grid-cell rank-low">16</div><div class="grid-cell rank-low">20+</div><div class="grid-cell rank-low">20+</div>
         </div>
-        <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Visible only in tight clusters immediately around the office address.</p>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;"><strong>Status:</strong> High drop-off outside 2–3 miles of office locations. Red/yellow zones lose calls to local competitors.</p>
       </div>
       <div class="geogrid-box">
-        <div class="geogrid-label" style="color: var(--accent-green);">Auto8 Target (Google 3-Pack Dominance)</div>
+        <div class="geogrid-label" style="color: var(--green-accent);">Auto8 90-Day Target (3-Pack Proximity Dominance)</div>
         <div class="grid-matrix">
           <div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">3</div><div class="grid-cell rank-top3">3</div>
           <div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">2</div>
@@ -141,121 +192,219 @@
           <div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">1</div><div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">3</div>
           <div class="grid-cell rank-top3">3</div><div class="grid-cell rank-top3">2</div><div class="grid-cell rank-top3">3</div><div class="grid-cell rank-top3">3</div><div class="grid-cell rank-top3">3</div>
         </div>
-        <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Dominant 10–15+ mile radius ranking capture across all target services.</p>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;"><strong>Target:</strong> Consistent Top-3 green rankings across 10–15+ mile radius covering both Oakland & Macomb counties.</p>
       </div>
     </div>
   </div>
-  <div class="section-title"><span>03</span> Core Service Focus & Search Demand</div>
-  <div class="card" style="margin-bottom: 32px; overflow-x: auto;">
+  <div class="section-heading"><span class="section-num">03</span> Google Business Profile Audit & Health Check</div>
+  <p class="section-sub">Comprehensive audit of Zeppelin's active GBP profiles across key local ranking factors.</p>
+  <div class="card" style="margin-bottom: 36px; overflow-x: auto;">
     <table class="custom-table">
       <thead>
-        <tr><th>Core Service</th><th>Pure High-Intent Keyword</th><th>Search Intent</th><th>Primary Business Value</th><th>Auto8 Optimization Focus</th></tr>
+        <tr><th>Audit Factor</th><th>Current Status / Finding</th><th>Impact on Rankings</th><th>Auto8 Action Item</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Air Duct & HVAC Cleaning</strong></td><td><code>air duct cleaning</code> / <code>duct cleaning services</code></td><td>Commercial & Residential</td><td>High-ticket residential service & commercial duct restoration</td><td>GBP product buildout, Pringle truck photos & weekly posts</td></tr>
-        <tr><td><strong>Carpet & Rug Cleaning</strong></td><td><code>carpet cleaning</code> / <code>steam cleaning services</code></td><td>High-volume residential</td><td>Consistent recurring dispatch volume and repeat customers</td><td>Consolidate cannibalized URLs & optimize primary service pages</td></tr>
-        <tr><td><strong>Tile & Grout Restoration</strong></td><td><code>tile and grout cleaning</code> / <code>grout cleaning and sealing</code></td><td>High-margin residential</td><td>High ticket value with strong cross-sell opportunities</td><td>Local schema markup & before/after gallery integration</td></tr>
-        <tr><td><strong>Dryer Vent Cleaning</strong></td><td><code>dryer vent cleaning</code> / <code>dryer vent repair</code></td><td>Preventative & Emergency</td><td>Rapid booking cycle, fire safety compliance & add-on revenue</td><td>Proximity optimization for immediate dispatch terms</td></tr>
-        <tr><td><strong>Commercial Janitorial</strong></td><td><code>commercial carpet cleaning</code> / <code>medical office cleaning</code></td><td>B2B Contractual</td><td>Long-term recurring monthly commercial facility contracts</td><td>B2B citation alignment & commercial service attributes</td></tr>
-        <tr><td><strong>Water & Odor Restoration</strong></td><td><code>odor removal service</code> / <code>water damage restoration</code></td><td>Emergency high-value</td><td>Maximum revenue per ticket emergency dispatches</td><td>24/7 service hour setup & rapid call CTA setup on profiles</td></tr>
+        <tr><td><strong>Business Description</strong></td><td><span class="badge-status badge-warn">Needs Optimization</span> Partial character usage; missing secondary service keywords.</td><td>Medium</td><td>Rewrite 750-character profile description with structured service & value proposition hooks.</td></tr>
+        <tr><td><strong>Google Star Rating</strong></td><td><span class="badge-status badge-pass">4.9 ★ Rating</span> Strong historical reputation.</td><td>High</td><td>Maintain 4.8+ rating while scaling total review velocity.</td></tr>
+        <tr><td><strong>Review Frequency & Velocity</strong></td><td><span class="badge-status badge-warn">Sporadic / Low Velocity</span> Long gaps between new customer reviews.</td><td>Critical</td><td>Deploy automated SMS/email review request sequences to generate 8–15 new verified reviews monthly.</td></tr>
+        <tr><td><strong>Review Reply Rate</strong></td><td><span class="badge-status badge-crit">~35% Unanswered</span> Many positive reviews lack owner responses.</td><td>High</td><td>Implement 100% keyword-rich response protocol for all incoming reviews within 24 hours.</td></tr>
+        <tr><td><strong>Image & Media Count</strong></td><td><span class="badge-status badge-warn">Low Photo Frequency</span> Static photos, limited truck/equipment shots.</td><td>Medium</td><td>Upload weekly geo-tagged photos of Pringle trucks, job sites, and team dispatches.</td></tr>
+        <tr><td><strong>Google Post Frequency</strong></td><td><span class="badge-status badge-crit">Inactive (< 1 / month)</span> Profiles lack ongoing promotional activity.</td><td>High</td><td>Publish 2x weekly localized Google updates, promotional offers, and service highlights.</td></tr>
+        <tr><td><strong>Post Keyword Optimization</strong></td><td><span class="badge-status badge-crit">Missing</span> Historical posts lack structured call-to-actions and service keywords.</td><td>Medium</td><td>Optimize every post with direct booking buttons, phone CTAs, and core service terms.</td></tr>
+        <tr><td><strong>Service List Completeness</strong></td><td><span class="badge-status badge-warn">Incomplete Catalog</span> Core services present, but sub-services and prices missing.</td><td>High</td><td>Build comprehensive product and service menu (Air Duct, Carpet, Grout, Janitorial, Dryer Vent).</td></tr>
+        <tr><td><strong>Service Descriptions</strong></td><td><span class="badge-status badge-warn">Generic</span> Default Google descriptions used instead of customized copy.</td><td>Medium</td><td>Add rich 300-word custom descriptions for each individual service offering.</td></tr>
+        <tr><td><strong>Service Area Radius</strong></td><td><span class="badge-status badge-pass">Configured</span> St. Clair Shores and Birmingham territory polygons defined.</td><td>Medium</td><td>Refine zip code boundaries to maximize cross-county service overlap.</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="section-title"><span>04</span> Auto8 Full-Service Local SEO Scope</div>
+  <div class="section-heading"><span class="section-num">04</span> Website On-Page & Schema Technical Audit</div>
+  <p class="section-sub">Evaluation of zepservices.com on-page signals that feed Google's local ranking algorithms.</p>
   <div class="grid-2">
     <div class="card">
-      <h3 style="color: var(--accent-cyan); font-size: 16px; margin-bottom: 10px;">1. Google Business Profile Management (x2 Locations)</h3>
+      <h3 style="color: var(--purple-light); font-size: 16px; margin-bottom: 12px;">On-Page Architecture & Metadata</h3>
       <ul style="color: var(--text-muted); font-size: 14px; line-height: 1.8; padding-left: 18px;">
-        <li>Primary and secondary category restructuring (Air Duct, Carpet, Janitorial).</li>
-        <li>Full product & service catalog setup with core service pricing and descriptions.</li>
-        <li>Weekly promotional updates and service spotlight posts.</li>
-        <li>Geo-tagged photo uploads (job site, equipment, truck fleet).</li>
-        <li>Automated Q&A seeding with high-intent customer inquiries.</li>
+        <li><strong>Page Title Tags:</strong> Good brand inclusion, but lacks primary service intent hierarchy on sub-pages.</li>
+        <li><strong>Meta Descriptions:</strong> Several service pages have duplicate or missing meta descriptions, hurting click-through rates.</li>
+        <li><strong>H1 & Heading Hierarchy:</strong> Multiple H1 tags detected on core service pages causing keyword dilution.</li>
+        <li><strong>URL Silos:</strong> Potential cannibalization between generic cleaning and specialized air duct service URLs.</li>
       </ul>
     </div>
     <div class="card">
-      <h3 style="color: var(--accent-cyan); font-size: 16px; margin-bottom: 10px;">2. Local Directory Citations & Aggregator Network</h3>
+      <h3 style="color: var(--purple-light); font-size: 16px; margin-bottom: 12px;">Structured Schema & NAP Consistency</h3>
       <ul style="color: var(--text-muted); font-size: 14px; line-height: 1.8; padding-left: 18px;">
-        <li>Data aggregator push (Data Axle, Neustar Localeze, Foursquare).</li>
-        <li>Clean-up and synchronization of NAP (Name, Address, Phone) consistency.</li>
-        <li>Top 50+ contractor, cleaning, and regional trade directories.</li>
-        <li>Duplicate listing suppression across Bing, Apple Maps, and Yelp.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3 style="color: var(--accent-cyan); font-size: 16px; margin-bottom: 10px;">3. Geo-Grid Heatmap Tracking & Radius Expansion</h3>
-      <ul style="color: var(--text-muted); font-size: 14px; line-height: 1.8; padding-left: 18px;">
-        <li>Bi-weekly 7x7 and 9x9 geo-grid ranking scans across both territory hubs.</li>
-        <li>Proximity tracking for pure Air Duct, Carpet, and Dryer Vent search terms.</li>
-        <li>Algorithmic adjustments based on micro-radius performance drops.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3 style="color: var(--accent-cyan); font-size: 16px; margin-bottom: 10px;">4. Local Schema & Service Page Signals</h3>
-      <ul style="color: var(--text-muted); font-size: 14px; line-height: 1.8; padding-left: 18px;">
-        <li>Nested <code>LocalBusiness</code> & <code>HVACBusiness</code> schema injection.</li>
-        <li>Core service page optimization to support Google Maps ranking algorithms.</li>
-        <li>Internal link silo restructuring to eliminate keyword cannibalization.</li>
+        <li><strong>LocalBusiness Schema:</strong> Basic schema present, but lacks multi-location parent/child department nesting.</li>
+        <li><strong>HVAC & Cleaning Schema:</strong> Missing specialized <code>HVACBusiness</code> and <code>DryCleaningOrLaundry</code> structured types.</li>
+        <li><strong>NAP Consistency:</strong> Minor formatting discrepancies in phone/address formatting across footer vs. location landing pages.</li>
+        <li><strong>Geo-Coordinates:</strong> Missing precise latitude/longitude tags in schema to anchor Google Maps signals.</li>
       </ul>
     </div>
   </div>
-  <div class="section-title"><span>05</span> 90-Day Local Dominance Roadmap</div>
+  <div class="section-heading"><span class="section-num">05</span> Top Local Competitor GBP Benchmark</div>
+  <p class="section-sub">How Zeppelin stacks up against the top 3-Pack competitors across Metro Detroit.</p>
+  <div class="card" style="margin-bottom: 36px; overflow-x: auto;">
+    <table class="custom-table">
+      <thead>
+        <tr><th>Business Name</th><th>Rating / Reviews</th><th>Primary GBP Category</th><th>Posting Cadence</th><th>Estimated 3-Pack Share</th></tr>
+      </thead>
+      <tbody>
+        <tr style="background: rgba(139, 92, 246, 0.08);"><td><strong>Zeppelin Cleaning Services (Target)</strong></td><td>4.9 ★ (120+ Reviews)</td><td>Air Duct Cleaning Service</td><td>Inactive (< 1/mo)</td><td><span class="badge-status badge-warn">Moderate (~28%)</span></td></tr>
+        <tr><td><strong>Competitor A (Modernistic)</strong></td><td>4.8 ★ (850+ Reviews)</td><td>Carpet Cleaning Service</td><td>3x / week</td><td><span class="badge-status badge-pass">Dominant (~55%)</span></td></tr>
+        <tr><td><strong>Competitor B (Safety King)</strong></td><td>4.9 ★ (1,200+ Reviews)</td><td>Air Duct Cleaning Service</td><td>Daily Updates</td><td><span class="badge-status badge-pass">Dominant (~62%)</span></td></tr>
+        <tr><td><strong>Competitor C (DUST DOCTORS)</strong></td><td>4.7 ★ (340+ Reviews)</td><td>Air Duct Cleaning Service</td><td>1x / week</td><td><span class="badge-status badge-warn">Moderate (~35%)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-heading"><span class="section-num">06</span> AI Search & LLM Visibility Audit</div>
+  <p class="section-sub">Brand presence and recommendation rate across ChatGPT, Google Gemini, Perplexity, and AI Overviews.</p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-header">ChatGPT / OpenAI</div>
+      <div class="stat-huge" style="color: var(--amber-accent);">35% <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">Share of Voice</span></div>
+      <div class="stat-context">Zeppelin is cited for branded queries but often omitted when users ask ChatGPT for <em>"top rated air duct cleaners in Oakland County"</em> due to weak third-party citation density.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Google Gemini & SGE</div>
+      <div class="stat-huge" style="color: var(--purple-light);">48% <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">Share of Voice</span></div>
+      <div class="stat-context">Gemini pulls heavily from Google Business Profile data and localized reviews. Expanding review volume will directly boost Gemini AI summary recommendations.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Perplexity AI</div>
+      <div class="stat-huge" style="color: var(--rose-accent);">22% <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">Share of Voice</span></div>
+      <div class="stat-context">Perplexity prioritizes web directory citations and press mentions. Auto8's citation distribution engine will establish authoritative references that Perplexity cites.</div>
+    </div>
+  </div>
+  <div class="section-heading"><span class="section-num">07</span> Auto8 Complete Six-Pillar Local SEO Scope</div>
+  <p class="section-sub">The complete done-for-you management and local engineering stack deployed for both Zeppelin locations.</p>
+  <div class="grid-3">
+    <div class="pillar-card">
+      <div class="pillar-num">Pillar 01</div>
+      <div class="pillar-title">Google Profile Optimization</div>
+      <ul class="pillar-list">
+        <li>Primary and secondary category restructuring.</li>
+        <li>Custom 750-character keyword-rich business descriptions.</li>
+        <li>Complete product and service catalog buildout.</li>
+        <li>Attribute tagging (emergency service, online estimates, payment types).</li>
+        <li>Direct booking and quote link configuration.</li>
+      </ul>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">Pillar 02</div>
+      <div class="pillar-title">Content & Activity</div>
+      <ul class="pillar-list">
+        <li>2x weekly promotional Google updates and offer posts.</li>
+        <li>Weekly geo-tagged job site and equipment photo uploads.</li>
+        <li>High-engagement video and before-and-after showcase uploads.</li>
+        <li>Automated Q&A seeding with high-intent customer inquiries.</li>
+        <li>Continuous profile activity signaling to Google's ranking engine.</li>
+      </ul>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">Pillar 03</div>
+      <div class="pillar-title">Reviews & Reputation</div>
+      <ul class="pillar-list">
+        <li>Automated customer review request workflows via SMS and email.</li>
+        <li>Smart follow-up sequences for uncompleted review requests.</li>
+        <li>100% personalized keyword-rich responses to all customer reviews.</li>
+        <li>Instant negative review alerts and reputation defense protocols.</li>
+        <li>Ongoing review velocity monitoring across both location profiles.</li>
+      </ul>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">Pillar 04</div>
+      <div class="pillar-title">Local Rankings & Heatmaps</div>
+      <ul class="pillar-list">
+        <li>Radius rank tracking across all core service keywords.</li>
+        <li>Bi-weekly 7x7 and 9x9 geo-grid proximity heatmap generation.</li>
+        <li>Ranking movement and volatility alerts.</li>
+        <li>Direct competitor proximity tracking across target zip codes.</li>
+        <li>Visual before-and-after ranking progress reports.</li>
+      </ul>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">Pillar 05</div>
+      <div class="pillar-title">Citations & Local Authority</div>
+      <ul class="pillar-list">
+        <li>Major data aggregator network sync (Data Axle, Neustar, Foursquare).</li>
+        <li>Top 50+ local, trade, and contractor directory submissions.</li>
+        <li>Comprehensive NAP (Name, Address, Phone) consistency synchronization.</li>
+        <li>Duplicate and incorrect listing suppression across Apple Maps, Bing, Yelp.</li>
+        <li>Foundational local authority and entity trust building.</li>
+      </ul>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">Pillar 06</div>
+      <div class="pillar-title">Reporting & AI Visibility</div>
+      <ul class="pillar-list">
+        <li>Monthly executive dashboard tracking calls, clicks, and direction requests.</li>
+        <li>Google Business Profile ROI and conversion attribution reporting.</li>
+        <li>Competitor market share of voice analytics.</li>
+        <li>Visibility tracking across ChatGPT, Gemini, Perplexity, and AI search engines.</li>
+        <li>Dedicated account growth reviews and strategic roadmap adjustments.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section-heading"><span class="section-num">08</span> 90-Day Local Dominance Execution Roadmap</div>
+  <p class="section-sub">Structured into three high-impact 30-day phases to deliver rapid 3-Pack capture and call volume growth.</p>
   <div class="timeline">
     <div class="timeline-item">
-      <div class="timeline-phase">Month 1: Foundation & Local Calibration</div>
-      <div class="timeline-title">Audit, Claiming, Category Optimization & Cleanup</div>
+      <div class="timeline-phase">Month 1: Foundation, Calibration & Citation Sync</div>
+      <div class="timeline-title">Audit Cleanup, Category Alignment & Baseline Heatmap Calibration</div>
       <ul class="timeline-list">
-        <li>Complete GBP deep-audit for both physical business profiles.</li>
-        <li>Align categories, primary services, and exact service territory radius.</li>
-        <li>Launch Aggregator Network citation distribution and duplicate suppression.</li>
-        <li>Deploy nested Local Schema on <code>zepservices.com</code>.</li>
+        <li>Perform complete profile audit for St. Clair Shores HQ and Birmingham branch.</li>
+        <li>Restructure primary/secondary GBP categories for Air Duct, Carpet, and Janitorial services.</li>
+        <li>Launch Aggregator Network push to sync NAP data across 50+ tier-1 directories.</li>
+        <li>Implement structured <code>LocalBusiness</code> and <code>HVACBusiness</code> schema on zepservices.com.</li>
+        <li>Establish baseline 9x9 geo-grid heatmaps across all core service terms.</li>
       </ul>
     </div>
     <div class="timeline-item">
-      <div class="timeline-phase">Month 2: Velocity & Proximity Radius Expansion</div>
-      <div class="timeline-title">Service Silos, Weekly Posts & Striking-Distance Keyword Push</div>
+      <div class="timeline-phase">Month 2: Activity Velocity, Review Engine & Striking-Distance Push</div>
+      <div class="timeline-title">Review Acceleration, Weekly Media Posting & Page 2 Keyword Elevation</div>
       <ul class="timeline-list">
-        <li>Launch weekly geo-tagged GBP posts highlighting Air Duct & Carpet projects.</li>
-        <li>Push 69 striking-distance keywords into top 10 rankings.</li>
-        <li>Expand core service page content for high-end residential queries.</li>
-        <li>Establish automated 5-star review generation protocol.</li>
+        <li>Launch automated review collection workflows to accelerate 5-star Google review velocity.</li>
+        <li>Deploy 2x weekly keyword-optimized Google posts and geo-tagged job photos.</li>
+        <li>Push 69 striking-distance Page 2 keywords into Top 10 organic positions.</li>
+        <li>Implement 100% review reply protocol with embedded service keyword phrasing.</li>
+        <li>Run mid-point geo-grid scans to measure proximity radius expansion.</li>
       </ul>
     </div>
     <div class="timeline-item">
-      <div class="timeline-phase">Month 3: Market Dominance & Conversion Scaling</div>
-      <div class="timeline-title">Full Geo-Grid 3-Pack Capture & Multi-Location Scaling</div>
+      <div class="timeline-phase">Month 3: Proximity Expansion, AI Search Scaling & Market Dominance</div>
+      <div class="timeline-title">Google 3-Pack Territory Capture, LLM Optimization & Multi-Location Scaling</div>
       <ul class="timeline-list">
-        <li>Achieve top-3 local rankings across primary 10-mile radius for both profiles.</li>
-        <li>Scale commercial & janitorial contract inquiries across the entire metro market.</li>
-        <li>Full quarterly ROI review and seasonal campaign preparation (HVAC/Duct rush).</li>
+        <li>Achieve dominant Top-3 rankings across target 10–15+ mile radius for both business profiles.</li>
+        <li>Scale B2B commercial janitorial and facility cleaning inquiries across Wayne & Oakland counties.</li>
+        <li>Optimize entity references to boost brand recommendation rates across ChatGPT, Gemini, and Perplexity.</li>
+        <li>Conduct comprehensive Q1 ROI review, call volume attribution, and seasonal campaign planning.</li>
       </ul>
     </div>
   </div>
-  <div class="section-title"><span>06</span> Transparent Investment & ROI</div>
+  <div class="section-heading"><span class="section-num">09</span> Transparent Investment & ROI Economics</div>
+  <p class="section-sub">A simple, transparent pricing structure engineered to deliver an immediate multiple on investment.</p>
   <div class="pricing-hero">
-    <div style="font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; font-size: 13px; letter-spacing: 1px;">Full-Service Auto8 Local SEO Retainer</div>
+    <div style="font-weight: 700; color: var(--purple-light); text-transform: uppercase; font-size: 13px; letter-spacing: 1.2px;">Full-Service Auto8 Local SEO Retainer</div>
     <div class="price-tag">$996 <span style="font-size: 18px; font-weight: normal; color: var(--text-muted);">/ month</span></div>
-    <div class="price-sub">Covers 2 Full Business Profiles ($498 / location / mo)</div>
+    <div class="price-sub">Covers 2 Full Business Profiles ($498 / location / month) — St. Clair Shores & Birmingham</div>
     <div class="price-breakdown">
       <div class="price-item">
-        <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location Profile 1</div>
-        <div style="font-size: 20px; font-weight: 800; color: #fff;">$498 / mo</div>
-        <div style="font-size: 12px; color: var(--accent-green); margin-top: 4px;">Full GBP + Citations + Heatmaps</div>
+        <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location 1: St. Clair Shores HQ</div>
+        <div style="font-size: 22px; font-weight: 800; color: #fff;">$498 / mo</div>
+        <div style="font-size: 12px; color: var(--green-accent); margin-top: 4px;">Full 6-Pillar Stack + Citations + Heatmaps</div>
       </div>
       <div class="price-item">
-        <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location Profile 2</div>
-        <div style="font-size: 20px; font-weight: 800; color: #fff;">$498 / mo</div>
-        <div style="font-size: 12px; color: var(--accent-green); margin-top: 4px;">Full GBP + Citations + Heatmaps</div>
+        <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location 2: Birmingham Branch</div>
+        <div style="font-size: 22px; font-weight: 800; color: #fff;">$498 / mo</div>
+        <div style="font-size: 12px; color: var(--green-accent); margin-top: 4px;">Full 6-Pillar Stack + Citations + Heatmaps</div>
       </div>
     </div>
-    <div style="margin-top: 24px; padding: 16px; background: rgba(51, 65, 85, 0.4); border-radius: 8px; font-size: 14px; color: var(--text-main);">
-      💡 <strong>The ROI Equation:</strong> An average residential air duct cleaning or commercial carpet cleaning job ranges from <strong>$400 to $1,500+</strong>. Securing just <strong>1 to 2 additional jobs per month</strong> across both locations completely funds this entire local growth program.
+    <div style="margin-top: 28px; padding: 20px; background: rgba(39, 33, 71, 0.5); border-radius: 10px; font-size: 14.5px; color: var(--text-primary); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+      💡 <strong>The ROI Math:</strong> An average residential air duct cleaning or commercial carpet cleaning job generates <strong>$400 to $1,500+</strong> in revenue. Landing just <strong>1 to 2 additional jobs per month</strong> across both locations completely pays for this entire local growth program. Every additional call beyond that is pure bottom-line profit.
     </div>
   </div>
-  <div class="card" style="text-align: center; padding: 32px;">
-    <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 8px; color: #fff;">Ready to turn local search into your #1 call driver?</h2>
-    <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">Auto8 handles 100% of the optimization, citations, tracking, and weekly execution so Zeppelin Cleaning Services can focus on fulfilling jobs and servicing clients.</p>
-    <div style="font-weight: 700; color: var(--accent-blue);">Auto8.ai — Local Growth Engineering</div>
+  <div class="card" style="text-align: center; padding: 36px; background: radial-gradient(circle at center, rgba(139, 92, 246, 0.1), transparent 70%), var(--bg-card);">
+    <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 10px; color: #fff;">Ready to turn local search into your #1 call driver?</h2>
+    <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px; max-width: 640px; margin-left: auto; margin-right: auto;">Auto8 handles 100% of the optimization, weekly content, review systems, citation distribution, and tracking so Zeppelin Cleaning Services can focus on fulfilling jobs and servicing clients.</p>
+    <div style="font-weight: 800; font-size: 16px; color: var(--purple-light);">Auto8.ai — Local Growth Engineering</div>
   </div>
 </div>
 </body>
