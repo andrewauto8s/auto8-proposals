@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Auto8 Local SEO Growth Proposal & Live Audit — Zeppelin Cleaning Services</title>
 <style>
-  :root {
+  :root[data-theme="dark"] {
     --bg-deep: #0b0914;
     --bg-card: #151128;
     --bg-card-hover: #1c1635;
@@ -24,8 +24,34 @@
     --text-dim: #64748b;
     --border-color: #272147;
     --border-highlight: #3c326b;
+    --table-header-bg: rgba(26, 21, 51, 0.9);
+    --pill-bg: rgba(39, 33, 71, 0.6);
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+
+  :root[data-theme="light"] {
+    --bg-deep: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --bg-card-alt: #f8fafc;
+    --purple-primary: #7c3aed;
+    --purple-light: #6d28d9;
+    --purple-dark: #4c1d95;
+    --purple-glow: rgba(124, 58, 237, 0.15);
+    --indigo-accent: #4f46e5;
+    --cyan-accent: #0891b2;
+    --green-accent: #059669;
+    --amber-accent: #d97706;
+    --rose-accent: #e11d48;
+    --text-primary: #0f172a;
+    --text-muted: #475569;
+    --text-dim: #94a3b8;
+    --border-color: #e2e8f0;
+    --border-highlight: #cbd5e1;
+    --table-header-bg: #f1f5f9;
+    --pill-bg: #e2e8f0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
   body { background-color: var(--bg-deep); color: var(--text-primary); line-height: 1.6; padding: 32px 20px; }
   .container { max-width: 1120px; margin: 0 auto; }
   
@@ -34,27 +60,31 @@
   .brand-group { display: flex; align-items: center; gap: 14px; }
   .brand-logo-img { height: 38px; width: auto; object-fit: contain; }
   .brand-badge { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.8px; color: #fff; }
-  .export-btn { background: linear-gradient(135deg, #8b5cf6, #6366f1); color: #fff; font-weight: 700; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px var(--purple-glow); transition: all 0.2s ease; }
+  
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .theme-toggle-btn { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); padding: 9px 16px; border-radius: 8px; font-size: 13.5px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .theme-toggle-btn:hover { border-color: var(--purple-primary); }
+  .export-btn { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); color: #fff; font-weight: 700; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px var(--purple-glow); transition: all 0.2s ease; }
   .export-btn:hover { opacity: 0.95; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4); }
 
   /* Hero Banner */
-  .hero-card { background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15), transparent 60%), linear-gradient(180deg, #181330, #120e24); border: 1px solid var(--border-highlight); border-radius: 20px; padding: 40px; margin-bottom: 36px; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+  .hero-card { background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.12), transparent 60%), var(--bg-card); border: 1px solid var(--border-highlight); border-radius: 20px; padding: 40px; margin-bottom: 36px; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
   .hero-tag { color: var(--purple-light); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 6px; }
   .hero-tag::before { content: ''; width: 8px; height: 8px; background: var(--purple-primary); border-radius: 50%; display: inline-block; }
-  .hero-title { font-size: 34px; font-weight: 800; line-height: 1.25; margin-bottom: 16px; color: #fff; }
+  .hero-title { font-size: 34px; font-weight: 800; line-height: 1.25; margin-bottom: 16px; color: var(--text-primary); }
   .hero-desc { color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-bottom: 24px; max-width: 960px; }
   .meta-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
-  .pill { background: rgba(39, 33, 71, 0.6); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 24px; font-size: 13px; color: var(--text-primary); font-weight: 500; }
+  .pill { background: var(--pill-bg); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 24px; font-size: 13px; color: var(--text-primary); font-weight: 500; }
   .pill strong { color: var(--purple-light); }
 
   /* Target Keyword Cloud Card inside Hero */
-  .keyword-hero-box { background: rgba(21, 17, 40, 0.7); border: 1px dashed var(--border-highlight); border-radius: 12px; padding: 20px; }
+  .keyword-hero-box { background: var(--bg-card-alt); border: 1px dashed var(--border-highlight); border-radius: 12px; padding: 20px; }
   .keyword-hero-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--purple-light); margin-bottom: 12px; }
   .keyword-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .kw-tag { background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.3); color: #e2e8f0; font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 6px; }
+  .kw-tag { background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.3); color: var(--text-primary); font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 6px; }
 
   /* Sections */
-  .section-heading { font-size: 24px; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; color: #fff; margin-top: 40px; }
+  .section-heading { font-size: 24px; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; color: var(--text-primary); margin-top: 40px; }
   .section-num { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); color: #fff; font-size: 13px; font-weight: 800; padding: 3px 9px; border-radius: 6px; }
   .section-sub { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
 
@@ -65,38 +95,43 @@
   .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; transition: border-color 0.2s ease; }
   .card:hover { border-color: var(--border-highlight); }
   .card-header { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
-  .stat-huge { font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .stat-huge { font-size: 32px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
   .stat-context { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
   /* Health Scorecard */
-  .health-score-hero { background: linear-gradient(135deg, #1c1538, #130f28); border: 2px solid var(--purple-primary); border-radius: 16px; padding: 28px; margin-bottom: 32px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between; }
+  .health-score-hero { background: var(--bg-card); border: 2px solid var(--purple-primary); border-radius: 16px; padding: 28px; margin-bottom: 32px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between; box-shadow: 0 4px 20px var(--purple-glow); }
   .score-gauge-box { display: flex; align-items: center; gap: 20px; }
-  .score-circle { width: 100px; height: 100px; border-radius: 50%; background: #130f28; border: 6px solid var(--green-accent); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
-  .score-val { font-size: 32px; font-weight: 900; color: #fff; line-height: 1; }
+  .score-circle { width: 100px; height: 100px; border-radius: 50%; background: var(--bg-card-alt); border: 6px solid var(--green-accent); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
+  .score-val { font-size: 32px; font-weight: 900; color: var(--text-primary); line-height: 1; }
   .score-total { font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
-  .score-details h3 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+  .score-details h3 { font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
   .score-details p { font-size: 13.5px; color: var(--text-muted); max-width: 440px; }
   
   .sub-scores-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; min-width: 320px; }
-  .sub-score-item { background: rgba(39, 33, 71, 0.5); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-color); }
+  .sub-score-item { background: var(--pill-bg); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-color); }
   .sub-score-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; justify-content: space-between; }
-  .sub-score-bar-bg { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+  .sub-score-bar-bg { width: 100%; height: 6px; background: rgba(0,0,0,0.1); border-radius: 3px; overflow: hidden; }
   .sub-score-bar-fill { height: 100%; border-radius: 3px; }
 
   /* Diagnostic Metric Badges / Cards */
-  .diag-card { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; }
+  .diag-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; }
   .diag-title { font-size: 13px; font-weight: 700; color: var(--purple-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-  .diag-metric { font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+  .diag-metric { font-size: 24px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
   .diag-sub { font-size: 12.5px; color: var(--text-muted); }
 
-  /* Tables */
+  /* Redesigned Clean Audit Table (Separate Status Column & Cell Layout) */
   .custom-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
-  .custom-table th { text-align: left; padding: 14px 16px; background: rgba(26, 21, 51, 0.9); color: var(--purple-light); font-weight: 600; border-bottom: 1px solid var(--border-color); }
-  .custom-table td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); vertical-align: middle; }
-  .badge-status { display: inline-block; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 12px; }
-  .badge-pass { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-  .badge-warn { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-  .badge-crit { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+  .custom-table th { text-align: left; padding: 14px 16px; background: var(--table-header-bg); color: var(--purple-light); font-weight: 600; border-bottom: 1px solid var(--border-color); }
+  .custom-table td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); vertical-align: top; }
+  
+  /* Audit Status Block UI */
+  .status-cell-block { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .badge-status { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 12px; letter-spacing: 0.3px; line-height: 1; }
+  .badge-status-desc { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+  
+  .badge-pass { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+  .badge-warn { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+  .badge-crit { background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.3); }
 
   /* Geo-Grid Visualizer */
   .geogrid-container { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 28px; margin-bottom: 36px; }
@@ -113,7 +148,7 @@
   .pillar-card { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; }
   .pillar-card:hover { border-color: var(--purple-primary); }
   .pillar-num { font-size: 12px; font-weight: 800; color: var(--purple-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-  .pillar-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+  .pillar-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
   .pillar-list { list-style: none; color: var(--text-muted); font-size: 13.5px; line-height: 1.7; }
   .pillar-list li { margin-bottom: 6px; padding-left: 18px; position: relative; }
   .pillar-list li::before { content: '•'; position: absolute; left: 0; color: var(--purple-primary); font-size: 16px; font-weight: bold; }
@@ -122,22 +157,22 @@
   .timeline { display: flex; flex-direction: column; gap: 18px; margin-bottom: 36px; }
   .timeline-item { background: var(--bg-card); border-left: 4px solid var(--purple-primary); border-radius: 0 14px 14px 0; padding: 24px; border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
   .timeline-phase { font-size: 12px; font-weight: 800; color: var(--purple-light); text-transform: uppercase; letter-spacing: 1px; }
-  .timeline-title { font-size: 18px; font-weight: 700; margin: 4px 0 10px 0; color: #fff; }
+  .timeline-title { font-size: 18px; font-weight: 700; margin: 4px 0 10px 0; color: var(--text-primary); }
   .timeline-list { list-style: none; color: var(--text-muted); font-size: 14px; }
   .timeline-list li { margin-bottom: 6px; padding-left: 20px; position: relative; }
   .timeline-list li::before { content: '✓'; position: absolute; left: 0; color: var(--purple-primary); font-weight: 800; }
 
   /* Pricing Box */
-  .pricing-hero { background: radial-gradient(circle at center, rgba(139, 92, 246, 0.12), transparent 70%), linear-gradient(135deg, #191433, #120e24); border: 2px solid var(--purple-primary); border-radius: 20px; padding: 36px; margin-bottom: 36px; text-align: center; box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15); }
-  .price-tag { font-size: 48px; font-weight: 900; color: #fff; margin: 12px 0 4px 0; }
+  .pricing-hero { background: var(--bg-card); border: 2px solid var(--purple-primary); border-radius: 20px; padding: 36px; margin-bottom: 36px; text-align: center; box-shadow: 0 8px 30px var(--purple-glow); }
+  .price-tag { font-size: 48px; font-weight: 900; color: var(--text-primary); margin: 12px 0 4px 0; }
   .price-sub { color: var(--purple-light); font-size: 15px; margin-bottom: 24px; }
   .price-breakdown { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 20px; text-align: left; }
-  .price-item { background: var(--bg-deep); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 24px; min-width: 260px; }
+  .price-item { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 24px; min-width: 260px; }
 
   /* Print Styles */
   @media print {
     body { background-color: #fff !important; color: #000 !important; padding: 0 !important; }
-    .header-nav .export-btn { display: none !important; }
+    .header-nav .export-btn, .theme-toggle-btn { display: none !important; }
     .card, .hero-card, .geogrid-container, .timeline-item, .pricing-hero, .price-item, .pillar-card, .keyword-hero-box, .health-score-hero, .diag-card { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; }
     .hero-title, .timeline-title, .stat-huge, .section-heading, .brand-logo, .pillar-title { color: #000 !important; }
     .hero-desc, .text-muted, .stat-context, .timeline-list, .pillar-list, .section-sub { color: #444 !important; }
@@ -150,16 +185,22 @@
 <body>
 
 <div class="container">
-  <!-- Navigation Header with Official Logo -->
+  <!-- Navigation Header with Theme Switcher & Official Logo -->
   <div class="header-nav">
     <div class="brand-group">
       <img src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f8762.png" alt="Auto8.ai Logo" class="brand-logo-img">
       <span class="brand-badge">Local Growth Intelligence</span>
     </div>
-    <button class="export-btn" onclick="window.print()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-      Export / Print PDF
-    </button>
+    <div class="nav-actions">
+      <button class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()">
+        <span id="theme-icon">☀️</span>
+        <span id="theme-text">Light Mode</span>
+      </button>
+      <button class="export-btn" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Export / Print PDF
+      </button>
+    </div>
   </div>
 
   <!-- Hero Banner -->
@@ -300,7 +341,7 @@
     </div>
   </div>
 
-  <!-- Section 03: Verified GBP Audit Findings -->
+  <!-- Section 03: Verified GBP Audit Findings (Redesigned Table Layout) -->
   <div class="section-heading"><span class="section-num">03</span> Verified GBP Profile Audit Breakdown</div>
   <p class="section-sub">Direct audit data from Zeppelin's verified Google Business Profile record (Harper Ave HQ).</p>
 
@@ -327,51 +368,82 @@
     </div>
   </div>
 
+  <!-- Redesigned Clean Status Table -->
   <div class="card" style="margin-bottom: 36px; overflow-x: auto;">
     <table class="custom-table">
       <thead>
         <tr>
-          <th>Audit Factor</th>
-          <th>Verified Profile Status</th>
-          <th>Impact on Rankings</th>
-          <th>Auto8 Action Plan</th>
+          <th style="width: 22%;">Audit Factor</th>
+          <th style="width: 38%;">Verified Profile Status</th>
+          <th style="width: 12%;">Impact</th>
+          <th style="width: 28%;">Auto8 Action Plan</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Business Verification</strong></td>
-          <td><span class="badge-status badge-pass">Verified Location</span> 21210 Harper Ave, St Clair Shores, MI</td>
-          <td>High</td>
+          <td>
+            <div class="status-cell-block">
+              <span class="badge-status badge-pass">● Verified Location</span>
+              <span class="badge-status-desc">21210 Harper Ave, St Clair Shores, MI</span>
+            </div>
+          </td>
+          <td><span style="font-weight: 600; color: var(--purple-light);">High</span></td>
           <td>Maintain active verification and expand service area polygon boundaries.</td>
         </tr>
         <tr>
           <td><strong>Google Star Rating</strong></td>
-          <td><span class="badge-status badge-pass">5.0 ★ (1,996 Reviews)</span> Exceptional customer feedback.</td>
-          <td>Critical</td>
+          <td>
+            <div class="status-cell-block">
+              <span class="badge-status badge-pass">● 5.0 ★ (1,996 Reviews)</span>
+              <span class="badge-status-desc">Exceptional historical customer feedback.</span>
+            </div>
+          </td>
+          <td><span style="font-weight: 700; color: var(--rose-accent);">Critical</span></td>
           <td>Maintain 5.0★ rating with ongoing automated review acceleration sequences.</td>
         </tr>
         <tr>
           <td><strong>Photos & Media Signals</strong></td>
-          <td><span class="badge-status badge-warn">50% Media Score</span> 263 total photos.</td>
-          <td>High</td>
+          <td>
+            <div class="status-cell-block">
+              <span class="badge-status badge-warn">▲ 50% Media Score</span>
+              <span class="badge-status-desc">263 total photos. Low recent truck & job site upload cadence.</span>
+            </div>
+          </td>
+          <td><span style="font-weight: 600; color: var(--purple-light);">High</span></td>
           <td>Upload weekly geo-tagged photos of Pringle trucks, job sites, and team dispatches.</td>
         </tr>
         <tr>
           <td><strong>Post Velocity & Offers</strong></td>
-          <td><span class="badge-status badge-pass">250 Historical Posts</span> Good historical activity.</td>
-          <td>High</td>
+          <td>
+            <div class="status-cell-block">
+              <span class="badge-status badge-pass">● 250 Historical Posts</span>
+              <span class="badge-status-desc">Strong historical archive. Requires ongoing weekly promotional frequency.</span>
+            </div>
+          </td>
+          <td><span style="font-weight: 600; color: var(--purple-light);">High</span></td>
           <td>Deploy consistent 2x weekly localized promotional updates and core service highlights.</td>
         </tr>
         <tr>
           <td><strong>Citation Network Health</strong></td>
-          <td><span class="badge-status badge-warn">75.0 / 100 Score</span> Inconsistencies across regional directories.</td>
-          <td>High</td>
+          <td>
+            <div class="status-cell-block">
+              <span class="badge-status badge-warn">▲ 75.0 / 100 Score</span>
+              <span class="badge-status-desc">Inconsistencies detected across regional and trade directories.</span>
+            </div>
+          </td>
+          <td><span style="font-weight: 600; color: var(--purple-light);">High</span></td>
           <td>Sync NAP consistency across Data Axle, Neustar, Foursquare, and 50+ contractor portals.</td>
         </tr>
         <tr>
           <td><strong>Service Menu Completeness</strong></td>
-          <td><span class="badge-status badge-warn">Needs Refinement</span> Catalog requires full pricing & sub-services.</td>
-          <td>Medium</td>
+          <td>
+            <div class="status-cell-block">
+              <span class="badge-status badge-warn">▲ Incomplete Menu</span>
+              <span class="badge-status-desc">Catalog requires full item pricing, custom descriptions, and sub-services.</span>
+            </div>
+          </td>
+          <td><span style="font-weight: 600; color: var(--text-muted);">Medium</span></td>
           <td>Build comprehensive product/service catalog (Air Duct, Carpet, Grout, Janitorial, Dryer Vent).</td>
         </tr>
       </tbody>
@@ -424,35 +496,35 @@
           <td><strong>653 visits / mo</strong></td>
           <td>— (Target Site)</td>
           <td>Air Duct, Carpet, Grout & Janitorial</td>
-          <td><span class="badge-status badge-pass">Baseline Leader</span></td>
+          <td><span class="badge-status badge-pass">● Baseline Leader</span></td>
         </tr>
         <tr>
           <td><strong>Amistee Air Duct Cleaning (amistee.com)</strong></td>
           <td>11,404 visits / mo</td>
           <td>19 shared keywords</td>
           <td>Air Duct & HVAC Cleaning (Regional Leader)</td>
-          <td><span class="badge-status badge-crit">High Organic Scale</span></td>
+          <td><span class="badge-status badge-crit">▲ High Organic Scale</span></td>
         </tr>
         <tr>
           <td><strong>Safety King (safetyking.com)</strong></td>
           <td>4,233 visits / mo</td>
           <td>36 shared keywords</td>
           <td>Air Duct & Dryer Vent Cleaning Specialists</td>
-          <td><span class="badge-status badge-crit">High Keyword Overlap</span></td>
+          <td><span class="badge-status badge-crit">▲ High Keyword Overlap</span></td>
         </tr>
         <tr>
           <td><strong>Dolls Cleaning (dollscleaning.com)</strong></td>
           <td>4,198 visits / mo</td>
           <td>9 shared keywords</td>
           <td>Carpet, Upholstery & Janitorial Services</td>
-          <td><span class="badge-status badge-warn">Moderate Threat</span></td>
+          <td><span class="badge-status badge-warn">▲ Moderate Threat</span></td>
         </tr>
         <tr>
           <td><strong>Sir Grout Detroit (sirgroutgreaterdetroit.com)</strong></td>
           <td>1,633 visits / mo</td>
           <td>5 shared keywords</td>
           <td>Tile, Grout & Stone Restoration Specialists</td>
-          <td><span class="badge-status badge-warn">Niche Tile Competitor</span></td>
+          <td><span class="badge-status badge-warn">▲ Niche Tile Competitor</span></td>
         </tr>
       </tbody>
     </table>
@@ -465,7 +537,7 @@
   <div class="grid-3">
     <div class="card">
       <div class="card-header">ChatGPT / OpenAI</div>
-      <div class="stat-huge" style="color: var(--amber-accent);">35% <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">Share of Voice</span></div>
+      <div class="stat-huge" style="color: var(--amber-accent);"><span id="chatgpt-sov">35%</span> <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">Share of Voice</span></div>
       <div class="stat-context">Zeppelin is cited for branded queries but often omitted when users ask ChatGPT for <em>"top rated air duct cleaners in Oakland County"</em> due to weak third-party citation density.</div>
     </div>
     <div class="card">
@@ -610,30 +682,50 @@
     <div class="price-breakdown">
       <div class="price-item">
         <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location 1: St. Clair Shores HQ</div>
-        <div style="font-size: 22px; font-weight: 800; color: #fff;">$498 / mo</div>
+        <div style="font-size: 22px; font-weight: 800; color: var(--text-primary);">$498 / mo</div>
         <div style="font-size: 12px; color: var(--green-accent); margin-top: 4px;">Full 6-Pillar Stack + Citations + Heatmaps</div>
       </div>
       <div class="price-item">
         <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location 2: Birmingham Branch</div>
-        <div style="font-size: 22px; font-weight: 800; color: #fff;">$498 / mo</div>
+        <div style="font-size: 22px; font-weight: 800; color: var(--text-primary);">$498 / mo</div>
         <div style="font-size: 12px; color: var(--green-accent); margin-top: 4px;">Full 6-Pillar Stack + Citations + Heatmaps</div>
       </div>
     </div>
 
-    <div style="margin-top: 28px; padding: 20px; background: rgba(39, 33, 71, 0.5); border-radius: 10px; font-size: 14.5px; color: var(--text-primary); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+    <div style="margin-top: 28px; padding: 20px; background: var(--pill-bg); border-radius: 10px; font-size: 14.5px; color: var(--text-primary); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.7;">
       💡 <strong>The ROI Math:</strong> An average residential air duct cleaning or commercial carpet cleaning job generates <strong>$400 to $1,500+</strong> in revenue. Landing just <strong>1 to 2 additional jobs per month</strong> across both locations completely pays for this entire local growth program. Every additional call beyond that is pure bottom-line profit.
     </div>
   </div>
 
   <!-- Next Steps Card -->
-  <div class="card" style="text-align: center; padding: 36px; background: radial-gradient(circle at center, rgba(139, 92, 246, 0.1), transparent 70%), var(--bg-card);">
-    <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 10px; color: #fff;">Ready to turn local search into your #1 call driver?</h2>
+  <div class="card" style="text-align: center; padding: 36px; background: radial-gradient(circle at center, rgba(139, 92, 246, 0.08), transparent 70%), var(--bg-card);">
+    <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">Ready to turn local search into your #1 call driver?</h2>
     <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px; max-width: 640px; margin-left: auto; margin-right: auto;">
       Auto8 handles 100% of the optimization, weekly content, review systems, citation distribution, and tracking so Zeppelin Cleaning Services can focus on fulfilling jobs and servicing clients.
     </p>
     <div style="font-weight: 800; font-size: 16px; color: var(--purple-light);"><img src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f8762.png" alt="Auto8.ai" style="height: 32px; vertical-align: middle;"></div>
   </div>
 </div>
+
+<script>
+  function toggleTheme() {
+    const htmlEl = document.documentElement;
+    const currentTheme = htmlEl.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    htmlEl.setAttribute('data-theme', newTheme);
+    
+    const iconEl = document.getElementById('theme-icon');
+    const textEl = document.getElementById('theme-text');
+    
+    if (newTheme === 'light') {
+      iconEl.textContent = '🌙';
+      textEl.textContent = 'Dark Mode';
+    } else {
+      iconEl.textContent = '☀️';
+      textEl.textContent = 'Light Mode';
+    }
+  }
+</script>
 
 </body>
 </html>
