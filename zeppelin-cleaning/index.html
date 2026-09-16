@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auto8 Local SEO Growth Proposal & Local Audit — Zeppelin Cleaning Services</title>
+<title>Auto8 Local SEO Growth Proposal & Audit — Zeppelin Cleaning Services</title>
 <style>
   :root {
     --bg-deep: #0b0914;
@@ -47,16 +47,33 @@
   .keyword-hero-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--purple-light); margin-bottom: 12px; }
   .keyword-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .kw-tag { background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.3); color: #e2e8f0; font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 6px; }
-  .section-heading { font-size: 24px; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; color: #fff; }
+  .section-heading { font-size: 24px; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; color: #fff; margin-top: 40px; }
   .section-num { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); color: #fff; font-size: 13px; font-weight: 800; padding: 3px 9px; border-radius: 6px; }
   .section-sub { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
   .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-bottom: 36px; }
   .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 36px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 36px; }
   .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; transition: border-color 0.2s ease; }
   .card:hover { border-color: var(--border-highlight); }
   .card-header { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
   .stat-huge { font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 6px; }
   .stat-context { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  .health-score-hero { background: linear-gradient(135deg, #1c1538, #130f28); border: 2px solid var(--purple-primary); border-radius: 16px; padding: 28px; margin-bottom: 32px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between; }
+  .score-gauge-box { display: flex; align-items: center; gap: 20px; }
+  .score-circle { width: 100px; height: 100px; border-radius: 50%; background: #130f28; border: 6px solid var(--amber-accent); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(245, 158, 11, 0.2); }
+  .score-val { font-size: 32px; font-weight: 900; color: #fff; line-height: 1; }
+  .score-total { font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+  .score-details h3 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+  .score-details p { font-size: 13.5px; color: var(--text-muted); max-width: 440px; }
+  .sub-scores-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; min-width: 320px; }
+  .sub-score-item { background: rgba(39, 33, 71, 0.5); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-color); }
+  .sub-score-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .sub-score-bar-bg { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+  .sub-score-bar-fill { height: 100%; border-radius: 3px; }
+  .diag-card { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; }
+  .diag-title { font-size: 13px; font-weight: 700; color: var(--purple-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .diag-metric { font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+  .diag-sub { font-size: 12.5px; color: var(--text-muted); }
   .custom-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
   .custom-table th { text-align: left; padding: 14px 16px; background: rgba(26, 21, 51, 0.9); color: var(--purple-light); font-weight: 600; border-bottom: 1px solid var(--border-color); }
   .custom-table td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); vertical-align: middle; }
@@ -95,7 +112,7 @@
   @media print {
     body { background-color: #fff !important; color: #000 !important; padding: 0 !important; }
     .header-nav .export-btn { display: none !important; }
-    .card, .hero-card, .geogrid-container, .timeline-item, .pricing-hero, .price-item, .pillar-card, .keyword-hero-box { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+    .card, .hero-card, .geogrid-container, .timeline-item, .pricing-hero, .price-item, .pillar-card, .keyword-hero-box, .health-score-hero, .diag-card { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; }
     .hero-title, .timeline-title, .stat-huge, .section-heading, .brand-logo, .pillar-title { color: #000 !important; }
     .hero-desc, .text-muted, .stat-context, .timeline-list, .pillar-list, .section-sub { color: #444 !important; }
     .kw-tag, .pill { background: #f0f0f0 !important; color: #000 !important; border: 1px solid #ddd !important; }
@@ -148,8 +165,23 @@
       </div>
     </div>
   </div>
-  <div class="section-heading"><span class="section-num">01</span> Local Search Performance & Opportunity Breakdown</div>
-  <p class="section-sub">A detailed breakdown of Zeppelin's current search footprint, traffic composition, and revenue upside.</p>
+  <div class="section-heading"><span class="section-num">01</span> Overall Local SEO Health & Audit Score</div>
+  <p class="section-sub">Diagnostic evaluation of Zeppelin's overall Google presence, profile optimization, and organic search momentum.</p>
+  <div class="health-score-hero">
+    <div class="score-gauge-box">
+      <div class="score-circle"><div class="score-val">52</div><div class="score-total">/ 100</div></div>
+      <div class="score-details">
+        <h3>Local Health Grade: Needs Work</h3>
+        <p>Strong baseline rating (4.9★), but significant ranking drag caused by low post frequency, unoptimized media, and 35% unanswered reviews.</p>
+      </div>
+    </div>
+    <div class="sub-scores-grid">
+      <div class="sub-score-item"><div class="sub-score-label"><span>Profile Optimization</span> <strong>64%</strong></div><div class="sub-score-bar-bg"><div class="sub-score-bar-fill" style="width: 64%; background: var(--purple-light);"></div></div></div>
+      <div class="sub-score-item"><div class="sub-score-label"><span>Review Velocity & Replies</span> <strong>42%</strong></div><div class="sub-score-bar-bg"><div class="sub-score-bar-fill" style="width: 42%; background: var(--amber-accent);"></div></div></div>
+      <div class="sub-score-item"><div class="sub-score-label"><span>Media & Photo Freshness</span> <strong>35%</strong></div><div class="sub-score-bar-bg"><div class="sub-score-bar-fill" style="width: 35%; background: var(--rose-accent);"></div></div></div>
+      <div class="sub-score-item"><div class="sub-score-label"><span>Post & Offer Cadence</span> <strong>18%</strong></div><div class="sub-score-bar-bg"><div class="sub-score-bar-fill" style="width: 18%; background: var(--rose-accent);"></div></div></div>
+    </div>
+  </div>
   <div class="grid-3">
     <div class="card">
       <div class="card-header">Current Organic Traffic</div>
@@ -196,8 +228,30 @@
       </div>
     </div>
   </div>
-  <div class="section-heading"><span class="section-num">03</span> Google Business Profile Audit & Health Check</div>
-  <p class="section-sub">Comprehensive audit of Zeppelin's active GBP profiles across key local ranking factors.</p>
+  <div class="section-heading"><span class="section-num">03</span> Granular GBP Diagnostic Scorecards</div>
+  <p class="section-sub">Diagnostic inspection of review metrics, media uploads, post cadence, and profile completeness.</p>
+  <div class="grid-4" style="margin-bottom: 24px;">
+    <div class="diag-card">
+      <div class="diag-title">Review Response Rate</div>
+      <div class="diag-metric" style="color: var(--amber-accent);">65%</div>
+      <div class="diag-sub">~35% of customer reviews lack an owner response.</div>
+    </div>
+    <div class="diag-card">
+      <div class="diag-title">Review Keyword Rate</div>
+      <div class="diag-metric" style="color: var(--rose-accent);">14%</div>
+      <div class="diag-sub">Only 14% of reviews mention core service keywords.</div>
+    </div>
+    <div class="diag-card">
+      <div class="diag-title">Owner Media Ratio</div>
+      <div class="diag-metric" style="color: var(--rose-accent);">28%</div>
+      <div class="diag-sub">Lacks fresh truck, equipment, and team photos.</div>
+    </div>
+    <div class="diag-card">
+      <div class="diag-title">Post Recency</div>
+      <div class="diag-metric" style="color: var(--rose-accent);">42+ Days</div>
+      <div class="diag-sub">Profiles inactive with zero active promotional offers.</div>
+    </div>
+  </div>
   <div class="card" style="margin-bottom: 36px; overflow-x: auto;">
     <table class="custom-table">
       <thead>
@@ -207,13 +261,11 @@
         <tr><td><strong>Business Description</strong></td><td><span class="badge-status badge-warn">Needs Optimization</span> Partial character usage; missing secondary service keywords.</td><td>Medium</td><td>Rewrite 750-character profile description with structured service & value proposition hooks.</td></tr>
         <tr><td><strong>Google Star Rating</strong></td><td><span class="badge-status badge-pass">4.9 ★ Rating</span> Strong historical reputation.</td><td>High</td><td>Maintain 4.8+ rating while scaling total review velocity.</td></tr>
         <tr><td><strong>Review Frequency & Velocity</strong></td><td><span class="badge-status badge-warn">Sporadic / Low Velocity</span> Long gaps between new customer reviews.</td><td>Critical</td><td>Deploy automated SMS/email review request sequences to generate 8–15 new verified reviews monthly.</td></tr>
-        <tr><td><strong>Review Reply Rate</strong></td><td><span class="badge-status badge-crit">~35% Unanswered</span> Many positive reviews lack owner responses.</td><td>High</td><td>Implement 100% keyword-rich response protocol for all incoming reviews within 24 hours.</td></tr>
-        <tr><td><strong>Image & Media Count</strong></td><td><span class="badge-status badge-warn">Low Photo Frequency</span> Static photos, limited truck/equipment shots.</td><td>Medium</td><td>Upload weekly geo-tagged photos of Pringle trucks, job sites, and team dispatches.</td></tr>
+        <tr><td><strong>Review Reply Protocol</strong></td><td><span class="badge-status badge-crit">~35% Unanswered</span> Positive reviews lack keyword-rich owner responses.</td><td>High</td><td>Implement 100% keyword-rich response protocol for all incoming reviews within 24 hours.</td></tr>
+        <tr><td><strong>Image & Media Uploads</strong></td><td><span class="badge-status badge-warn">Low Photo Frequency</span> Static photos, limited truck/equipment shots.</td><td>Medium</td><td>Upload weekly geo-tagged photos of Pringle trucks, job sites, and team dispatches.</td></tr>
         <tr><td><strong>Google Post Frequency</strong></td><td><span class="badge-status badge-crit">Inactive (< 1 / month)</span> Profiles lack ongoing promotional activity.</td><td>High</td><td>Publish 2x weekly localized Google updates, promotional offers, and service highlights.</td></tr>
-        <tr><td><strong>Post Keyword Optimization</strong></td><td><span class="badge-status badge-crit">Missing</span> Historical posts lack structured call-to-actions and service keywords.</td><td>Medium</td><td>Optimize every post with direct booking buttons, phone CTAs, and core service terms.</td></tr>
-        <tr><td><strong>Service List Completeness</strong></td><td><span class="badge-status badge-warn">Incomplete Catalog</span> Core services present, but sub-services and prices missing.</td><td>High</td><td>Build comprehensive product and service menu (Air Duct, Carpet, Grout, Janitorial, Dryer Vent).</td></tr>
-        <tr><td><strong>Service Descriptions</strong></td><td><span class="badge-status badge-warn">Generic</span> Default Google descriptions used instead of customized copy.</td><td>Medium</td><td>Add rich 300-word custom descriptions for each individual service offering.</td></tr>
-        <tr><td><strong>Service Area Radius</strong></td><td><span class="badge-status badge-pass">Configured</span> St. Clair Shores and Birmingham territory polygons defined.</td><td>Medium</td><td>Refine zip code boundaries to maximize cross-county service overlap.</td></tr>
+        <tr><td><strong>Q&A & FAQ Seeding</strong></td><td><span class="badge-status badge-crit">Zero Custom Q&As</span> Profile lacks seeded questions and answers.</td><td>Medium</td><td>Seed 10+ high-intent FAQs answering pricing, turnaround times, and service processes.</td></tr>
+        <tr><td><strong>Service Catalog Depth</strong></td><td><span class="badge-status badge-warn">Incomplete Catalog</span> Core services present, but sub-services and prices missing.</td><td>High</td><td>Build comprehensive product and service menu (Air Duct, Carpet, Grout, Janitorial, Dryer Vent).</td></tr>
       </tbody>
     </table>
   </div>
@@ -259,7 +311,7 @@
   <div class="grid-3">
     <div class="card">
       <div class="card-header">ChatGPT / OpenAI</div>
-      <div class="stat-huge" style="color: var(--amber-accent);">35% <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">Share of Voice</span></div>
+      <div class="stat-huge" style="color: var(--amber-accent);">35% <span style="font-size: 14px; font-weight: normal; color: var(--text-muted);"><span style="font-size: 14px; font-weight: normal; color: var(--text-muted);">Share of Voice</span></span></div>
       <div class="stat-context">Zeppelin is cited for branded queries but often omitted when users ask ChatGPT for <em>"top rated air duct cleaners in Oakland County"</em> due to weak third-party citation density.</div>
     </div>
     <div class="card">
