@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,7 +64,7 @@
   .lock-indicator { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); background: var(--bg-card); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border-color); }
 
   /* Auth Gate Modal / Screen */
-  #auth-gate { width: 100%; max-width: 440px; margin: 60px auto 0; background: radial-gradient(circle at top, rgba(139, 92, 246, 0.12), transparent 70%), var(--bg-card); border: 2px solid var(--border-highlight); border-radius: 20px; padding: 36px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+  #auth-gate { width: 100%; max-width: 440px; margin: 60px auto 0; background: radial-gradient(circle at top, rgba(124, 58, 237, 0.08), transparent 70%), var(--bg-card); border: 2px solid var(--border-highlight); border-radius: 20px; padding: 36px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.06); }
   .auth-logo-center { height: 48px; width: auto; object-fit: contain; margin-bottom: 16px; }
   .auth-title { font-size: 22px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
   .auth-sub { font-size: 13.5px; color: var(--text-muted); margin-bottom: 24px; }
@@ -78,7 +78,7 @@
 
   /* Portal Main Content */
   #portal-content { display: none; width: 100%; }
-  .portal-hero { background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.12), transparent 60%), var(--bg-card); border: 1px solid var(--border-highlight); border-radius: 20px; padding: 36px; margin-bottom: 32px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); }
+  .portal-hero { background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent 60%), var(--bg-card); border: 1px solid var(--border-highlight); border-radius: 20px; padding: 36px; margin-bottom: 32px; box-shadow: 0 8px 30px rgba(0,0,0,0.04); }
   .portal-tag { color: var(--purple-light); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; display: inline-flex; align-items: center; gap: 6px; }
   .portal-tag::before { content: ''; width: 8px; height: 8px; background: var(--purple-primary); border-radius: 50%; display: inline-block; }
   .portal-title { font-size: 28px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
@@ -87,11 +87,11 @@
   /* Proposal Cards */
   .section-label { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--purple-light); margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; }
   .proposal-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; }
-  .proposal-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px 28px; text-decoration: none; color: inherit; display: block; transition: all 0.2s ease; position: relative; overflow: hidden; }
+  .proposal-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px 28px; text-decoration: none; color: inherit; display: block; transition: all 0.2s ease; position: relative; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
   .proposal-card:hover { transform: translateY(-2px); border-color: var(--purple-primary); box-shadow: 0 8px 30px var(--purple-glow); }
   .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
   .client-name { font-size: 20px; font-weight: 800; color: var(--text-primary); }
-  .status-badge { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 3px 10px; border-radius: 6px; }
+  .status-badge { background: rgba(16, 185, 129, 0.15); color: #059669; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 3px 10px; border-radius: 6px; }
   .client-summary { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
   .card-meta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
   .meta-chip { background: var(--bg-card-alt); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: 6px; font-size: 12.5px; color: var(--text-primary); }
@@ -110,13 +110,13 @@
   <!-- Header Navigation -->
   <div class="header-nav">
     <div class="brand-group">
-      <img src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f8762.png" alt="Auto8.ai Logo" class="brand-logo-img">
+      <img id="nav-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai Logo" class="brand-logo-img">
       <span class="brand-badge">Growth Hub</span>
     </div>
     <div class="nav-actions">
       <button class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()">
-        <span id="theme-icon">☀️</span>
-        <span id="theme-text">Light</span>
+        <span id="theme-icon">🌙</span>
+        <span id="theme-text">Dark Mode</span>
       </button>
       <div class="lock-indicator" id="lock-status">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -127,7 +127,7 @@
 
   <!-- Password Gate (Default View) -->
   <div id="auth-gate">
-    <img src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f8762.png" alt="Auto8.ai Logo" class="auth-logo-center">
+    <img id="gate-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai Logo" class="auth-logo-center">
     <h2 class="auth-title">Client Growth Portal</h2>
     <p class="auth-sub">Please enter your access passcode to view active Auto8 proposals and strategy blueprints.</p>
     
@@ -184,6 +184,8 @@
 
 <script>
   const HASH = "5d2146e2f07297e682d334547b7194f4a4d6df19671676f6b57d6be3dfdf4429";
+  const DARK_LOGO = "https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f8762.png";
+  const LIGHT_LOGO = "https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png";
 
   async function sha256(message) {
     const msgBuffer = new TextEncoder().encode(message);
@@ -209,7 +211,7 @@
   function renderUnlocked() {
     document.getElementById('auth-gate').style.display = 'none';
     document.getElementById('portal-content').style.display = 'block';
-    document.getElementById('lock-status').innerHTML = '<span style="color: #10b981;">●</span> Unlocked';
+    document.getElementById('lock-status').innerHTML = '<span style="color: #059669;">●</span> Unlocked';
   }
 
   function lockPortal() {
@@ -219,19 +221,25 @@
 
   function toggleTheme() {
     const htmlEl = document.documentElement;
-    const currentTheme = htmlEl.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const currentTheme = htmlEl.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     htmlEl.setAttribute('data-theme', newTheme);
     
     const iconEl = document.getElementById('theme-icon');
     const textEl = document.getElementById('theme-text');
+    const navLogo = document.getElementById('nav-logo');
+    const gateLogo = document.getElementById('gate-logo');
     
-    if (newTheme === 'light') {
-      iconEl.textContent = '🌙';
-      textEl.textContent = 'Dark';
-    } else {
+    if (newTheme === 'dark') {
       iconEl.textContent = '☀️';
-      textEl.textContent = 'Light';
+      textEl.textContent = 'Light Mode';
+      if (navLogo) navLogo.src = DARK_LOGO;
+      if (gateLogo) gateLogo.src = DARK_LOGO;
+    } else {
+      iconEl.textContent = '🌙';
+      textEl.textContent = 'Dark Mode';
+      if (navLogo) navLogo.src = LIGHT_LOGO;
+      if (gateLogo) gateLogo.src = LIGHT_LOGO;
     }
   }
 
