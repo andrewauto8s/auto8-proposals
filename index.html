@@ -102,6 +102,7 @@
   .portal-footer { text-align: center; padding-top: 24px; border-top: 1px solid var(--border-color); color: var(--text-dim); font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
   .lock-action { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 13px; text-decoration: underline; }
   .lock-action:hover { color: var(--text-primary); }
+  @media (max-width: 720px) { .header-nav { flex-wrap: wrap; gap: 14px; } .nav-actions { flex-wrap: wrap; } }
 </style>
 </head>
 <body>
@@ -154,7 +155,7 @@
 
     <div class="proposal-grid">
       <!-- Zeppelin Cleaning Services Proposal Card -->
-      <a href="/zeppelin-cleaning/" class="proposal-card">
+      <a href="zeppelin-cleaning/" class="proposal-card">
         <div class="card-top">
           <div class="client-name">Zeppelin Cleaning Services</div>
           <span class="status-badge">Active Proposal</span>
@@ -165,8 +166,8 @@
         <div class="card-meta-row">
           <div class="meta-chip">Retainer: <strong>$996 / mo</strong> ($498 / loc)</div>
           <div class="meta-chip">Locations: <strong>2 Active Profiles</strong></div>
-          <div class="meta-chip">Health Score: <strong>88 / 100</strong></div>
-          <div class="meta-chip">Reviews: <strong>1,996 (5.0 ★)</strong></div>
+          <div class="meta-chip">Health Scores: <strong>88 · 89 / 100</strong></div>
+          <div class="meta-chip">Reviews: <strong>2,262 (5.0 ★)</strong></div>
           <div class="cta-link">
             View Proposal
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -219,11 +220,10 @@
     window.location.reload();
   }
 
-  function toggleTheme() {
+  function applyTheme(newTheme) {
     const htmlEl = document.documentElement;
-    const currentTheme = htmlEl.getAttribute('data-theme') || 'light';
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     htmlEl.setAttribute('data-theme', newTheme);
+    try { localStorage.setItem('auto8_theme', newTheme); } catch (e) {}
     
     const iconEl = document.getElementById('theme-icon');
     const textEl = document.getElementById('theme-text');
@@ -242,6 +242,16 @@
       if (gateLogo) gateLogo.src = LIGHT_LOGO;
     }
   }
+
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    applyTheme(currentTheme === 'light' ? 'dark' : 'light');
+  }
+
+  try {
+    const saved = localStorage.getItem('auto8_theme');
+    if (saved === 'dark' || saved === 'light') applyTheme(saved);
+  } catch (e) {}
 
   if (sessionStorage.getItem('auto8_portal_auth') === 'true') {
     renderUnlocked();
