@@ -135,9 +135,9 @@
 
   @media (max-width: 720px) {
     body { padding: 16px 14px 32px; }
-    .header-nav { flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 20px; }
+    .header-nav { flex-wrap: nowrap; padding-bottom: 14px; margin-bottom: 20px; }
     .brand-logo-img { height: 30px; }
-    .nav-actions { width: 100%; justify-content: space-between; }
+    .nav-actions { width: auto; justify-content: flex-end; }
     .hero { padding: 24px 20px; border-radius: 16px; }
     .hero h1 { font-size: 26px; }
     .hero p { font-size: 15.5px; }
@@ -170,7 +170,6 @@
       <img id="nav-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai" class="brand-logo-img">
     </div>
     <div class="nav-actions">
-      <a class="nav-link" href="full-audit.html">See the full audit data &rarr;</a>
       <button class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()"><span id="theme-icon">🌙</span><span id="theme-text">Dark Mode</span></button>
     </div>
   </div>
