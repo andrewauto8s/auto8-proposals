@@ -6,6 +6,7 @@
 <title>Getting Found on Google — Zeppelin Cleaning Services × Auto8</title>
 <meta name="description" content="A plain-English look at where Zeppelin Cleaning Services shows up on Google today, where it doesn't, and what Auto8 will do about it.">
 <link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d46b99c55ea0bf42967.png">
+<script src="config.js"></script>
 <style>
   :root[data-theme="dark"] {
     --bg-deep: #0b0914; --bg-card: #151128; --bg-card-alt: #1a1533;
@@ -87,6 +88,8 @@
   .price-per { font-size: 16px; color: var(--text-muted); }
   .price-math { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 18px; margin-top: 16px; font-size: 15px; line-height: 1.6; }
   .price-math strong { color: var(--green-accent); }
+  .pay-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 18px; }
+  .pay-note { font-size: 13px; color: var(--text-muted); }
 
   .timeline { list-style: none; margin-top: 14px; }
   .timeline li { position: relative; padding-left: 26px; margin-bottom: 12px; font-size: 14.5px; line-height: 1.55; }
@@ -205,6 +208,7 @@
     <div class="price-row"><span class="price-big">$998</span><span class="price-per">per month for both offices · $499 each</span></div>
     <p class="note" style="color: var(--text-muted); font-size: 14.5px;">Month to month. Covers everything in the list above for both listings, plus a monthly report showing calls, direction requests and how much of the map is green.</p>
     <div class="price-math">A typical duct cleaning or commercial carpet job is worth <strong>$400 to $1,500</strong>. <strong>One or two extra jobs a month</strong> across both offices covers the whole program. Everything after that is profit.</div>
+    <div class="pay-row"><a class="btn-primary pay-btn" href="#" target="_blank" rel="noopener" style="display: none;">Start the program &rarr;</a><span class="pay-note pay-btn" style="display: none;">Secure checkout · month to month</span></div>
   </div>
 
   <div class="block">
@@ -221,6 +225,7 @@
     <h2>Ready to be the name they see in Birmingham too?</h2>
     <p>We handle the listings, the posts, the replies and the tracking. You keep doing the work that earned 2,262 five-star reviews.</p>
     <div class="cta-actions">
+      <a class="btn-primary pay-btn" href="#" target="_blank" rel="noopener" style="display: none;">Start the program &rarr;</a>
       <a class="btn-outline" href="full-audit.html">See the full audit data &rarr;</a>
     </div>
     <p class="source-note">Every number on this page comes from live Search Atlas scans of your Google listings, the map around each office, your website and AI assistants, run between September 3 and September 17, 2026. The full data, with sources and dates, is on the audit page.</p>
@@ -241,6 +246,14 @@
   }
   function toggleTheme() { applyTheme((document.documentElement.getAttribute('data-theme') || 'light') === 'light' ? 'dark' : 'light'); }
   try { const s = localStorage.getItem('auto8_theme'); if (s === 'dark' || s === 'light') applyTheme(s); } catch (e) {}
+
+  (function () {
+    var url = (window.AUTO8_PAYMENT_URL || '').trim();
+    var btns = document.querySelectorAll('.pay-btn');
+    for (var i = 0; i < btns.length; i++) {
+      if (url) { if (btns[i].tagName === 'A') btns[i].href = url; btns[i].style.display = ''; } else { btns[i].style.display = 'none'; }
+    }
+  })();
 </script>
 </body>
 </html>

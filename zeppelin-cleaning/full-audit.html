@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Full Audit Data — Zeppelin Cleaning Services × Auto8</title>
 <link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d46b99c55ea0bf42967.png">
+<script src="config.js"></script>
 <style>
   :root[data-theme="dark"] {
     --bg-deep: #0b0914;
@@ -592,6 +593,7 @@
       <div class="price-item"><div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Location 2: Birmingham Branch (Oakland)</div><div style="font-size: 22px; font-weight: 800; color: var(--text-primary);">$499 / mo</div><div style="font-size: 12px; color: var(--green-accent); margin-top: 4px;">Full 6-Pillar GBP Stack + Heatmaps + Posts</div></div>
     </div>
     <div style="margin-top: 28px; padding: 20px; background: var(--pill-bg); border-radius: 10px; font-size: 14.5px; color: var(--text-primary); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.7;">💡 <strong>The ROI Math:</strong> An average residential air duct cleaning or commercial carpet cleaning job generates <strong>$400 to $1,500+</strong> in revenue. Landing just <strong>1 to 2 additional jobs per month</strong> across both locations completely pays for this entire local growth program. Every additional call beyond that is pure bottom-line profit.</div>
+    <div style="margin-top: 22px;"><a class="export-btn pay-btn" href="#" target="_blank" rel="noopener" style="display: none; text-decoration: none; justify-content: center; max-width: 320px; margin: 0 auto;">Start the program &rarr;</a></div>
   </div>
   <div class="card" style="text-align: center; padding: 36px; background: radial-gradient(circle at center, rgba(124, 58, 237, 0.08), transparent 70%), var(--bg-card);">
     <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">Ready to turn local search into your #1 call driver across Southeast Michigan?</h2>
@@ -636,6 +638,14 @@
     const saved = localStorage.getItem('auto8_theme');
     if (saved === 'dark' || saved === 'light') applyTheme(saved);
   } catch (e) {}
+
+  (function () {
+    var url = (window.AUTO8_PAYMENT_URL || '').trim();
+    var btns = document.querySelectorAll('.pay-btn');
+    for (var i = 0; i < btns.length; i++) {
+      if (url) { if (btns[i].tagName === 'A') btns[i].href = url; btns[i].style.display = ''; } else { btns[i].style.display = 'none'; }
+    }
+  })();
 </script>
 </body>
 </html>
