@@ -15,6 +15,7 @@
     --text-primary: #f8fafc; --text-muted: #94a3b8; --text-dim: #64748b;
     --border-color: #272147; --border-highlight: #3c326b; --pill-bg: rgba(39, 33, 71, 0.6);
     --green-soft: rgba(16, 185, 129, 0.12); --rose-soft: rgba(244, 63, 94, 0.12); --purple-soft: rgba(139, 92, 246, 0.12);
+    --you: #8b5cf6; --them: #d95926; --track: #221c3a;
   }
   :root[data-theme="light"] {
     --bg-deep: #f8fafc; --bg-card: #ffffff; --bg-card-alt: #f8fafc;
@@ -23,6 +24,7 @@
     --text-primary: #0f172a; --text-muted: #475569; --text-dim: #94a3b8;
     --border-color: #e2e8f0; --border-highlight: #cbd5e1; --pill-bg: #e2e8f0;
     --green-soft: rgba(5, 150, 105, 0.08); --rose-soft: rgba(225, 29, 72, 0.07); --purple-soft: rgba(124, 58, 237, 0.07);
+    --you: #7c3aed; --them: #eb6834; --track: #eef0f4;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
   body { background-color: var(--bg-deep); color: var(--text-primary); line-height: 1.6; padding: 32px 20px 48px; }
@@ -76,6 +78,22 @@
   .dist-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
   .map-verdict { margin-top: 12px; font-size: 14px; line-height: 1.55; padding-top: 12px; border-top: 1px dashed var(--border-highlight); }
 
+  .cmp-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--text-muted); margin: 4px 0 18px; }
+  .cmp-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .cmp-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .cmp-figure .rows { max-width: 640px; }
+  .cmp-figure { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px; }
+  .cmp-figure h3 { font-size: 15px; font-weight: 800; line-height: 1.35; margin-bottom: 4px; }
+  .cmp-figure .sub { font-size: 12.5px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
+  .cmp-row { display: grid; grid-template-columns: 150px 1fr 90px; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .cmp-row:last-child { margin-bottom: 0; }
+  .cmp-label { font-size: 12.5px; color: var(--text-primary); line-height: 1.3; }
+  .cmp-track { height: 18px; background: var(--track); border-radius: 0 4px 4px 0; position: relative; }
+  .cmp-bar { height: 100%; border-radius: 0 4px 4px 0; background: var(--them); min-width: 3px; }
+  .cmp-bar.you { background: var(--you); }
+  .cmp-val { font-size: 13px; font-weight: 700; color: var(--text-primary); white-space: nowrap; min-width: 44px; text-align: right; }
+  .cmp-val small { font-weight: 500; color: var(--text-muted); }
+  .cmp-takeaway { margin-top: 16px; font-size: 15px; line-height: 1.55; padding: 14px 16px; border-radius: 12px; background: var(--purple-soft); border: 1px solid var(--border-color); }
   .plan-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
   .plan-list li { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 16px; font-size: 14.5px; line-height: 1.5; }
   .plan-list li strong { display: block; color: var(--text-primary); font-size: 15px; margin-bottom: 3px; }
@@ -117,6 +135,7 @@
     .big-stat .n { font-size: 28px; }
     .map-row { grid-template-columns: 1fr; }
     .plan-list { grid-template-columns: 1fr; }
+    .cmp-row { grid-template-columns: 104px 1fr auto; gap: 10px; }
     .price-big { font-size: 40px; }
     .btn-primary, .btn-outline { width: 100%; justify-content: center; }
   }
@@ -191,7 +210,45 @@
   </div>
 
   <div class="block">
-    <h2><span class="block-num">3</span> What we do about it, every month</h2>
+    <h2><span class="block-num">3</span> The gap, in numbers</h2>
+    <p class="lead">Same searches, same customers. Here's how far apart you and the businesses beating you actually are.</p>
+    <div class="cmp-legend"><span><i style="background: var(--you);"></i>Zeppelin</span><span><i style="background: var(--them);"></i>Competitors</span></div>
+    <div class="cmp-grid">
+      <div class="cmp-figure">
+        <h3>Website visitors each month</h3>
+        <div class="sub">Estimated visits from Google search to each company's website.</div>
+        <div class="rows">
+        <div class="cmp-row" title="Zeppelin: 653 visits per month"><div class="cmp-label">Zeppelin</div><div class="cmp-track"><div class="cmp-bar you" style="width: 5.7%;"></div></div><div class="cmp-val">653</div></div>
+        <div class="cmp-row" title="Safety King: 4,233 visits per month"><div class="cmp-label">Safety King</div><div class="cmp-track"><div class="cmp-bar" style="width: 37.1%;"></div></div><div class="cmp-val">4,233</div></div>
+        <div class="cmp-row" title="Amistee: 11,404 visits per month"><div class="cmp-label">Amistee</div><div class="cmp-track"><div class="cmp-bar" style="width: 100%;"></div></div><div class="cmp-val">11,404</div></div>
+        </div>
+      </div>
+      <div class="cmp-figure">
+        <h3>Birmingham map: spots where you're in the top 3</h3>
+        <div class="sub">Out of 39 spots searched for "air duct cleaning" around the Cole St office.</div>
+        <div class="rows">
+        <div class="cmp-row" title="Zeppelin: top 3 in 6 of 39 spots"><div class="cmp-label">Zeppelin</div><div class="cmp-track"><div class="cmp-bar you" style="width: 46.2%;"></div></div><div class="cmp-val">6 <small>of 39</small></div></div>
+        <div class="cmp-row" title="Michigan Air Care: top 3 in 10 of 39 spots"><div class="cmp-label">Michigan Air Care</div><div class="cmp-track"><div class="cmp-bar" style="width: 76.9%;"></div></div><div class="cmp-val">10 <small>of 39</small></div></div>
+        <div class="cmp-row" title="Ultra Air Duct Cleaning: top 3 in 10 of 39 spots"><div class="cmp-label">Ultra Air Duct</div><div class="cmp-track"><div class="cmp-bar" style="width: 76.9%;"></div></div><div class="cmp-val">10 <small>of 39</small></div></div>
+        <div class="cmp-row" title="USA Pro-Vac: top 3 in 13 of 39 spots"><div class="cmp-label">USA Pro-Vac</div><div class="cmp-track"><div class="cmp-bar" style="width: 100%;"></div></div><div class="cmp-val">13 <small>of 39</small></div></div>
+        </div>
+      </div>
+      <div class="cmp-figure">
+        <h3>Five-star Google reviews</h3>
+        <div class="sub">Zeppelin's two listings combined, against the businesses above.</div>
+        <div class="rows">
+        <div class="cmp-row" title="Zeppelin: 2,262 reviews across both listings"><div class="cmp-label">Zeppelin</div><div class="cmp-track"><div class="cmp-bar you" style="width: 100%;"></div></div><div class="cmp-val">2,262</div></div>
+        <div class="cmp-row" title="USA Pro-Vac: 1,751 reviews"><div class="cmp-label">USA Pro-Vac</div><div class="cmp-track"><div class="cmp-bar" style="width: 77.4%;"></div></div><div class="cmp-val">1,751</div></div>
+        <div class="cmp-row" title="Doctor Ducts: 146 reviews"><div class="cmp-label">Doctor Ducts</div><div class="cmp-track"><div class="cmp-bar" style="width: 6.5%;"></div></div><div class="cmp-val">146</div></div>
+        <div class="cmp-row" title="Michigan Air Care: 106 reviews"><div class="cmp-label">Michigan Air Care</div><div class="cmp-track"><div class="cmp-bar" style="width: 4.7%;"></div></div><div class="cmp-val">106</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="cmp-takeaway"><strong>You have the reputation. They have the visibility.</strong> Nobody on this list comes close to your reviews, yet they're the ones Google puts in front of customers. That is the gap this program closes.</div>
+  </div>
+
+  <div class="block">
+    <h2><span class="block-num">4</span> What we do about it, every month</h2>
     <p class="lead">Google rewards businesses that look active and consistent. We make both of your listings look that way, without you lifting a finger.</p>
     <ul class="plan-list">
       <li><strong>Post twice a week</strong><span>Short updates and photos on both listings so Google sees a business that's open and busy.</span></li>
@@ -212,7 +269,7 @@
   </div>
 
   <div class="block">
-    <h2><span class="block-num">4</span> What the first 90 days look like</h2>
+    <h2><span class="block-num">5</span> What the first 90 days look like</h2>
     <ul class="timeline">
       <li><strong>Month 1:</strong> both listings cleaned up, services and descriptions written, info fixed across the directories. First map check done so we have a starting line.</li>
       <li><strong>Month 2:</strong> posts and review replies running on both listings. We go after the 69 searches where your website is stuck on page 2.</li>
