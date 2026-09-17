@@ -94,6 +94,14 @@
   .cmp-val { font-size: 13px; font-weight: 700; color: var(--text-primary); white-space: nowrap; min-width: 44px; text-align: right; }
   .cmp-val small { font-weight: 500; color: var(--text-muted); }
   .cmp-takeaway { margin-top: 16px; font-size: 15px; line-height: 1.55; padding: 14px 16px; border-radius: 12px; background: var(--purple-soft); border: 1px solid var(--border-color); }
+  .cadence-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 18px; }
+  .cadence-card { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px; border-top: 4px solid var(--purple-primary); }
+  .cadence-tag { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--purple-light); margin-bottom: 6px; }
+  .cadence-title { font-size: 16px; font-weight: 800; margin-bottom: 10px; line-height: 1.3; }
+  .cadence-list { list-style: none; font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+  .cadence-list li { position: relative; padding-left: 22px; margin-bottom: 9px; }
+  .cadence-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--green-accent); font-weight: 800; }
+  .cadence-list li strong { color: var(--text-primary); }
   .plan-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
   .plan-list li { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 16px; font-size: 14.5px; line-height: 1.5; }
   .plan-list li strong { display: block; color: var(--text-primary); font-size: 15px; margin-bottom: 3px; }
@@ -135,6 +143,7 @@
     .big-stat .n { font-size: 28px; }
     .map-row { grid-template-columns: 1fr; }
     .plan-list { grid-template-columns: 1fr; }
+    .cadence-grid { grid-template-columns: 1fr; }
     .cmp-row { grid-template-columns: 104px 1fr auto; gap: 10px; }
     .price-big { font-size: 40px; }
     .btn-primary, .btn-outline { width: 100%; justify-content: center; }
@@ -143,7 +152,7 @@
   @media print {
     body { background: #fff !important; color: #000 !important; padding: 0 !important; }
     .nav-actions { display: none !important; }
-    .hero, .block, .price-box, .big-stat, .map-box, .plan-list li, .price-math { background: #fff !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+    .hero, .block, .price-box, .big-stat, .map-box, .plan-list li, .cadence-card, .price-math { background: #fff !important; border: 1px solid #ccc !important; box-shadow: none !important; }
   }
 </style>
 </head>
@@ -246,16 +255,42 @@
   </div>
 
   <div class="block">
-    <h2><span class="block-num">4</span> What we do about it, every month</h2>
-    <p class="lead">Google rewards businesses that look active and consistent. We make both of your listings look that way, without you lifting a finger.</p>
-    <ul class="plan-list">
-      <li><strong>Post twice a week</strong><span>Short updates and photos on both listings so Google sees a business that's open and busy.</span></li>
-      <li><strong>Reply to every review within a day</strong><span>Personal replies that mention the service and the town. Google reads them too.</span></li>
-      <li><strong>Fix your info everywhere</strong><span>Same name, address and phone on Google, Apple Maps, Bing and the directories that feed them.</span></li>
-      <li><strong>Fill in the missing services</strong><span>Both listings are missing services and have descriptions that are too short. We write them out properly.</span></li>
-      <li><strong>Add the questions customers ask</strong><span>Pricing, turnaround, what's included. Answered right on your listing so people call ready to book.</span></li>
-      <li><strong>Re-check the map every month</strong><span>Same 39-spot search, so you can watch the green spread and we can fix any spot that slips.</span></li>
-    </ul>
+    <h2><span class="block-num">4</span> What you're getting, week by week</h2>
+    <p class="lead">Everything below is done for you, on both listings, by our team. The only thing we'll ever ask of you is a few new job-site photos when you have them.</p>
+    <div class="cadence-grid">
+      <div class="cadence-card">
+        <div class="cadence-tag">First 30 days · one-time setup</div>
+        <div class="cadence-title">Get both listings in shape</div>
+        <ul class="cadence-list">
+          <li>Rewrite both business descriptions so they say what you do and where.</li>
+          <li>Fix categories and add every missing service, with a description for each.</li>
+          <li>Make your name, address and phone match on Google, Apple Maps, Bing and the directories that feed them.</li>
+          <li>Upload a proper logo and cover photo on both listings.</li>
+          <li>Seed the first set of customer questions and answers.</li>
+          <li>Run the first 39-spot Birmingham map scan so we have a starting line.</li>
+        </ul>
+      </div>
+      <div class="cadence-card">
+        <div class="cadence-tag">Every week</div>
+        <div class="cadence-title">Keep Google seeing an active business</div>
+        <ul class="cadence-list">
+          <li><strong>2 posts on each listing</strong> (4 a week) with a photo or custom visual, tied to your services and season.</li>
+          <li><strong>A personal reply to every new review</strong> on both listings, written within a day and mentioning the service and the town.</li>
+          <li>New job-site photos posted as soon as you send them.</li>
+        </ul>
+      </div>
+      <div class="cadence-card">
+        <div class="cadence-tag">Every month</div>
+        <div class="cadence-title">Measure, adjust, report</div>
+        <ul class="cadence-list">
+          <li><strong>Fresh 39-spot map scan</strong> around the Birmingham office.</li>
+          <li><strong>A report</strong> showing what we did and how much of the map is green.</li>
+          <li>New questions and answers added based on what customers are asking.</li>
+          <li>Seasonal updates to services and offers (fall furnace season, spring duct cleaning).</li>
+          <li>A heads-up right away if anything on either listing needs your attention.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="price-box">
