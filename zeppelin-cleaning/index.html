@@ -170,7 +170,67 @@
   .kw-pos { font-weight: 800; }
   .pos-good { color: #059669; } .pos-mid { color: #d97706; } .pos-low { color: #e11d48; }
   .source-note { font-size: 12px; color: var(--text-dim); text-align: center; margin-top: 24px; line-height: 1.6; }
-  @media (max-width: 720px) { .header-nav { flex-wrap: wrap; gap: 14px; } .nav-actions { flex-wrap: wrap; } }
+  /* ---------- Mobile ---------- */
+  @media (max-width: 720px) {
+    body { padding: 16px 14px 32px; }
+    .header-nav { flex-wrap: wrap; gap: 12px; padding-bottom: 16px; margin-bottom: 24px; }
+    .brand-logo-img { height: 30px; }
+    .nav-actions { width: 100%; justify-content: space-between; gap: 8px; }
+    .back-link { font-size: 13px; }
+    .theme-toggle-btn { padding: 8px 12px; font-size: 13px; }
+    .export-btn { padding: 8px 12px; font-size: 13px; }
+    .export-btn svg { width: 14px; height: 14px; }
+    .hero-card { padding: 22px 18px; border-radius: 16px; margin-bottom: 24px; }
+    .hero-tag { font-size: 11px; letter-spacing: 0.8px; }
+    .hero-title { font-size: 25px; line-height: 1.2; }
+    .hero-desc { font-size: 15px; line-height: 1.6; }
+    .pill { font-size: 12.5px; padding: 7px 12px; }
+    .keyword-hero-box { padding: 16px; }
+    .section-heading { font-size: 20px; margin-top: 32px; gap: 10px; }
+    .section-num { font-size: 12px; }
+    .section-sub { font-size: 13.5px; }
+    .grid-2, .grid-3, .grid-4, .loc-card-container, .flywheel-grid { grid-template-columns: 1fr; gap: 14px; margin-bottom: 24px; }
+    .card, .pillar-card, .flywheel-card, .loc-profile-card, .timeline-item { padding: 18px; }
+    .stat-huge { font-size: 28px; }
+    .health-score-hero { flex-direction: column; align-items: stretch; padding: 20px 18px; gap: 18px; }
+    .score-gauge-box { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .score-circle { width: 84px; height: 84px; border-width: 5px; }
+    .score-val { font-size: 26px; }
+    .score-details p { max-width: none; }
+    .sub-scores-grid { min-width: 0; width: 100%; grid-template-columns: 1fr; gap: 8px; }
+    .geogrid-container { padding: 18px; }
+    .geogrid-wrapper { gap: 24px; }
+    .geogrid-box { flex: 1 1 100%; min-width: 0; width: 100%; }
+    .geogrid-label { font-size: 14px; }
+    .loc-metrics-row { gap: 6px; padding: 10px 6px; }
+    .loc-m-val { font-size: 16px; }
+    .loc-m-lbl { font-size: 10px; }
+    .timeline-item { border-radius: 0 12px 12px 0; }
+    .timeline-title { font-size: 16px; }
+    .pricing-hero { padding: 24px 18px; }
+    .price-tag { font-size: 40px; }
+    .price-breakdown { gap: 12px; }
+    .price-item { min-width: 0; width: 100%; }
+    .source-note { text-align: left; }
+
+    /* Stack data tables into labelled rows instead of sideways scrolling */
+    .custom-table, .custom-table tbody, .custom-table tr, .custom-table td { display: block; width: 100%; }
+    .custom-table thead { display: none; }
+    .custom-table { margin-top: 4px; }
+    .custom-table tr { border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: var(--bg-card); }
+    .custom-table tr[style] { background: rgba(124, 58, 237, 0.06) !important; }
+    .custom-table td { border-bottom: 1px solid var(--border-color); padding: 10px 14px; font-size: 13.5px; }
+    .custom-table td:last-child { border-bottom: none; }
+    .custom-table td:first-child { background: var(--table-header-bg); font-size: 15px; padding: 12px 14px; }
+    .custom-table td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--purple-light); margin-bottom: 3px; }
+    .custom-table td[data-label=""]::before { display: none; }
+  }
+  @media (max-width: 400px) {
+    .hero-title { font-size: 23px; }
+    .nav-actions { justify-content: flex-start; }
+    .theme-toggle-btn #theme-text { display: none; }
+    .theme-toggle-btn { padding: 8px 10px; }
+  }
   @media print {
     body { background-color: #fff !important; color: #000 !important; padding: 0 !important; }
     .header-nav .export-btn, .theme-toggle-btn, .back-link { display: none !important; }
@@ -307,14 +367,14 @@
           <tr><th>Service Keyword</th><th>St. Clair Shores HQ<br><span style="font-weight: 400; font-size: 12px;">9×9 · 81 pins · avg map position</span></th><th>Birmingham Branch<br><span style="font-weight: 400; font-size: 12px;">39-pin circle · avg map position</span></th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Air duct cleaning</strong></td><td><span class="kw-pos pos-good">4.4</span> — Top-3 on 57 / 81 pins</td><td><span class="kw-pos pos-low">13.2</span> — Top-3 on 6 / 39 pins</td></tr>
-          <tr><td><strong>Dryer vent cleaning</strong></td><td><span class="kw-pos pos-mid">5.5</span></td><td><span class="kw-pos pos-low">10.9</span></td></tr>
-          <tr><td><strong>Carpet cleaning</strong></td><td><span class="kw-pos pos-mid">6.5</span></td><td><span class="kw-pos pos-low">17.1</span></td></tr>
-          <tr><td><strong>Commercial cleaning</strong></td><td>Not yet tracked</td><td><span class="kw-pos pos-low">10.8</span></td></tr>
-          <tr><td><strong>Janitorial services</strong></td><td><span class="kw-pos pos-low">12.6</span></td><td><span class="kw-pos pos-low">19.1</span></td></tr>
-          <tr><td><strong>Cleaning services / house cleaning</strong></td><td>Not yet tracked</td><td><span class="kw-pos pos-low">16.4</span> / <span class="kw-pos pos-low">19.3</span></td></tr>
-          <tr><td><strong>Water &amp; fire damage restoration</strong></td><td><span class="kw-pos pos-low">17.2</span></td><td><span class="kw-pos pos-low">20.8</span></td></tr>
-          <tr><td><strong>Mold remediation</strong></td><td>Not yet tracked</td><td><span class="kw-pos pos-low">20.6</span></td></tr>
+          <tr><td data-label="Service Keyword"><strong>Air duct cleaning</strong></td><td data-label="St. Clair Shores HQ"><span class="kw-pos pos-good">4.4</span> — Top-3 on 57 / 81 pins</td><td data-label="Birmingham Branch"><span class="kw-pos pos-low">13.2</span> — Top-3 on 6 / 39 pins</td></tr>
+          <tr><td data-label="Service Keyword"><strong>Dryer vent cleaning</strong></td><td data-label="St. Clair Shores HQ"><span class="kw-pos pos-mid">5.5</span></td><td data-label="Birmingham Branch"><span class="kw-pos pos-low">10.9</span></td></tr>
+          <tr><td data-label="Service Keyword"><strong>Carpet cleaning</strong></td><td data-label="St. Clair Shores HQ"><span class="kw-pos pos-mid">6.5</span></td><td data-label="Birmingham Branch"><span class="kw-pos pos-low">17.1</span></td></tr>
+          <tr><td data-label="Service Keyword"><strong>Commercial cleaning</strong></td><td data-label="St. Clair Shores HQ">Not yet tracked</td><td data-label="Birmingham Branch"><span class="kw-pos pos-low">10.8</span></td></tr>
+          <tr><td data-label="Service Keyword"><strong>Janitorial services</strong></td><td data-label="St. Clair Shores HQ"><span class="kw-pos pos-low">12.6</span></td><td data-label="Birmingham Branch"><span class="kw-pos pos-low">19.1</span></td></tr>
+          <tr><td data-label="Service Keyword"><strong>Cleaning services / house cleaning</strong></td><td data-label="St. Clair Shores HQ">Not yet tracked</td><td data-label="Birmingham Branch"><span class="kw-pos pos-low">16.4</span> / <span class="kw-pos pos-low">19.3</span></td></tr>
+          <tr><td data-label="Service Keyword"><strong>Water &amp; fire damage restoration</strong></td><td data-label="St. Clair Shores HQ"><span class="kw-pos pos-low">17.2</span></td><td data-label="Birmingham Branch"><span class="kw-pos pos-low">20.8</span></td></tr>
+          <tr><td data-label="Service Keyword"><strong>Mold remediation</strong></td><td data-label="St. Clair Shores HQ">Not yet tracked</td><td data-label="Birmingham Branch"><span class="kw-pos pos-low">20.6</span></td></tr>
         </tbody>
       </table>
       <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 14px; line-height: 1.6;"><strong>Target state:</strong> hold Top-3 green across a 10–15+ mile radius for every core keyword at both locations, re-scanned bi-weekly. Green = positions 1–3, amber = 4–7, red = 8–20, grey = not in the Top 20.</p>
@@ -364,12 +424,12 @@
         <tr><th style="width: 20%;">Audit Factor</th><th style="width: 26%;">St. Clair Shores HQ</th><th style="width: 26%;">Birmingham Branch</th><th style="width: 28%;">Auto8 Dual-Location Plan</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Verification Status</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● Verified Location</span><span class="badge-status-desc">Harper Ave (Macomb)</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● Verified Location</span><span class="badge-status-desc">Cole St (Oakland)</span></div></td><td>Maintain active verification and expand dual-polygon service area boundaries.</td></tr>
-        <tr><td><strong>Google Reviews</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● 1,996 Reviews (5.0★)</span><span class="badge-status-desc">High volume flagship</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● 266 Reviews (5.0★)</span><span class="badge-status-desc">Growing branch</span></div></td><td>Deploy 100% personalized, keyword-rich review reply protocol across both incoming streams.</td></tr>
-        <tr><td><strong>Media & Photos</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 263 Photos</span><span class="badge-status-desc">50% media score</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 113 Photos</span><span class="badge-status-desc">50% media score · logo &amp; cover need verifying</span></div></td><td>Upload weekly geo-tagged photos of trucks, job sites, and team dispatches to both profiles.</td></tr>
-        <tr><td><strong>Weekly Posting</strong></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● 250 Historical Posts</span><span class="badge-status-desc">Needs regular cadence</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 20 Historical Posts</span><span class="badge-status-desc">Needs active schedule</span></div></td><td>Publish 2x weekly localized promotional updates and core service spotlights via AI automation.</td></tr>
-        <tr><td><strong>Citation Health</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ 75.0 / 100 Score</span><span class="badge-status-desc">Inconsistencies detected</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-pass">● 95.0 / 100 Score</span><span class="badge-status-desc">Strong NAP consistency</span></div></td><td>Lift the HQ citation score from 75 toward Birmingham's 95 by syncing NAP data across Google, Apple Maps, Bing, and major aggregator networks.</td></tr>
-        <tr><td><strong>Description &amp; Service Menu</strong></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ Description Too Short</span><span class="badge-status-desc">Audit flags a sub-500-character description</span></div></td><td><div class="status-cell-block"><span class="badge-status badge-warn">▲ Description Too Short</span><span class="badge-status-desc">Audit flags a sub-700-character description</span></div></td><td>Write keyword-rich 750-character descriptions for both profiles and build out the product/service catalog (Air Duct, Carpet, Grout, Janitorial, Dryer Vent).</td></tr>
+        <tr><td data-label="Audit Factor"><strong>Verification Status</strong></td><td data-label="St. Clair Shores HQ"><div class="status-cell-block"><span class="badge-status badge-pass">● Verified Location</span><span class="badge-status-desc">Harper Ave (Macomb)</span></div></td><td data-label="Birmingham Branch"><div class="status-cell-block"><span class="badge-status badge-pass">● Verified Location</span><span class="badge-status-desc">Cole St (Oakland)</span></div></td><td data-label="Auto8 Dual-Location Plan">Maintain active verification and expand dual-polygon service area boundaries.</td></tr>
+        <tr><td data-label="Audit Factor"><strong>Google Reviews</strong></td><td data-label="St. Clair Shores HQ"><div class="status-cell-block"><span class="badge-status badge-pass">● 1,996 Reviews (5.0★)</span><span class="badge-status-desc">High volume flagship</span></div></td><td data-label="Birmingham Branch"><div class="status-cell-block"><span class="badge-status badge-pass">● 266 Reviews (5.0★)</span><span class="badge-status-desc">Growing branch</span></div></td><td data-label="Auto8 Dual-Location Plan">Deploy 100% personalized, keyword-rich review reply protocol across both incoming streams.</td></tr>
+        <tr><td data-label="Audit Factor"><strong>Media & Photos</strong></td><td data-label="St. Clair Shores HQ"><div class="status-cell-block"><span class="badge-status badge-warn">▲ 263 Photos</span><span class="badge-status-desc">50% media score</span></div></td><td data-label="Birmingham Branch"><div class="status-cell-block"><span class="badge-status badge-warn">▲ 113 Photos</span><span class="badge-status-desc">50% media score · logo &amp; cover need verifying</span></div></td><td data-label="Auto8 Dual-Location Plan">Upload weekly geo-tagged photos of trucks, job sites, and team dispatches to both profiles.</td></tr>
+        <tr><td data-label="Audit Factor"><strong>Weekly Posting</strong></td><td data-label="St. Clair Shores HQ"><div class="status-cell-block"><span class="badge-status badge-pass">● 250 Historical Posts</span><span class="badge-status-desc">Needs regular cadence</span></div></td><td data-label="Birmingham Branch"><div class="status-cell-block"><span class="badge-status badge-warn">▲ 20 Historical Posts</span><span class="badge-status-desc">Needs active schedule</span></div></td><td data-label="Auto8 Dual-Location Plan">Publish 2x weekly localized promotional updates and core service spotlights via AI automation.</td></tr>
+        <tr><td data-label="Audit Factor"><strong>Citation Health</strong></td><td data-label="St. Clair Shores HQ"><div class="status-cell-block"><span class="badge-status badge-warn">▲ 75.0 / 100 Score</span><span class="badge-status-desc">Inconsistencies detected</span></div></td><td data-label="Birmingham Branch"><div class="status-cell-block"><span class="badge-status badge-pass">● 95.0 / 100 Score</span><span class="badge-status-desc">Strong NAP consistency</span></div></td><td data-label="Auto8 Dual-Location Plan">Lift the HQ citation score from 75 toward Birmingham's 95 by syncing NAP data across Google, Apple Maps, Bing, and major aggregator networks.</td></tr>
+        <tr><td data-label="Audit Factor"><strong>Description &amp; Service Menu</strong></td><td data-label="St. Clair Shores HQ"><div class="status-cell-block"><span class="badge-status badge-warn">▲ Description Too Short</span><span class="badge-status-desc">Audit flags a sub-500-character description</span></div></td><td data-label="Birmingham Branch"><div class="status-cell-block"><span class="badge-status badge-warn">▲ Description Too Short</span><span class="badge-status-desc">Audit flags a sub-700-character description</span></div></td><td data-label="Auto8 Dual-Location Plan">Write keyword-rich 750-character descriptions for both profiles and build out the product/service catalog (Air Duct, Carpet, Grout, Janitorial, Dryer Vent).</td></tr>
       </tbody>
     </table>
   </div>
@@ -405,11 +465,11 @@
         <tr><th>Competitor Domain</th><th>Monthly Organic Traffic</th><th>Common Keywords</th><th>Core Service Focus Area</th><th>Competitive Threat Level</th></tr>
       </thead>
       <tbody>
-        <tr style="background: rgba(139, 92, 246, 0.08);"><td><strong>Zeppelin Cleaning Services (zepservices.com)</strong></td><td><strong>653 visits / mo</strong></td><td>— (Target Site)</td><td>Air Duct, Carpet, Grout & Janitorial</td><td><span class="badge-status badge-pass">● Baseline Leader</span></td></tr>
-        <tr><td><strong>Amistee Air Duct Cleaning (amistee.com)</strong></td><td>11,404 visits / mo</td><td>19 shared keywords</td><td>Air Duct & HVAC Cleaning (Regional Leader)</td><td><span class="badge-status badge-crit">▲ High Organic Scale</span></td></tr>
-        <tr><td><strong>Safety King (safetyking.com)</strong></td><td>4,233 visits / mo</td><td>36 shared keywords</td><td>Air Duct & Dryer Vent Cleaning Specialists</td><td><span class="badge-status badge-crit">▲ High Keyword Overlap</span></td></tr>
-        <tr><td><strong>Dolls Cleaning (dollscleaning.com)</strong></td><td>4,198 visits / mo</td><td>9 shared keywords</td><td>Carpet, Upholstery & Janitorial Services</td><td><span class="badge-status badge-warn">▲ Moderate Threat</span></td></tr>
-        <tr><td><strong>Sir Grout Detroit (sirgroutgreaterdetroit.com)</strong></td><td>1,633 visits / mo</td><td>5 shared keywords</td><td>Tile, Grout & Stone Restoration Specialists</td><td><span class="badge-status badge-warn">▲ Niche Tile Competitor</span></td></tr>
+        <tr style="background: rgba(139, 92, 246, 0.08);"><td data-label="Competitor Domain"><strong>Zeppelin Cleaning Services (zepservices.com)</strong></td><td data-label="Monthly Organic Traffic"><strong>653 visits / mo</strong></td><td data-label="Common Keywords">— (Target Site)</td><td data-label="Core Service Focus Area">Air Duct, Carpet, Grout & Janitorial</td><td data-label="Competitive Threat Level"><span class="badge-status badge-pass">● Baseline Leader</span></td></tr>
+        <tr><td data-label="Competitor Domain"><strong>Amistee Air Duct Cleaning (amistee.com)</strong></td><td data-label="Monthly Organic Traffic">11,404 visits / mo</td><td data-label="Common Keywords">19 shared keywords</td><td data-label="Core Service Focus Area">Air Duct & HVAC Cleaning (Regional Leader)</td><td data-label="Competitive Threat Level"><span class="badge-status badge-crit">▲ High Organic Scale</span></td></tr>
+        <tr><td data-label="Competitor Domain"><strong>Safety King (safetyking.com)</strong></td><td data-label="Monthly Organic Traffic">4,233 visits / mo</td><td data-label="Common Keywords">36 shared keywords</td><td data-label="Core Service Focus Area">Air Duct & Dryer Vent Cleaning Specialists</td><td data-label="Competitive Threat Level"><span class="badge-status badge-crit">▲ High Keyword Overlap</span></td></tr>
+        <tr><td data-label="Competitor Domain"><strong>Dolls Cleaning (dollscleaning.com)</strong></td><td data-label="Monthly Organic Traffic">4,198 visits / mo</td><td data-label="Common Keywords">9 shared keywords</td><td data-label="Core Service Focus Area">Carpet, Upholstery & Janitorial Services</td><td data-label="Competitive Threat Level"><span class="badge-status badge-warn">▲ Moderate Threat</span></td></tr>
+        <tr><td data-label="Competitor Domain"><strong>Sir Grout Detroit (sirgroutgreaterdetroit.com)</strong></td><td data-label="Monthly Organic Traffic">1,633 visits / mo</td><td data-label="Common Keywords">5 shared keywords</td><td data-label="Core Service Focus Area">Tile, Grout & Stone Restoration Specialists</td><td data-label="Competitive Threat Level"><span class="badge-status badge-warn">▲ Niche Tile Competitor</span></td></tr>
       </tbody>
     </table>
   </div>
