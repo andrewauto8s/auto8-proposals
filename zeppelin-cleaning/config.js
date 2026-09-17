@@ -5,4 +5,4 @@
 //  quotes. While it is empty, the "Start the program" buttons stay hidden
 //  on both the summary page and the full audit page.
 // ============================================================
-window.AUTO8_PAYMENT_URL = "";
+window.AUTO8_PAYMENT_URL = "https://go.auto8.ai/payment-link/6a83f11bc8cc9a2ce72687cc";
