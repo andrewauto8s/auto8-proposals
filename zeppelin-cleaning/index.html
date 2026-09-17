@@ -322,6 +322,27 @@
       if (url) { if (btns[i].tagName === 'A') btns[i].href = url; btns[i].style.display = ''; } else { btns[i].style.display = 'none'; }
     }
   })();
+
+  (function () {
+    var hook = (window.AUTO8_OPEN_WEBHOOK || '').trim();
+    var PAGE = 'summary';
+    try {
+      if (new URLSearchParams(location.search).get('me') === '1') localStorage.setItem('auto8_owner', '1');
+      if (localStorage.getItem('auto8_owner') === '1') return;
+    } catch (e) {}
+    if (!hook) return;
+    function send(ev) {
+      var body = JSON.stringify({ client: 'zeppelin', page: PAGE, event: ev, when: new Date().toISOString(),
+        device: window.innerWidth < 720 ? 'phone' : 'desktop', referrer: document.referrer || '', url: location.href });
+      try { fetch(hook, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain' }, body: body }); } catch (e) {}
+    }
+    try {
+      var last = parseInt(localStorage.getItem('auto8_open_' + PAGE) || '0', 10);
+      if (Date.now() - last > 6 * 3600 * 1000) { send('opened'); localStorage.setItem('auto8_open_' + PAGE, String(Date.now())); }
+    } catch (e) { send('opened'); }
+    var btns = document.querySelectorAll('a.pay-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].addEventListener('click', function () { send('pay_click'); });
+  })();
 </script>
 </body>
 </html>
