@@ -580,7 +580,7 @@
     function send(ev) {
       var body = JSON.stringify({ client: 'zeppelin', page: PAGE, event: ev, when: new Date().toISOString(),
         device: window.innerWidth < 720 ? 'phone' : 'desktop', referrer: document.referrer || '', url: location.href });
-      try { fetch(hook, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain' }, body: body }); } catch (e) {}
+      try { fetch(hook, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: body }).catch(function () {}); } catch (e) {}
     }
     try {
       var last = parseInt(localStorage.getItem('auto8_open_' + PAGE) || '0', 10);
