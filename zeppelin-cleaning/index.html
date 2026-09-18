@@ -332,9 +332,11 @@
     } catch (e) {}
     if (!hook) return;
     function send(ev) {
-      var body = JSON.stringify({ client: 'zeppelin', page: PAGE, event: ev, when: new Date().toISOString(),
-        device: window.innerWidth < 720 ? 'phone' : 'desktop', referrer: document.referrer || '', url: location.href });
-      try { fetch(hook, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: body }).catch(function () {}); } catch (e) {}
+      var data = { client: 'zeppelin', page: PAGE, event: ev, when: new Date().toISOString(),
+        device: window.innerWidth < 720 ? 'phone' : 'desktop', referrer: document.referrer || '', url: location.href };
+      var qs = Object.keys(data).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]); }).join('&');
+      var target = hook + (hook.indexOf('?') === -1 ? '?' : '&') + qs;
+      try { fetch(target, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).catch(function () {}); } catch (e) {}
     }
     try {
       var last = parseInt(localStorage.getItem('auto8_open_' + PAGE) || '0', 10);
