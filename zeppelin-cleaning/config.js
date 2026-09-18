@@ -17,4 +17,4 @@
 //  is then ignored for good (it's stored in the browser).
 // ============================================================
 window.AUTO8_PAYMENT_URL = "https://go.auto8.ai/payment-link/6a83f11bc8cc9a2ce72687cc";
-window.AUTO8_OPEN_WEBHOOK = "";
+window.AUTO8_OPEN_WEBHOOK = "https://services.leadconnectorhq.com/hooks/bgJlG66yBBWsAdgtyFep/webhook-trigger/602ee0b7-84e8-46b0-b8cc-d30a608c2678";
