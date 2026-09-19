@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Be the Name Google Shows — Demohaulic × Auto8</title>
+<title>Full Audit Data — Demohaulic × Auto8</title>
 <meta name="description" content="A plain-English look at where Demohaulic shows up on Google today, where it doesn't, and what Auto8 will do about it.">
 <link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d46b99c55ea0bf42967.png">
 <script src="config.js"></script>
@@ -135,7 +135,20 @@
   .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
   .source-note { font-size: 12px; color: var(--text-dim); text-align: center; margin-top: 22px; line-height: 1.6; }
 
+  .tbl { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 14px; }
+  .tbl th { text-align: left; padding: 10px 12px; color: var(--purple-light); font-weight: 700; border-bottom: 1px solid var(--border-color); font-size: 13px; }
+  .tbl td { padding: 10px 12px; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+  .tbl td.you { font-weight: 800; }
+  .finding { border: 1px solid var(--border-color); border-left: 4px solid var(--rose-accent); border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; background: var(--bg-card-alt); }
+  .finding h4 { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+  .finding p { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+  .finding code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; background: var(--pill-bg); padding: 1px 6px; border-radius: 4px; color: var(--text-primary); }
+  .evidence { font-size: 13px; color: var(--text-primary); margin-top: 6px; }
+  .ok { border-left-color: var(--green-accent); }
+  .mapbars { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 14px; }
   @media (max-width: 720px) {
+    .mapbars { grid-template-columns: 1fr; }
+    .tbl { font-size: 12.5px; } .tbl th, .tbl td { padding: 8px 6px; }
     body { padding: 16px 14px 32px; }
     .header-nav { flex-wrap: nowrap; padding-bottom: 14px; margin-bottom: 20px; }
     .brand-logo-img { height: 30px; }
@@ -166,132 +179,95 @@
 </head>
 <body>
 <div class="container">
-
   <div class="header-nav">
-    <div class="brand-group">
-      <img id="nav-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai" class="brand-logo-img">
-    </div>
+    <div class="brand-group"><img id="nav-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai" class="brand-logo-img"></div>
     <div class="nav-actions">
+      <a class="nav-link" href="./">&larr; Plain-English summary</a>
       <button class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()"><span id="theme-icon">🌙</span><span id="theme-text">Dark Mode</span></button>
     </div>
   </div>
 
   <div class="hero">
-    <div class="hero-kicker">Prepared for Demohaulic · September 2026</div>
-    <h1>Be the name Google shows, everywhere you serve</h1>
-    <p>Every one of your 12 reviews is five stars, and for "demolition contractor" you already own the map. For "junk removal" you lose 22 of 39 spots to someone else. For "debris hauling" you don't appear at all. This page shows the gap, and how we close it.</p>
-    <div class="hero-facts">
-      <div class="fact"><strong>1 location</strong> · Eastpointe, serving Macomb, Oakland &amp; St. Clair</div>
-      <div class="fact"><strong>12 reviews</strong> · 5.0 stars</div>
-    </div>
+    <div class="hero-kicker">Full audit data · the evidence behind the summary page</div>
+    <h1>Demohaulic: what the scans found</h1>
+    <p>Every measurement behind the summary: your Google listing against three competitors, the map around your Eastpointe location for three searches, and a page-by-page look at demohaulic.com. All taken September 19, 2026.</p>
   </div>
 
-  <div class="block win">
-    <h2><span class="block-num">1</span> Where you win today</h2>
-    <p class="lead">The people who find you love you. That's the hard part, and you've already done it.</p>
-    <div class="big-stats">
-      <div class="big-stat"><div class="n good">5.0</div><div class="l">stars, with every single review a five. The three companies you're up against average 4.9 to 5.0, so you're at the top of that group.</div></div>
-      <div class="big-stat"><div class="n good">100</div><div class="l">out of 100 for business-info consistency. Your name, address and phone match everywhere we checked.</div></div>
-      <div class="big-stat"><div class="n good">39 of 39</div><div class="l">spots where you're in Google's top three for "demolition contractor," across the whole area we scanned. Demolition Man, with 199 reviews, is behind you.</div></div>
+  <div class="block">
+    <h2><span class="block-num">1</span> Google listing audit, side by side</h2>
+    <p class="lead">The same audit, run on all four listings against Google's recommended practices.</p>
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <table class="tbl">
+      <thead><tr><th>Business</th><th>Rating</th><th>Reviews</th><th>Photos</th><th>Updates posted</th><th>Listing quality</th><th>Overall score</th></tr></thead>
+      <tbody>
+        <tr><td class="you">Demohaulic</td><td class="you">5.0</td><td class="you">12</td><td class="you">10</td><td class="you">0</td><td class="you">53 / 100</td><td class="you">71 / 100</td></tr>
+        <tr><td>Shores Demolition and Disposal</td><td>5.0</td><td>34</td><td>10</td><td>50</td><td>61 / 100</td><td>82 / 100</td></tr>
+        <tr><td>JunkOHaulics</td><td>5.0</td><td>92</td><td>71</td><td>100</td><td>99 / 100</td><td>91 / 100</td></tr>
+        <tr><td>Demolition Man</td><td>4.9</td><td>199</td><td>10</td><td>250</td><td>77 / 100</td><td>84 / 100</td></tr>
+      </tbody>
+    </table>
     </div>
-    <p class="note">Your listing scores 71 out of 100 overall. The reviews and the basics are right, and Google already trusts you for demolition. What's missing is everything else you do.</p>
+    <p class="note" style="margin-top: 12px;">Your listing's own audit flagged: no updates ever posted, a description well under the recommended length, logo and cover photo not confirmed, and 10 photos against a competitor average of 71. Business-info consistency across the web scored 100. The audit ranked your listing 4th of the 6 businesses Google shows beside it.</p>
   </div>
 
-  <div class="block gap">
-    <h2><span class="block-num">2</span> Where you're invisible</h2>
-    <p class="lead">Someone nearby types "junk removal" or "debris hauling" into Google. Here's who they see.</p>
-    <div class="map-row">
+  <div class="block">
+    <h2><span class="block-num">2</span> The map, three searches, 39 spots each</h2>
+    <p class="lead">A wide circle around Willowby Ave. Green is top three, amber is 4 to 7, red is 8 to 20, grey is not shown at all.</p>
+    <div class="mapbars">
+      <div class="map-box">
+        <div class="map-title">"demolition contractor"</div>
+        <div class="dist-bar"><span class="seg-top3" style="width: 100%;"></span></div>
+        <div class="dist-legend"><i class="seg-top3"></i>Top 3 on 39 of 39 · average position 1.5</div>
+        <div class="map-verdict">You own this search. Demolition Man is next at an average of 9.5, top three on 23 spots.</div>
+      </div>
       <div class="map-box">
         <div class="map-title">"junk removal"</div>
-        <div class="map-sub">Searched from 39 spots in a wide circle around your Eastpointe location.</div>
         <div class="dist-bar"><span class="seg-top3" style="width: 43.6%;"></span><span class="seg-mid" style="width: 28.2%;"></span><span class="seg-low" style="width: 28.2%;"></span></div>
-        <div class="dist-legend"><i class="seg-top3"></i>Green: you're in the top 3 (17 spots) &nbsp; <i class="seg-mid"></i><i class="seg-low"></i>Amber &amp; red: a competitor is (22 spots)</div>
-        <div class="map-verdict">Close to home you win. Further out, <strong>JDog Junk Removal in Warren</strong>, with 83 reviews, and <strong>JaRa's Hauling &amp; Dumping</strong> take those calls.</div>
+        <div class="dist-legend"><i class="seg-top3"></i>17 &nbsp; <i class="seg-mid"></i>11 &nbsp; <i class="seg-low"></i>11 · average position 5.8</div>
+        <div class="map-verdict">Strong at home, fading outward. JDog Junk Removal (Warren, 83 reviews), Two Hour Clunker Removal and JaRa's Hauling &amp; Dumping hold the outer spots.</div>
       </div>
       <div class="map-box">
         <div class="map-title">"debris hauling"</div>
-        <div class="map-sub">Same 39 spots, same circle.</div>
         <div class="dist-bar"><span class="seg-none" style="width: 100%;"></span></div>
-        <div class="dist-legend"><i class="seg-none"></i>Grey: you're not on the list at all (39 spots)</div>
-        <div class="map-verdict">You don't appear anywhere for a service you do every week. <strong>JaRa's Hauling &amp; Dumping</strong> is first on 18 spots; <strong>Motor City Disposal</strong>, with 508 reviews, takes most of the rest.</div>
+        <div class="dist-legend"><i class="seg-none"></i>Not shown on any of the 39 spots</div>
+        <div class="map-verdict">JaRa's Hauling &amp; Dumping is first on 18 spots. Motor City Disposal (508 reviews) and Bin There Dump That take most of the rest.</div>
       </div>
-    </div>
-    <div class="big-stats" style="margin-top: 18px;">
-      <div class="big-stat"><div class="n bad">10</div><div class="l">photos on your listing. JunkOHaulics has 71. To Google, and to a homeowner comparing you, photos are proof you're real and busy.</div></div>
-      <div class="big-stat"><div class="n bad">0</div><div class="l">updates ever posted to your listing. Google reads that as a business that might not be open.</div></div>
-      <div class="big-stat"><div class="n bad">0</div><div class="l">searches your website shows up for on Google. Every page is titled "Bathroom Demo &amp; Tile Removal" and tells Google it's a copy of the homepage. Details on the audit page.</div></div>
     </div>
   </div>
 
-  <div class="block">
-    <h2><span class="block-num">3</span> The gap, in numbers</h2>
-    <p class="lead">Same searches, same customers. Here's how far apart you and the three companies you're up against actually are.</p>
-    <div class="cmp-legend"><span><i style="background: var(--you);"></i>Demohaulic</span><span><i style="background: var(--them);"></i>Competitors</span></div>
-    <div class="cmp-grid">
-      <div class="cmp-figure">
-        <h3>Google reviews</h3>
-        <div class="sub">Demohaulic's listing (5.0 stars) against the three companies you're up against.</div>
-        <div class="rows">
-        <div class="cmp-row" title="Demohaulic: 12 reviews"><div class="cmp-label">Demohaulic</div><div class="cmp-track"><div class="cmp-bar you" style="width: 6.0%;"></div></div><div class="cmp-val">12</div></div>
-        <div class="cmp-row" title="Shores Demolition: 34 reviews"><div class="cmp-label">Shores Demolition</div><div class="cmp-track"><div class="cmp-bar" style="width: 17.1%;"></div></div><div class="cmp-val">34</div></div>
-        <div class="cmp-row" title="JunkOHaulics: 92 reviews"><div class="cmp-label">JunkOHaulics</div><div class="cmp-track"><div class="cmp-bar" style="width: 46.2%;"></div></div><div class="cmp-val">92</div></div>
-        <div class="cmp-row" title="Demolition Man: 199 reviews"><div class="cmp-label">Demolition Man</div><div class="cmp-track"><div class="cmp-bar" style="width: 100.0%;"></div></div><div class="cmp-val">199</div></div>
-        </div>
-      </div>
-      <div class="cmp-figure">
-        <h3>Updates ever posted to Google</h3>
-        <div class="sub">Posts on the listing. Google reads these as a sign the business is active.</div>
-        <div class="rows">
-        <div class="cmp-row" title="Demohaulic: 0 posts"><div class="cmp-label">Demohaulic</div><div class="cmp-track"><div class="cmp-bar you" style="width: 0.0%;"></div></div><div class="cmp-val">0</div></div>
-        <div class="cmp-row" title="Shores Demolition: 50 posts"><div class="cmp-label">Shores Demolition</div><div class="cmp-track"><div class="cmp-bar" style="width: 20.0%;"></div></div><div class="cmp-val">50</div></div>
-        <div class="cmp-row" title="JunkOHaulics: 100 posts"><div class="cmp-label">JunkOHaulics</div><div class="cmp-track"><div class="cmp-bar" style="width: 40.0%;"></div></div><div class="cmp-val">100</div></div>
-        <div class="cmp-row" title="Demolition Man: 250 posts"><div class="cmp-label">Demolition Man</div><div class="cmp-track"><div class="cmp-bar" style="width: 100.0%;"></div></div><div class="cmp-val">250</div></div>
-        </div>
-      </div>
-      <div class="cmp-figure">
-        <h3>Listing quality score</h3>
-        <div class="sub">Out of 100, from the same listing audit run on all four businesses.</div>
-        <div class="rows">
-        <div class="cmp-row" title="Demohaulic: 53 / 100"><div class="cmp-label">Demohaulic</div><div class="cmp-track"><div class="cmp-bar you" style="width: 53.5%;"></div></div><div class="cmp-val">53</div></div>
-        <div class="cmp-row" title="Shores Demolition: 61 / 100"><div class="cmp-label">Shores Demolition</div><div class="cmp-track"><div class="cmp-bar" style="width: 61.6%;"></div></div><div class="cmp-val">61</div></div>
-        <div class="cmp-row" title="Demolition Man: 77 / 100"><div class="cmp-label">Demolition Man</div><div class="cmp-track"><div class="cmp-bar" style="width: 77.8%;"></div></div><div class="cmp-val">77</div></div>
-        <div class="cmp-row" title="JunkOHaulics: 99 / 100"><div class="cmp-label">JunkOHaulics</div><div class="cmp-track"><div class="cmp-bar" style="width: 100.0%;"></div></div><div class="cmp-val">99</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="cmp-takeaway"><strong>Same five stars as the leaders. A fraction of the presence.</strong> JunkOHaulics ranks first for "junk removal" across its whole area with a 99-out-of-100 listing, 92 reviews and 100 updates. Demolition Man has 199 reviews and 250 updates. You have 12 reviews and have never posted. Google isn't judging your work. It's judging how much of a listing there is to show. That is the gap this program closes.</div>
-  </div>
+  <div class="block gap">
+    <h2><span class="block-num">3</span> demohaulic.com: what's wrong with the website</h2>
+    <p class="lead">Google currently shows this website for <strong>zero searches</strong> and sends it <strong>zero visitors a month</strong>, three months running. Here's why, page by page.</p>
 
-  <div class="block">
-    <h2><span class="block-num">4</span> How we close the gap</h2>
-    <p class="lead">Three moves. Each one closes a piece of the gap you just saw.</p>
-    <div class="outcome-list">
-      <div class="outcome">
-        <div class="outcome-title">We bring your listing in line with Google's recommended practices, and keep it there.</div>
-        <div class="outcome-body">Google publishes what it wants to see from a business listing. Yours scores 53 out of 100 against that standard; JunkOHaulics scores 99. The description, services and photos get built out the way Google says to, and stay that way.</div>
-        <div class="outcome-proof">What changes: you stop losing map spots to listings that are simply filled out better.</div>
-      </div>
-      <div class="outcome">
-        <div class="outcome-title">We keep Google seeing an active, answered business, every week.</div>
-        <div class="outcome-body">Fresh activity on your listing and on your Facebook and Instagram, and a personal reply to every review. That is the signal Google uses to decide who gets shown further from home base.</div>
-        <div class="outcome-proof">What changes: the green spreads across junk removal and hauling the way it already has for demolition.</div>
-      </div>
-      <div class="outcome">
-        <div class="outcome-title">Every month, we find where you're still losing calls and aim the next month's work there.</div>
-        <div class="outcome-body">Once a month we re-run the same three map searches. Wherever a neighborhood is still calling someone else, that's where the next round of posts, answers and updates point.</div>
-        <div class="outcome-proof">What changes: you watch the map turn green, and the calls that come with it, this month next to last month.</div>
-      </div>
-    </div>
+    <div class="finding"><h4>Every page tells Google it's a copy of the homepage.</h4><p>Each page carries a canonical tag pointing at <code>https://demohaulic.com</code>. That's an instruction to ignore the page and index the homepage instead. Your junk removal page, your bathroom demolition page and your quote pages are all effectively excluded from search.</p><div class="evidence">Evidence: <code>rel="canonical" href="https://demohaulic.com"</code> on /junk-removal, /bathroom-demolition, /free-quote, /demo-quote, /home-1760, /home-1776.</div></div>
+
+    <div class="finding"><h4>Every page has the same title and description, and it's about bathroom tile.</h4><p>The title tag is what shows up as the blue link in Google. All seven pages we checked, including the junk removal page, use the identical title and description, and neither mentions junk removal, hauling or Eastpointe.</p><div class="evidence">Evidence: title on every page is "Bathroom Demo &amp; Tile Removal - Demohaulic Macomb County Michigan". Description on every page begins "Bathroom demo and tile removal in Macomb County…"</div></div>
+
+    <div class="finding"><h4>16 H1 headings on the homepage. A page should have one.</h4><p>The H1 is the headline Google uses to understand what a page is about. The homepage has sixteen of them, and they include a phone number, an email line, the word "STOP…" and bullet points. The junk removal page has ten. To Google that reads as a page with no subject.</p><div class="evidence">Evidence, homepage H1s include: "Call / Text: 586-202-4056", "Email: …", "STOP…", "Stop doing yOUR OWN bathroom DEMO.", "• We protect the house.", "• We contain the dust."</div></div>
+
+    <div class="finding"><h4>Four copies of the homepage are live at different addresses.</h4><p><code>/home-1760</code>, <code>/home-1776</code>, <code>/demo-quote</code> and <code>/free-quote</code> all serve the same page as the homepage, word for word. Duplicate pages split whatever authority the site has and confuse which one Google should show.</p><div class="evidence">Evidence: identical title, description, headings and word count (about 400 words) on all five URLs. /privacy and /privacy-policy, and /terms and /terms-and-conditions, are also duplicates.</div></div>
+
+    <div class="finding"><h4>The words customers search for barely appear.</h4><p>Across the whole site, "Eastpointe" appears on zero pages. "Junk removal" appears once on the homepage. "Demolition" appears once. Each page has roughly 400 words of visible text. Google can't rank a page for a service the page doesn't name.</p></div>
+
+    <div class="finding"><h4>Nearly every image is missing alt text.</h4><p>Six of the seven images on each page have no alt text, which is how Google reads what a picture shows. The images are also larger than 100 KB and not in a modern format, which slows the page on phones.</p></div>
+
+    <div class="finding"><h4>The phone number isn't tappable.</h4><p>The number is written into a heading as text, not as a link. On a phone, a customer has to copy it out by hand. There are no <code>tel:</code> links anywhere on the pages we checked.</p></div>
+
+    <div class="finding"><h4>Redirect and orphan clutter.</h4><p>Of 22 URLs Google knows about, 10 redirect somewhere else, one returns a 404, and 6 are orphans no other page links to. <code>robots.txt</code> is empty, the crawl flagged the sitemap, and the site sends no security policy header.</p><div class="evidence">Evidence: /blog, /contact-us, /cost-calculators, /get-a-quote, /home, /schedule-pickup all redirect; /cdn-cgi/l/email-protection returns 404.</div></div>
+
+    <div class="finding"><h4>Missing social and structured data on most pages.</h4><p>No <code>og:url</code>, no Twitter title or description, and the Open Graph title runs over 60 characters. Business schema markup exists on the homepage and quote pages but not on the bathroom demolition or junk removal pages, which are the ones that should carry it.</p></div>
+
+    <div class="finding"><h4>172 backlinks, and almost all of them are junk.</h4><p>The site has links from 122 other domains. They are overwhelmingly link farms and unrelated foreign sites: casino and poker pages, "guest post" networks, music download sites, each linking from an address like <code>/all/799/14.html</code>. Links like these don't help, and a pile of them can hurt. They should be disavowed.</p><div class="evidence">Examples: bestnz-poker-casinoslot.com, ufabettererm4.com, chordmp3.net, plrdownloadshub.com, firstguestpost.com, backlinkocean.com.</div></div>
+
+    <div class="finding ok"><h4>What's fine.</h4><p>Pages load with a 200 status, the homepage carries business schema, and the site is on a modern host. The bones are usable; the content and settings on top of them are working against you.</p></div>
   </div>
 
   <div class="block cta">
-    <h2>Want to be the name Google shows, everywhere you serve?</h2>
-    <p>A typical Demohaulic job is worth about $2,000, and every month the map stays grey those jobs go to someone else. If you'd like to be put on the map, reach out and we'll talk it through. No pressure, nothing to sign today.</p>
-    <div class="cta-actions" style="margin-top: 4px;"><a class="btn-outline" href="full-audit.html">See the full audit data &rarr;</a></div>
-    <p class="source-note">Every number on this page comes from live scans of your Google listing, the map around your location, your website, and the same scans run on the three competitors, taken September 19, 2026.</p>
+    <h2>That's the gap. The summary page shows how we close it.</h2>
+    <p>Every figure above is a live measurement of your Google listing, the map around your location, three competitors' listings, and demohaulic.com, taken September 19, 2026.</p>
+    <div class="cta-actions"><a class="btn-outline" href="./">&larr; Back to the summary</a></div>
     <div style="margin-top: 18px;"><img id="footer-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai" style="height: 30px;"></div>
   </div>
-
 </div>
 <script>
   const DARK_LOGO = 'https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f8762.png';
@@ -317,7 +293,7 @@
 
   (function () {
     var hook = (window.AUTO8_OPEN_WEBHOOK || '').trim();
-    var PAGE = 'summary';
+    var PAGE = 'audit';
     try {
       if (new URLSearchParams(location.search).get('me') === '1') localStorage.setItem('auto8_owner', '1');
       if (localStorage.getItem('auto8_owner') === '1') return;
