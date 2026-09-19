@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be the Name Google Shows — {{CLIENT_NAME}} × Auto8</title>
+<meta name="description" content="A plain-English look at where {{CLIENT_NAME}} shows up on Google today, where it doesn't, and what Auto8 will do about it.">
+<link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d46b99c55ea0bf42967.png">
+<script src="config.js"></script>
+<style>
+  :root[data-theme="dark"] {
+    --bg-deep: #0b0914; --bg-card: #151128; --bg-card-alt: #1a1533;
+    --purple-primary: #8b5cf6; --purple-light: #a78bfa; --indigo-accent: #6366f1;
+    --green-accent: #10b981; --amber-accent: #f59e0b; --rose-accent: #f43f5e;
+    --text-primary: #f8fafc; --text-muted: #94a3b8; --text-dim: #64748b;
+    --border-color: #272147; --border-highlight: #3c326b; --pill-bg: rgba(39, 33, 71, 0.6);
+    --green-soft: rgba(16, 185, 129, 0.12); --rose-soft: rgba(244, 63, 94, 0.12); --purple-soft: rgba(139, 92, 246, 0.12);
+    --you: #8b5cf6; --them: #d95926; --track: #221c3a;
+  }
+  :root[data-theme="light"] {
+    --bg-deep: #f8fafc; --bg-card: #ffffff; --bg-card-alt: #f8fafc;
+    --purple-primary: #7c3aed; --purple-light: #6d28d9; --indigo-accent: #4f46e5;
+    --green-accent: #059669; --amber-accent: #d97706; --rose-accent: #e11d48;
+    --text-primary: #0f172a; --text-muted: #475569; --text-dim: #94a3b8;
+    --border-color: #e2e8f0; --border-highlight: #cbd5e1; --pill-bg: #e2e8f0;
+    --green-soft: rgba(5, 150, 105, 0.08); --rose-soft: rgba(225, 29, 72, 0.07); --purple-soft: rgba(124, 58, 237, 0.07);
+    --you: #7c3aed; --them: #eb6834; --track: #eef0f4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
+  body { background-color: var(--bg-deep); color: var(--text-primary); line-height: 1.6; padding: 32px 20px 48px; }
+  .container { max-width: 860px; margin: 0 auto; }
+  a { color: var(--purple-light); }
+
+  .header-nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); margin-bottom: 32px; gap: 12px; }
+  .brand-group { display: flex; align-items: center; gap: 12px; }
+  .brand-logo-img { height: 36px; width: auto; object-fit: contain; }
+  .nav-actions { display: flex; align-items: center; gap: 10px; }
+  .nav-link { color: var(--text-muted); font-size: 13.5px; font-weight: 600; text-decoration: none; }
+  .nav-link:hover { color: var(--purple-light); }
+  .theme-toggle-btn { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .theme-toggle-btn:hover { border-color: var(--purple-primary); }
+  .btn-primary { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); color: #fff; font-weight: 700; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; box-shadow: 0 4px 14px rgba(124, 58, 237, 0.2); }
+  .btn-primary:hover { opacity: 0.95; transform: translateY(-1px); }
+  .btn-outline { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border-highlight); font-weight: 600; padding: 10px 18px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; }
+  .btn-outline:hover { border-color: var(--purple-primary); color: var(--purple-light); }
+
+  .hero { background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent 60%), var(--bg-card); border: 1px solid var(--border-highlight); border-radius: 20px; padding: 40px; margin-bottom: 28px; box-shadow: 0 8px 30px rgba(0,0,0,0.04); }
+  .hero-kicker { color: var(--purple-light); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; }
+  .hero h1 { font-size: 34px; font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+  .hero p { color: var(--text-muted); font-size: 17px; line-height: 1.65; max-width: 700px; }
+  .hero-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .fact { background: var(--pill-bg); border: 1px solid var(--border-color); padding: 8px 14px; border-radius: 24px; font-size: 13.5px; }
+  .fact strong { color: var(--purple-light); }
+
+  .block { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 18px; padding: 30px 32px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+  .block-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); color: #fff; font-size: 13px; font-weight: 800; margin-right: 10px; vertical-align: middle; }
+  .block h2 { font-size: 24px; font-weight: 800; line-height: 1.25; margin-bottom: 8px; display: flex; align-items: center; }
+  .block .lead { font-size: 16.5px; color: var(--text-primary); line-height: 1.6; margin-bottom: 18px; }
+  .block .lead strong { color: var(--text-primary); }
+  .block p.note { font-size: 14.5px; color: var(--text-muted); line-height: 1.65; }
+  .win { border-left: 5px solid var(--green-accent); }
+  .gap { border-left: 5px solid var(--rose-accent); }
+
+  .big-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0; }
+  .big-stat { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 18px; }
+  .big-stat .n { font-size: 30px; font-weight: 900; line-height: 1.1; }
+  .big-stat .l { font-size: 13px; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
+  .n.good { color: var(--green-accent); } .n.bad { color: var(--rose-accent); } .n.mid { color: var(--amber-accent); }
+
+  .map-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+  .map-box { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px; }
+  .map-title { font-weight: 800; font-size: 15px; margin-bottom: 4px; }
+  .map-sub { font-size: 12.5px; color: var(--text-muted); margin-bottom: 12px; }
+  .dist-bar { display: flex; width: 100%; height: 26px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 10px; }
+  .dist-bar span { display: block; height: 100%; }
+  .seg-top3 { background: #059669; } .seg-mid { background: #d97706; } .seg-low { background: #be123c; } .seg-none { background: #64748b; }
+  .dist-legend { font-size: 12.5px; color: var(--text-muted); line-height: 1.6; }
+  .dist-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+  .map-verdict { margin-top: 12px; font-size: 14px; line-height: 1.55; padding-top: 12px; border-top: 1px dashed var(--border-highlight); }
+
+  .cmp-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--text-muted); margin: 4px 0 18px; }
+  .cmp-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .cmp-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .cmp-figure .rows { max-width: 640px; }
+  .cmp-figure { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px; }
+  .cmp-figure h3 { font-size: 15px; font-weight: 800; line-height: 1.35; margin-bottom: 4px; }
+  .cmp-figure .sub { font-size: 12.5px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
+  .cmp-row { display: grid; grid-template-columns: 150px 1fr 90px; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .cmp-row:last-child { margin-bottom: 0; }
+  .cmp-label { font-size: 12.5px; color: var(--text-primary); line-height: 1.3; }
+  .cmp-track { height: 18px; background: var(--track); border-radius: 0 4px 4px 0; position: relative; }
+  .cmp-bar { height: 100%; border-radius: 0 4px 4px 0; background: var(--them); min-width: 3px; }
+  .cmp-bar.you { background: var(--you); }
+  .cmp-val { font-size: 13px; font-weight: 700; color: var(--text-primary); white-space: nowrap; min-width: 44px; text-align: right; }
+  .cmp-val small { font-weight: 500; color: var(--text-muted); }
+  .cmp-takeaway { margin-top: 16px; font-size: 15px; line-height: 1.55; padding: 14px 16px; border-radius: 12px; background: var(--purple-soft); border: 1px solid var(--border-color); }
+  .cadence-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 18px; }
+  .cadence-card { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px; border-top: 4px solid var(--purple-primary); }
+  .cadence-tag { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--purple-light); margin-bottom: 6px; }
+  .cadence-title { font-size: 16px; font-weight: 800; margin-bottom: 10px; line-height: 1.3; }
+  .cadence-list { list-style: none; font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+  .cadence-list li { position: relative; padding-left: 22px; margin-bottom: 9px; }
+  .cadence-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--green-accent); font-weight: 800; }
+  .cadence-list li strong { color: var(--text-primary); }
+  .outcome-list { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 16px; }
+  .outcome { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px 20px; border-left: 4px solid var(--green-accent); }
+  .outcome-title { font-size: 17px; font-weight: 800; line-height: 1.3; margin-bottom: 6px; }
+  .outcome-body { font-size: 14.5px; color: var(--text-muted); line-height: 1.6; }
+  .outcome-proof { margin-top: 8px; font-size: 13.5px; color: var(--text-primary); font-weight: 600; }
+  .plan-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .plan-list li { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 16px; font-size: 14.5px; line-height: 1.5; }
+  .plan-list li strong { display: block; color: var(--text-primary); font-size: 15px; margin-bottom: 3px; }
+  .plan-list li span { color: var(--text-muted); }
+
+  .price-box { background: var(--purple-soft); border: 2px solid var(--purple-primary); border-radius: 18px; padding: 30px 32px; margin-bottom: 20px; }
+  .price-box h2 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+  .price-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px; margin: 12px 0 6px; }
+  .price-big { font-size: 46px; font-weight: 900; line-height: 1; }
+  .price-per { font-size: 16px; color: var(--text-muted); }
+  .price-math { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 18px; margin-top: 16px; font-size: 15px; line-height: 1.6; }
+  .price-math strong { color: var(--green-accent); }
+  .pay-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 18px; }
+  .pay-note { font-size: 13px; color: var(--text-muted); }
+
+  .timeline { list-style: none; margin-top: 14px; }
+  .timeline li { position: relative; padding-left: 26px; margin-bottom: 12px; font-size: 14.5px; line-height: 1.55; }
+  .timeline li::before { content: ''; position: absolute; left: 4px; top: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--purple-primary); }
+  .timeline li strong { color: var(--text-primary); }
+
+  .cta { text-align: center; padding: 34px 28px; }
+  .cta h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+  .cta p { color: var(--text-muted); font-size: 15px; margin-bottom: 20px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .source-note { font-size: 12px; color: var(--text-dim); text-align: center; margin-top: 22px; line-height: 1.6; }
+
+  @media (max-width: 720px) {
+    body { padding: 16px 14px 32px; }
+    .header-nav { flex-wrap: nowrap; padding-bottom: 14px; margin-bottom: 20px; }
+    .brand-logo-img { height: 30px; }
+    .nav-actions { width: auto; justify-content: flex-end; }
+    .hero { padding: 24px 20px; border-radius: 16px; }
+    .hero h1 { font-size: 26px; }
+    .hero p { font-size: 15.5px; }
+    .block, .price-box { padding: 22px 18px; border-radius: 14px; }
+    .block h2, .price-box h2, .cta h2 { font-size: 21px; }
+    .block .lead { font-size: 15.5px; }
+    .big-stats { grid-template-columns: 1fr; gap: 10px; }
+    .big-stat .n { font-size: 28px; }
+    .map-row { grid-template-columns: 1fr; }
+    .plan-list { grid-template-columns: 1fr; }
+    .cadence-grid { grid-template-columns: 1fr; }
+    .outcome-title { font-size: 16px; }
+    .cmp-row { grid-template-columns: 104px 1fr auto; gap: 10px; }
+    .price-big { font-size: 40px; }
+    .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+  }
+  @media (max-width: 400px) { .theme-toggle-btn #theme-text { display: none; } }
+  @media print {
+    body { background: #fff !important; color: #000 !important; padding: 0 !important; }
+    .nav-actions { display: none !important; }
+    .hero, .block, .price-box, .big-stat, .map-box, .plan-list li, .cadence-card, .outcome, .price-math { background: #fff !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header-nav">
+    <div class="brand-group">
+      <img id="nav-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai" class="brand-logo-img">
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()"><span id="theme-icon">🌙</span><span id="theme-text">Dark Mode</span></button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-kicker">Prepared for {{CLIENT_NAME}} · {{PREPARED}}</div>
+    <h1>Be the name Google shows, everywhere you serve</h1>
+    <p>You've earned {{TOTAL_REVIEWS}} five-star reviews. Google isn't showing you to nearly enough of the people searching. This page shows the gap, and how we close it.</p>
+    <div class="hero-facts">
+      <div class="fact"><strong>2 locations</strong> · {{LOC1_NAME}} &amp; {{LOC2_NAME}}</div>
+      <div class="fact"><strong>{{TOTAL_REVIEWS}} reviews</strong> · {{CLIENT_RATING}} stars on both listings</div>
+      <div class="fact"><strong>${{PRICE_LOC}}</strong> per location per month</div>
+    </div>
+  </div>
+
+  <div class="block win">
+    <h2><span class="block-num">1</span> Where you win today</h2>
+    <p class="lead">Close to your {{LOC1_STREET}} location, you're the business Google shows first. Your reviews earned that.</p>
+    <div class="big-stats">
+      <div class="big-stat"><div class="n good">#1</div><div class="l">on the Google map for "{{SERVICE_KW}}" right outside your {{LOC1_NAME}} location</div></div>
+      <div class="big-stat"><div class="n good">{{LOC1_TOP3}} of {{LOC1_PINS}}</div><div class="l">spots we checked around the location where you're in Google's top three</div></div>
+      <div class="big-stat"><div class="n good">{{LOC1_REVIEWS}}</div><div class="l">five-star reviews on the {{LOC1_NAME}} listing. Nobody nearby comes close.</div></div>
+    </div>
+    <p class="note">Both listings score well, {{LOC1_SCORE}} and {{LOC2_SCORE}} out of 100, with the same unfinished spots most listings have. The bigger problem is how far from the front door they reach.</p>
+  </div>
+
+  <div class="block gap">
+    <h2><span class="block-num">2</span> Where you're invisible</h2>
+    <p class="lead">Drive a few miles from either location and Google starts recommending your competitors instead of you.</p>
+    <div class="map-row">
+      <div class="map-box">
+        <div class="map-title">{{LOC1_NAME}} location</div>
+        <div class="map-sub">We searched "{{SERVICE_KW}}" from {{LOC1_PINS}} spots in a {{LOC1_RADIUS}}-mile circle around the location.</div>
+        <div class="dist-bar">{{LOC1_BAR}}</div>
+        <div class="dist-legend"><i class="seg-top3"></i>Green: you're in the top 3 ({{LOC1_TOP3}} spots) &nbsp; <i class="seg-mid"></i><i class="seg-low"></i>Amber &amp; red: a competitor is ({{LOC1_COMP_SPOTS}} spots) &nbsp; <i class="seg-none"></i>Grey: you're not on the list at all ({{LOC1_NONE}} spots)</div>
+        <div class="map-verdict">On the outer ring, <strong>{{LOC1_RIVAL}}</strong>, with {{LOC1_RIVAL_REVIEWS}} five-star reviews, is the business picking up those calls instead of you.</div>
+      </div>
+      <div class="map-box">
+        <div class="map-title">{{LOC2_NAME}} location</div>
+        <div class="map-sub">Same search, {{LOC2_PINS}} spots in a {{LOC2_RADIUS}}-mile circle around the {{LOC2_STREET}} location.</div>
+        <div class="dist-bar">{{LOC2_BAR}}</div>
+        <div class="dist-legend"><i class="seg-top3"></i>Green: top 3 ({{LOC2_TOP3}} spots) &nbsp; <i class="seg-mid"></i><i class="seg-low"></i>Amber &amp; red: a competitor wins ({{LOC2_COMP_SPOTS}} spots) &nbsp; <i class="seg-none"></i>Grey: not on the list ({{LOC2_NONE}} spots)</div>
+        <div class="map-verdict">In <strong>{{LOC2_NONE}} of {{LOC2_PINS}} spots</strong> you don't appear at all. <strong>{{LOC2_RIVAL}}</strong>, with {{LOC2_RIVAL_REVIEWS}} reviews, is the one they see.</div>
+      </div>
+    </div>
+    <div class="big-stats" style="margin-top: 18px;">
+      <div class="big-stat"><div class="n bad">{{LOC2_TOP3}} of {{LOC2_PINS}}</div><div class="l">spots around {{LOC2_NAME}} where you make Google's top three</div></div>
+      <div class="big-stat"><div class="n bad">0</div><div class="l">times your website shows up when someone in {{LOC2_NAME}} types "{{SERVICE_KW}}" without a city name</div></div>
+      <div class="big-stat"><div class="n mid">{{AI_HIT}}</div><div class="l">service topics where ChatGPT or Google's AI mention you when someone asks for a {{INDUSTRY}} company in {{COUNTY_PHRASE}}</div></div>
+    </div>
+    <p class="note">The AI assistants pull from the same Google listing data, so the work that fixes the map fixes this too.</p>
+  </div>
+
+  <div class="block">
+    <h2><span class="block-num">3</span> The gap, in numbers</h2>
+    <p class="lead">Same searches, same customers. Here's how far apart you and the two biggest {{INDUSTRY}} companies in the region actually are.</p>
+    <div class="cmp-legend"><span><i style="background: var(--you);"></i>{{CLIENT_SHORT}}</span><span><i style="background: var(--them);"></i>Competitors</span></div>
+{{CHARTS}}    <div class="cmp-takeaway"><strong>Your reputation is right there with the biggest names in {{REGION}}. Your reach isn't.</strong> {{COMP1_NAME}} and {{COMP2_NAME}} are the two largest {{INDUSTRY}} companies in the region. On reviews you're in their league. On the searches and visits that turn into jobs, they're running {{GAP_RANGE_WORDS}} times ahead. That is the gap this program closes.</div>
+  </div>
+
+  <div class="block">
+    <h2><span class="block-num">4</span> How we close the gap</h2>
+    <p class="lead">Three moves. Each one closes a piece of the gap you just saw, on both locations.</p>
+    <div class="outcome-list">
+      <div class="outcome">
+        <div class="outcome-title">We bring both listings in line with Google's recommended practices, and keep them there.</div>
+        <div class="outcome-body">Google publishes what it wants to see from a business listing. Most companies never fully follow it. {{COMP1_NAME}} and {{COMP2_NAME}} have the same gaps today. Yours won't, from month one.</div>
+        <div class="outcome-proof">What changes: you stop losing map spots to businesses that simply filled out their listing better.</div>
+      </div>
+      <div class="outcome">
+        <div class="outcome-title">We keep Google seeing an active, answered business, every week.</div>
+        <div class="outcome-body">Fresh activity on both listings and on your Facebook, Instagram and LinkedIn, and a personal reply to every review. That is the signal Google uses to decide who gets shown further from the location.</div>
+        <div class="outcome-proof">What changes: the green spreads outward from each location instead of stopping at the front door.</div>
+      </div>
+      <div class="outcome">
+        <div class="outcome-title">Every month, we find where you're still losing calls and aim the next month's work there.</div>
+        <div class="outcome-body">Once a month we re-run the same map search around each location. Wherever a neighborhood is still calling someone else, that's where the next round of posts, answers and updates point.</div>
+        <div class="outcome-proof">What changes: you watch the map turn green, and the calls and clicks that come with it, this month next to last month.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="price-box">
+    <h2>What it costs, and what it's worth</h2>
+    <div class="price-row"><span class="price-big">${{PRICE_TOTAL}}</span><span class="price-per">per month for both locations · ${{PRICE_LOC}} each</span></div>
+    <p class="note" style="color: var(--text-muted); font-size: 14.5px;">Month to month. Covers both locations, everything it takes to close the gap, and a monthly report with the numbers that matter: how many people saw you on Google Search and Google Maps, how many called, how many clicked through to your website, and how much of the map is green.</p>
+    <div class="price-math">A typical {{JOB_TYPES}} is worth <strong>{{JOB_VALUE}}</strong>. <strong>One or two extra jobs a month</strong> across both locations covers the whole program. Everything after that is profit.</div>
+    <div class="pay-row"><a class="btn-primary pay-btn" href="#" target="_blank" rel="noopener" style="display: none;">Put me on the map · ${{PRICE_TOTAL}}/mo &rarr;</a><span class="pay-note pay-btn" style="display: none;">Month to month. First map check in week one.</span></div>
+  </div>
+
+  <div class="block cta">
+    <h2>Ready to be the name Google shows, everywhere you serve?</h2>
+    <p>We handle everything on Google. You keep doing the work that earned {{TOTAL_REVIEWS}} five-star reviews.</p>
+    <div class="cta-actions">
+      <a class="btn-primary pay-btn" href="#" target="_blank" rel="noopener" style="display: none;">Put me on the map · ${{PRICE_TOTAL}}/mo &rarr;</a>
+      <a class="btn-outline" href="full-audit.html">See the full audit data &rarr;</a>
+    </div>
+    <p class="source-note">Every number on this page comes from live scans of your Google listings, the map around each location, your website and AI assistants, run between September 3 and September 17, 2026. The full data, with sources and dates, is on the audit page.</p>
+    <div style="margin-top: 18px;"><img id="footer-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai" style="height: 30px;"></div>
+  </div>
+
+</div>
+<script>
+  const DARK_LOGO = 'https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f8762.png';
+  const LIGHT_LOGO = 'https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png';
+  function applyTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('auto8_theme', t); } catch (e) {}
+    const dark = t === 'dark';
+    document.getElementById('theme-icon').textContent = dark ? '☀️' : '🌙';
+    document.getElementById('theme-text').textContent = dark ? 'Light Mode' : 'Dark Mode';
+    for (const id of ['nav-logo', 'footer-logo']) { const el = document.getElementById(id); if (el) el.src = dark ? DARK_LOGO : LIGHT_LOGO; }
+  }
+  function toggleTheme() { applyTheme((document.documentElement.getAttribute('data-theme') || 'light') === 'light' ? 'dark' : 'light'); }
+  try { const s = localStorage.getItem('auto8_theme'); if (s === 'dark' || s === 'light') applyTheme(s); } catch (e) {}
+
+  (function () {
+    var url = (window.AUTO8_PAYMENT_URL || '').trim();
+    var btns = document.querySelectorAll('.pay-btn');
+    for (var i = 0; i < btns.length; i++) {
+      if (url) { if (btns[i].tagName === 'A') btns[i].href = url; btns[i].style.display = ''; } else { btns[i].style.display = 'none'; }
+    }
+  })();
+
+  (function () {
+    var hook = (window.AUTO8_OPEN_WEBHOOK || '').trim();
+    var PAGE = 'summary';
+    try {
+      if (new URLSearchParams(location.search).get('me') === '1') localStorage.setItem('auto8_owner', '1');
+      if (localStorage.getItem('auto8_owner') === '1') return;
+    } catch (e) {}
+    if (!hook) return;
+    function send(ev) {
+      var data = { client: '{{BEACON_CLIENT_ID}}', page: PAGE, event: ev, when: new Date().toISOString(),
+        device: window.innerWidth < 720 ? 'phone' : 'desktop', referrer: document.referrer || '', url: location.href };
+      var qs = Object.keys(data).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]); }).join('&');
+      var target = hook + (hook.indexOf('?') === -1 ? '?' : '&') + qs;
+      try { fetch(target, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).catch(function () {}); } catch (e) {}
+    }
+    try {
+      var last = parseInt(localStorage.getItem('auto8_open_' + PAGE) || '0', 10);
+      if (Date.now() - last > 6 * 3600 * 1000) { send('opened'); localStorage.setItem('auto8_open_' + PAGE, String(Date.now())); }
+    } catch (e) { send('opened'); }
+    var btns = document.querySelectorAll('a.pay-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].addEventListener('click', function () { send('pay_click'); });
+  })();
+</script>
+</body>
+</html>

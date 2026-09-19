@@ -1,0 +1,77 @@
+{
+  "_comment": "Copy to <slug>.brief.json, fill every value, then run: python3 scripts/new-client.py <slug>.brief.json",
+  "slug": "zeppelin-cleaning",
+  "beacon_client_id": "zeppelin",
+  "client_name": "Zeppelin Cleaning Services",
+  "client_short": "Zeppelin",
+  "domain": "zepservices.com",
+  "prepared": "September 2026",
+  "industry": "duct cleaning",
+  "service_keyword": "air duct cleaning",
+  "region": "Southeast Michigan",
+  "county_phrase": "Oakland County",
+  "client_rating": "5.0",
+  "client_traffic": 653,
+  "client_keywords": 541,
+  "ai_topics_hit": "1 in 5",
+  "gap_range_words": "two to seventeen",
+  "job_types": "duct cleaning or commercial carpet job",
+  "job_value": "$400 to $1,500",
+  "price_per_location": 499,
+  "locations": [
+    {
+      "name": "St. Clair Shores",
+      "street": "Harper Ave",
+      "reviews": 1996,
+      "health_score": 88,
+      "grid": {
+        "pins": 81,
+        "radius_miles": 6,
+        "top3": 57,
+        "mid": 8,
+        "low": 11,
+        "none": 5
+      },
+      "rival": {
+        "name": "Doctor Ducts",
+        "reviews": 146
+      },
+      "full_address": "21210 Harper Ave, St Clair Shores, MI 48080 (Macomb County)"
+    },
+    {
+      "name": "Birmingham",
+      "street": "Cole St",
+      "reviews": 266,
+      "health_score": 89,
+      "grid": {
+        "pins": 39,
+        "radius_miles": 6,
+        "top3": 6,
+        "mid": 5,
+        "low": 12,
+        "none": 16
+      },
+      "rival": {
+        "name": "USA Pro-Vac",
+        "reviews": 1751
+      },
+      "full_address": "2235 Cole St, Birmingham, MI 48009 (Oakland County)"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Amistee",
+      "traffic": 11404,
+      "keywords": 1056,
+      "reviews": 5550,
+      "rating": "4.9"
+    },
+    {
+      "name": "Safety King",
+      "traffic": 4233,
+      "keywords": 1597,
+      "reviews": 3411,
+      "rating": "4.9"
+    }
+  ]
+}
