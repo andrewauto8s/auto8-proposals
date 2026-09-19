@@ -135,6 +135,12 @@
   .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
   .source-note { font-size: 12px; color: var(--text-dim); text-align: center; margin-top: 22px; line-height: 1.6; }
 
+  .finding { border: 1px solid var(--border-color); border-left: 4px solid var(--rose-accent); border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; background: var(--bg-card-alt); }
+  .finding h4 { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+  .finding p { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+  .finding code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; background: var(--pill-bg); padding: 1px 6px; border-radius: 4px; color: var(--text-primary); }
+  .evidence { font-size: 13px; color: var(--text-primary); margin-top: 6px; }
+  .ok { border-left-color: var(--green-accent); }
   @media (max-width: 720px) {
     body { padding: 16px 14px 32px; }
     .header-nav { flex-wrap: nowrap; padding-bottom: 14px; margin-bottom: 20px; }
@@ -219,7 +225,7 @@
     <div class="big-stats" style="margin-top: 18px;">
       <div class="big-stat"><div class="n bad">10</div><div class="l">photos on your listing. JunkOHaulics has 71. To Google, and to a homeowner comparing you, photos are proof you're real and busy.</div></div>
       <div class="big-stat"><div class="n bad">0</div><div class="l">updates ever posted to your listing. Google reads that as a business that might not be open.</div></div>
-      <div class="big-stat"><div class="n bad">0</div><div class="l">searches your website shows up for on Google. Every page is titled "Bathroom Demo &amp; Tile Removal" and tells Google it's a copy of the homepage. Details on the audit page.</div></div>
+      <div class="big-stat"><div class="n bad">0</div><div class="l">searches your website shows up for on Google. Every page is titled "Bathroom Demo &amp; Tile Removal" and tells Google it's a copy of the homepage. Details in section 4.</div></div>
     </div>
   </div>
 
@@ -262,8 +268,34 @@
     <div class="cmp-takeaway"><strong>Same five stars as the leaders. A fraction of the presence.</strong> JunkOHaulics ranks first for "junk removal" across its whole area with a 99-out-of-100 listing, 92 reviews and 100 updates. Demolition Man has 199 reviews and 250 updates. You have 12 reviews and have never posted. Google isn't judging your work. It's judging how much of a listing there is to show. That is the gap this program closes.</div>
   </div>
 
+  <div class="block gap">
+    <h2><span class="block-num">4</span> Your website, page by page</h2>
+    <p class="lead">Google shows demohaulic.com for <strong>zero searches</strong> and sends it <strong>zero visitors a month</strong>, three months running. Here's why.</p>
+    <div class="finding"><h4>Every page tells Google it's a copy of the homepage.</h4><p>Each page carries a canonical tag pointing at <code>https://demohaulic.com</code>. That's an instruction to ignore the page and index the homepage instead. Your junk removal page, your bathroom demolition page and your quote pages are all effectively excluded from search.</p><div class="evidence">Evidence: <code>rel="canonical" href="https://demohaulic.com"</code> on /junk-removal, /bathroom-demolition, /free-quote, /demo-quote, /home-1760, /home-1776.</div></div>
+
+    <div class="finding"><h4>Every page has the same title and description, and it's about bathroom tile.</h4><p>The title tag is what shows up as the blue link in Google. All seven pages we checked, including the junk removal page, use the identical title and description, and neither mentions junk removal, hauling or Eastpointe.</p><div class="evidence">Evidence: title on every page is "Bathroom Demo &amp; Tile Removal - Demohaulic Macomb County Michigan". Description on every page begins "Bathroom demo and tile removal in Macomb County…"</div></div>
+
+    <div class="finding"><h4>16 H1 headings on the homepage. A page should have one.</h4><p>The H1 is the headline Google uses to understand what a page is about. The homepage has sixteen of them, and they include a phone number, an email line, the word "STOP…" and bullet points. The junk removal page has ten. To Google that reads as a page with no subject.</p><div class="evidence">Evidence, homepage H1s include: "Call / Text: 586-202-4056", "Email: …", "STOP…", "Stop doing yOUR OWN bathroom DEMO.", "• We protect the house.", "• We contain the dust."</div></div>
+
+    <div class="finding"><h4>Four copies of the homepage are live at different addresses.</h4><p><code>/home-1760</code>, <code>/home-1776</code>, <code>/demo-quote</code> and <code>/free-quote</code> all serve the same page as the homepage, word for word. Duplicate pages split whatever authority the site has and confuse which one Google should show.</p><div class="evidence">Evidence: identical title, description, headings and word count (about 400 words) on all five URLs. /privacy and /privacy-policy, and /terms and /terms-and-conditions, are also duplicates.</div></div>
+
+    <div class="finding"><h4>The words customers search for barely appear.</h4><p>Across the whole site, "Eastpointe" appears on zero pages. "Junk removal" appears once on the homepage. "Demolition" appears once. Each page has roughly 400 words of visible text. Google can't rank a page for a service the page doesn't name.</p></div>
+
+    <div class="finding"><h4>Nearly every image is missing alt text.</h4><p>Six of the seven images on each page have no alt text, which is how Google reads what a picture shows. The images are also larger than 100 KB and not in a modern format, which slows the page on phones.</p></div>
+
+    <div class="finding"><h4>The phone number isn't tappable.</h4><p>The number is written into a heading as text, not as a link. On a phone, a customer has to copy it out by hand. There are no <code>tel:</code> links anywhere on the pages we checked.</p></div>
+
+    <div class="finding"><h4>Redirect and orphan clutter.</h4><p>Of 22 URLs Google knows about, 10 redirect somewhere else, one returns a 404, and 6 are orphans no other page links to. <code>robots.txt</code> is empty, the crawl flagged the sitemap, and the site sends no security policy header.</p><div class="evidence">Evidence: /blog, /contact-us, /cost-calculators, /get-a-quote, /home, /schedule-pickup all redirect; /cdn-cgi/l/email-protection returns 404.</div></div>
+
+    <div class="finding"><h4>Missing social and structured data on most pages.</h4><p>No <code>og:url</code>, no Twitter title or description, and the Open Graph title runs over 60 characters. Business schema markup exists on the homepage and quote pages but not on the bathroom demolition or junk removal pages, which are the ones that should carry it.</p></div>
+
+    <div class="finding"><h4>172 backlinks, and almost all of them are junk.</h4><p>The site has links from 122 other domains. They are overwhelmingly link farms and unrelated foreign sites: casino and poker pages, "guest post" networks, music download sites, each linking from an address like <code>/all/799/14.html</code>. Links like these don't help, and a pile of them can hurt. They should be disavowed.</p><div class="evidence">Examples: bestnz-poker-casinoslot.com, ufabettererm4.com, chordmp3.net, plrdownloadshub.com, firstguestpost.com, backlinkocean.com.</div></div>
+
+    <div class="finding ok"><h4>What's fine.</h4><p>Pages load with a 200 status, the homepage carries business schema, and the site is on a modern host. The bones are usable; the content and settings on top of them are working against you.</p></div>
+  </div>
+
   <div class="block">
-    <h2><span class="block-num">4</span> How we close the gap</h2>
+    <h2><span class="block-num">5</span> How we close the gap</h2>
     <p class="lead">Three moves. Each one closes a piece of the gap you just saw.</p>
     <div class="outcome-list">
       <div class="outcome">
@@ -287,7 +319,6 @@
   <div class="block cta">
     <h2>Want to be the name Google shows, everywhere you serve?</h2>
     <p>A typical Demohaulic job is worth about $2,000, and every month the map stays grey those jobs go to someone else. If you'd like to be put on the map, reach out and we'll talk it through. No pressure, nothing to sign today.</p>
-    <div class="cta-actions" style="margin-top: 4px;"><a class="btn-outline" href="full-audit.html">See the full audit data &rarr;</a></div>
     <p class="source-note">Every number on this page comes from live scans of your Google listing, the map around your location, your website, and the same scans run on the three competitors, taken September 19, 2026.</p>
     <div style="margin-top: 18px;"><img id="footer-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai" style="height: 30px;"></div>
   </div>
