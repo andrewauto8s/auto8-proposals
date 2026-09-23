@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Audit Data — Clean View Services × Auto8</title>
+<link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d46b99c55ea0bf42967.png">
+<script src="config.js"></script>
+<style>
+  :root[data-theme="dark"] {
+    --bg-deep: #0b0914;
+    --bg-card: #151128;
+    --bg-card-hover: #1c1635;
+    --bg-card-alt: #1a1533;
+    --purple-primary: #8b5cf6;
+    --purple-light: #a78bfa;
+    --purple-dark: #6d28d9;
+    --purple-glow: rgba(139, 92, 246, 0.25);
+    --indigo-accent: #6366f1;
+    --cyan-accent: #06b6d4;
+    --green-accent: #10b981;
+    --amber-accent: #f59e0b;
+    --rose-accent: #f43f5e;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --border-color: #272147;
+    --border-highlight: #3c326b;
+    --table-header-bg: rgba(26, 21, 51, 0.9);
+    --pill-bg: rgba(39, 33, 71, 0.6);
+  }
+  :root[data-theme="light"] {
+    --bg-deep: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --bg-card-alt: #f8fafc;
+    --purple-primary: #7c3aed;
+    --purple-light: #6d28d9;
+    --purple-dark: #4c1d95;
+    --purple-glow: rgba(124, 58, 237, 0.15);
+    --indigo-accent: #4f46e5;
+    --cyan-accent: #0891b2;
+    --green-accent: #059669;
+    --amber-accent: #d97706;
+    --rose-accent: #e11d48;
+    --text-primary: #0f172a;
+    --text-muted: #475569;
+    --text-dim: #94a3b8;
+    --border-color: #e2e8f0;
+    --border-highlight: #cbd5e1;
+    --table-header-bg: #f1f5f9;
+    --pill-bg: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
+  body { background-color: var(--bg-deep); color: var(--text-primary); line-height: 1.6; padding: 32px 20px; }
+  .container { max-width: 1120px; margin: 0 auto; }
+  .header-nav { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid var(--border-color); margin-bottom: 36px; }
+  .brand-group { display: flex; align-items: center; gap: 14px; }
+  .brand-logo-img { height: 38px; width: auto; object-fit: contain; }
+  .brand-badge { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.8px; color: #fff; }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .theme-toggle-btn { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); padding: 9px 16px; border-radius: 8px; font-size: 13.5px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .theme-toggle-btn:hover { border-color: var(--purple-primary); }
+  .export-btn { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); color: #fff; font-weight: 700; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px var(--purple-glow); transition: all 0.2s ease; }
+  .export-btn:hover { opacity: 0.95; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4); }
+  .hero-card { background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent 60%), var(--bg-card); border: 1px solid var(--border-highlight); border-radius: 20px; padding: 40px; margin-bottom: 36px; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,0.04); }
+  .hero-tag { color: var(--purple-light); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 6px; }
+  .hero-tag::before { content: ''; width: 8px; height: 8px; background: var(--purple-primary); border-radius: 50%; display: inline-block; }
+  .hero-title { font-size: 34px; font-weight: 800; line-height: 1.25; margin-bottom: 16px; color: var(--text-primary); }
+  .hero-desc { color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-bottom: 24px; max-width: 960px; }
+  .meta-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+  .pill { background: var(--pill-bg); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 24px; font-size: 13px; color: var(--text-primary); font-weight: 500; }
+  .pill strong { color: var(--purple-light); }
+  .keyword-hero-box { background: var(--bg-card-alt); border: 1px dashed var(--border-highlight); border-radius: 12px; padding: 20px; }
+  .keyword-hero-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--purple-light); margin-bottom: 12px; }
+  .keyword-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .kw-tag { background: rgba(124, 58, 237, 0.08); border: 1px solid rgba(124, 58, 237, 0.25); color: var(--text-primary); font-size: 13px; font-weight: 500; padding: 5px 12px; border-radius: 6px; }
+  .section-heading { font-size: 24px; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; color: var(--text-primary); margin-top: 40px; }
+  .section-num { background: linear-gradient(135deg, var(--purple-primary), var(--indigo-accent)); color: #fff; font-size: 13px; font-weight: 800; padding: 3px 9px; border-radius: 6px; }
+  .section-sub { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-bottom: 36px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 36px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 36px; }
+  .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; transition: border-color 0.2s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+  .card:hover { border-color: var(--border-highlight); }
+  .card-header { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+  .stat-huge { font-size: 32px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
+  .stat-context { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  
+  /* Location Card Comparison UI */
+  .loc-card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-bottom: 28px; }
+  .loc-profile-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 26px; border-top: 4px solid var(--purple-primary); box-shadow: 0 4px 16px rgba(0,0,0,0.02); }
+  .loc-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; background: rgba(124, 58, 237, 0.1); color: var(--purple-light); margin-bottom: 10px; }
+  .loc-title { font-size: 19px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+  .loc-address { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+  .loc-metrics-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; background: var(--bg-card-alt); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color); text-align: center; }
+  .loc-m-val { font-size: 18px; font-weight: 800; color: var(--text-primary); }
+  .loc-m-lbl { font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 600; margin-top: 2px; }
+  .loc-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .health-score-hero { background: var(--bg-card); border: 2px solid var(--purple-primary); border-radius: 16px; padding: 28px; margin-bottom: 32px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between; box-shadow: 0 4px 20px var(--purple-glow); }
+  .score-gauge-box { display: flex; align-items: center; gap: 20px; }
+  .score-circle { width: 100px; height: 100px; border-radius: 50%; background: var(--bg-card-alt); border: 6px solid var(--green-accent); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(5, 150, 105, 0.15); }
+  .score-val { font-size: 32px; font-weight: 900; color: var(--text-primary); line-height: 1; }
+  .score-total { font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+  .score-details h3 { font-size: 20px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+  .score-details p { font-size: 13.5px; color: var(--text-muted); max-width: 440px; }
+  .sub-scores-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; min-width: 320px; }
+  .sub-score-item { background: var(--pill-bg); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-color); }
+  .sub-score-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .sub-score-bar-bg { width: 100%; height: 6px; background: rgba(0,0,0,0.08); border-radius: 3px; overflow: hidden; }
+  .sub-score-bar-fill { height: 100%; border-radius: 3px; }
+  .custom-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+  .custom-table th { text-align: left; padding: 14px 16px; background: var(--table-header-bg); color: var(--purple-light); font-weight: 600; border-bottom: 1px solid var(--border-color); }
+  .custom-table td { padding: 14px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); vertical-align: top; }
+  .status-cell-block { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .badge-status { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 12px; letter-spacing: 0.3px; line-height: 1; }
+  .badge-status-desc { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+  .badge-pass { background: rgba(16, 185, 129, 0.15); color: #059669; border: 1px solid rgba(16, 185, 129, 0.3); }
+  .badge-warn { background: rgba(245, 158, 11, 0.15); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.3); }
+  .badge-crit { background: rgba(244, 63, 94, 0.15); color: #e11d48; border: 1px solid rgba(244, 63, 94, 0.3); }
+  .advisory-box { background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 12px; padding: 18px 22px; margin-bottom: 24px; font-size: 14px; color: var(--text-primary); line-height: 1.6; }
+  .advisory-box strong { color: var(--amber-accent); }
+  .geogrid-container { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 28px; margin-bottom: 36px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+  .geogrid-wrapper { display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-around; margin-top: 24px; }
+  .geogrid-box { flex: 1; min-width: 300px; text-align: center; }
+  .geogrid-label { font-weight: 700; margin-bottom: 14px; font-size: 15px; }
+  .grid-matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; width: 230px; margin: 0 auto; }
+  .grid-cell { aspect-ratio: 1; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: #fff; }
+  .rank-top3 { background: #059669; border: 1px solid #10b981; box-shadow: 0 0 10px rgba(16, 185, 129, 0.2); }
+  .rank-mid { background: #d97706; border: 1px solid #f59e0b; }
+  .rank-low { background: #be123c; border: 1px solid #f43f5e; }
+  .pillar-card { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+  .pillar-card:hover { border-color: var(--purple-primary); }
+  .pillar-num { font-size: 12px; font-weight: 800; color: var(--purple-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .pillar-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+  .pillar-list { list-style: none; color: var(--text-muted); font-size: 13.5px; line-height: 1.7; }
+  .pillar-list li { margin-bottom: 6px; padding-left: 18px; position: relative; }
+  .pillar-list li::before { content: '•'; position: absolute; left: 0; color: var(--purple-primary); font-size: 16px; font-weight: bold; }
+  .flywheel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-bottom: 28px; }
+  .flywheel-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 22px; position: relative; overflow: hidden; border-top: 3px solid var(--purple-primary); box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+  .flywheel-cadence { font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--purple-light); margin-bottom: 6px; }
+  .flywheel-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+  .flywheel-list { list-style: none; color: var(--text-muted); font-size: 13.5px; line-height: 1.6; }
+  .flywheel-list li { margin-bottom: 6px; padding-left: 18px; position: relative; }
+  .flywheel-list li::before { content: '↻'; position: absolute; left: 0; color: var(--purple-primary); font-weight: 800; }
+  .timeline { display: flex; flex-direction: column; gap: 18px; margin-bottom: 36px; }
+  .timeline-item { background: var(--bg-card); border-left: 4px solid var(--purple-primary); border-radius: 0 14px 14px 0; padding: 24px; border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+  .timeline-phase { font-size: 12px; font-weight: 800; color: var(--purple-light); text-transform: uppercase; letter-spacing: 1px; }
+  .timeline-title { font-size: 18px; font-weight: 700; margin: 4px 0 10px 0; color: var(--text-primary); }
+  .timeline-list { list-style: none; color: var(--text-muted); font-size: 14px; }
+  .timeline-list li { margin-bottom: 6px; padding-left: 20px; position: relative; }
+  .timeline-list li::before { content: '✓'; position: absolute; left: 0; color: var(--purple-primary); font-weight: 800; }
+  .pricing-hero { background: var(--bg-card); border: 2px solid var(--purple-primary); border-radius: 20px; padding: 36px; margin-bottom: 36px; text-align: center; box-shadow: 0 8px 30px var(--purple-glow); }
+  .price-tag { font-size: 48px; font-weight: 900; color: var(--text-primary); margin: 12px 0 4px 0; }
+  .price-sub { color: var(--purple-light); font-size: 15px; margin-bottom: 24px; }
+  .price-breakdown { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 20px; text-align: left; }
+  .price-item { background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 24px; min-width: 260px; }
+  .back-link { color: var(--text-muted); font-size: 13.5px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-right: 4px; }
+  .back-link:hover { color: var(--purple-light); }
+  .grid-meta { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 14px; }
+  .grid-chip { background: var(--pill-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 5px 10px; font-size: 12px; color: var(--text-primary); }
+  .grid-chip strong { color: var(--purple-light); }
+  .dist-bar { display: flex; width: 100%; height: 22px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 10px; }
+  .dist-bar span { display: block; height: 100%; }
+  .seg-top3 { background: #059669; } .seg-mid { background: #d97706; } .seg-low { background: #be123c; } .seg-none { background: #64748b; }
+  .dist-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+  .dist-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+  .grid-rivals { font-size: 12.5px; color: var(--text-muted); line-height: 1.6; text-align: left; background: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 10px; padding: 12px 14px; }
+  .grid-rivals strong { color: var(--text-primary); }
+  .kw-pos { font-weight: 800; }
+  .pos-good { color: #059669; } .pos-mid { color: #d97706; } .pos-low { color: #e11d48; }
+  .source-note { font-size: 12px; color: var(--text-dim); text-align: center; margin-top: 24px; line-height: 1.6; }
+  /* ---------- Mobile ---------- */
+  @media (max-width: 720px) {
+    body { padding: 16px 14px 32px; }
+    .header-nav { flex-wrap: wrap; gap: 12px; padding-bottom: 16px; margin-bottom: 24px; }
+    .brand-logo-img { height: 30px; }
+    .nav-actions { width: 100%; justify-content: space-between; gap: 8px; }
+    .back-link { font-size: 13px; }
+    .theme-toggle-btn { padding: 8px 12px; font-size: 13px; }
+    .export-btn { padding: 12px 16px; font-size: 13.5px; min-height: 44px; }
+    .export-btn svg { width: 14px; height: 14px; }
+    .hero-card { padding: 22px 18px; border-radius: 16px; margin-bottom: 24px; }
+    .hero-tag { font-size: 11px; letter-spacing: 0.8px; }
+    .hero-title { font-size: 25px; line-height: 1.2; }
+    .hero-desc { font-size: 15px; line-height: 1.6; }
+    .pill { font-size: 12.5px; padding: 7px 12px; }
+    .keyword-hero-box { padding: 16px; }
+    .section-heading { font-size: 20px; margin-top: 32px; gap: 10px; }
+    .section-num { font-size: 12px; }
+    .section-sub { font-size: 13.5px; }
+    .grid-2, .grid-3, .grid-4, .loc-card-container, .flywheel-grid { grid-template-columns: 1fr; gap: 14px; margin-bottom: 24px; }
+    .card, .pillar-card, .flywheel-card, .loc-profile-card, .timeline-item { padding: 18px; }
+    .stat-huge { font-size: 28px; }
+    .health-score-hero { flex-direction: column; align-items: stretch; padding: 20px 18px; gap: 18px; }
+    .score-gauge-box { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .score-circle { width: 84px; height: 84px; border-width: 5px; }
+    .score-val { font-size: 26px; }
+    .score-details p { max-width: none; }
+    .sub-scores-grid { min-width: 0; width: 100%; grid-template-columns: 1fr; gap: 8px; }
+    .geogrid-container { padding: 18px; }
+    .geogrid-wrapper { gap: 24px; }
+    .geogrid-box { flex: 1 1 100%; min-width: 0; width: 100%; }
+    .geogrid-label { font-size: 14px; }
+    .loc-metrics-row { gap: 6px; padding: 10px 6px; }
+    .loc-m-val { font-size: 16px; }
+    .loc-m-lbl { font-size: 11px; }
+    .timeline-item { border-radius: 0 12px 12px 0; }
+    .timeline-title { font-size: 16px; }
+    .pricing-hero { padding: 24px 18px; }
+    .price-tag { font-size: 40px; }
+    .price-breakdown { gap: 12px; }
+    .price-item { min-width: 0; width: 100%; }
+    .source-note { text-align: left; }
+
+    /* Stack data tables into labelled rows instead of sideways scrolling */
+    .custom-table, .custom-table tbody, .custom-table tr, .custom-table td { display: block; width: 100%; }
+    .custom-table thead { display: none; }
+    .custom-table { margin-top: 4px; }
+    .custom-table tr { border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: var(--bg-card); }
+    .custom-table tr[style] { background: rgba(124, 58, 237, 0.06) !important; }
+    .custom-table td { border-bottom: 1px solid var(--border-color); padding: 10px 14px; font-size: 13.5px; }
+    .custom-table td:last-child { border-bottom: none; }
+    .custom-table td:first-child { background: var(--table-header-bg); font-size: 15px; padding: 12px 14px; }
+    .custom-table td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--purple-light); margin-bottom: 3px; }
+    .custom-table td[data-label=""]::before { display: none; }
+  }
+  @media (max-width: 400px) {
+    .hero-title { font-size: 23px; }
+    .nav-actions { justify-content: flex-start; }
+    .theme-toggle-btn #theme-text { display: none; }
+    .theme-toggle-btn { padding: 8px 10px; }
+  }
+  @media print {
+    body { background-color: #fff !important; color: #000 !important; padding: 0 !important; }
+    .header-nav .export-btn, .theme-toggle-btn, .back-link { display: none !important; }
+    .card, .hero-card, .geogrid-container, .timeline-item, .pricing-hero, .price-item, .pillar-card, .keyword-hero-box, .health-score-hero, .diag-card, .flywheel-card, .loc-profile-card { background: #fff !important; color: #000 !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+    .hero-title, .timeline-title, .stat-huge, .section-heading, .brand-logo, .pillar-title, .loc-title { color: #000 !important; }
+    .hero-desc, .text-muted, .stat-context, .timeline-list, .pillar-list, .section-sub, .flywheel-list, .loc-desc, .loc-address, .grid-rivals, .dist-legend { color: #444 !important; }
+    .kw-tag, .pill { background: #f0f0f0 !important; color: #000 !important; border: 1px solid #ddd !important; }
+    .custom-table th { background: #f5f5f5 !important; color: #000 !important; }
+    .custom-table td { color: #000 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header-nav">
+    <div class="brand-group">
+      <img id="nav-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai Logo" class="brand-logo-img">
+      <span class="brand-badge">Local Growth Intelligence</span>
+    </div>
+    <div class="nav-actions">
+      <a class="back-link" href="./">&larr; Plain-English summary</a>
+      <button class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()">
+        <span id="theme-icon">🌙</span>
+        <span id="theme-text">Dark Mode</span>
+      </button>
+      <button class="export-btn" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Export / Print PDF
+      </button>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-tag">Full audit data · the evidence behind the summary page</div>
+    <h1 class="hero-title">Clean View Services: What Google Can and Can't See</h1>
+    <p class="hero-desc">Prepared for <strong>Clean View Services (cleanviewwashing.com)</strong> by Auto8. The measurements behind the summary page: the website, the Google map listing, and the closest competitor.</p>
+    <div class="meta-pills">
+      <div class="pill">Client: <strong>Clean View Services</strong></div>
+      <div class="pill">Website: <strong>cleanviewwashing.com</strong></div>
+      <div class="pill">Location: <strong>Richmond, MI (Macomb County)</strong></div>
+      <div class="pill">Claimed area: <strong>Macomb, St. Clair, Oakland &amp; Wayne</strong></div>
+    </div>
+    <div class="keyword-hero-box">
+      <div class="keyword-hero-title">Core services on the website:</div>
+      <div class="keyword-tags">
+        <span class="kw-tag">house washing</span><span class="kw-tag">pressure washing</span><span class="kw-tag">roof cleaning</span><span class="kw-tag">gutter cleaning</span><span class="kw-tag">window cleaning</span><span class="kw-tag">commercial power washing</span><span class="kw-tag">christmas light installation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-heading"><span class="section-num">01</span> Search Visibility Snapshot</div>
+  <p class="section-sub">Organic search data for cleanviewwashing.com, United States index, September 2026.</p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-header">Monthly Organic Traffic</div>
+      <div class="stat-huge" style="color: var(--rose-accent);">2 <span style="font-size: 16px; font-weight: normal; color: var(--text-muted);">visits/mo</span></div>
+      <div class="stat-context">Down from <strong>9 visits in July</strong> and <strong>2 in August</strong>. The trend is still pointing down.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Keywords Ranking</div>
+      <div class="stat-huge" style="color: var(--amber-accent);">29</div>
+      <div class="stat-context">Down from <strong>38 in July</strong>. <strong>Zero</strong> in positions 1 to 3, one in 4 to 10, and more than half sit past position 50. Most are branded or name lookalikes ("clean view", "clean views").</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Best Non Brand Rankings</div>
+      <div class="stat-huge">#13</div>
+      <div class="stat-context"><em>roof cleaning richmond</em> sits at #13, <em>pressure washing michigan</em> at #14, <em>richmond window washing</em> at #21. All are page two, close enough to move.</div>
+    </div>
+  </div>
+
+  <div class="section-heading"><span class="section-num">02</span> Broken Pages Google Still Has on File</div>
+  <p class="section-sub">Crawl of the URLs Google and link databases know for cleanviewwashing.com. Of the first 100 URLs checked: 21 load, 17 redirect, 62 return a 404 error.</p>
+  <div class="advisory-box"><strong>Why this matters:</strong> when a site is rebuilt and old addresses aren't redirected, every search result and every link pointing at those pages dead ends. Google treats the site as smaller and less relevant than it was, which lines up with the traffic drop in section 01.</div>
+  <div class="card" style="margin-bottom: 24px; overflow-x: auto;">
+    <table class="custom-table">
+      <thead><tr><th>Page group</th><th>Checked</th><th>Still live</th><th>404 error</th><th>Examples of dead pages</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Town pages</strong> (/near-me/)</td><td>27</td><td>2</td><td style="color: var(--rose-accent); font-weight: 700;">25</td><td>Richmond, Romeo, Armada, Chesterfield Twp, Macomb Twp, New Baltimore, Marine City, St. Clair, Washington Twp, all five Grosse Pointes</td></tr>
+        <tr><td><strong>Job and project pages</strong> (/projects/)</td><td>23+</td><td>0</td><td style="color: var(--rose-accent); font-weight: 700;">23+</td><td>House wash in Armada, roof cleaning in Marine City, driveway in St. Clair Shores, four Grosse Pointe jobs</td></tr>
+        <tr><td><strong>Tips articles</strong> (/pressure-washing-tips/)</td><td>5</td><td>0</td><td style="color: var(--rose-accent); font-weight: 700;">5</td><td>Why roof cleaning, why driveway cleaning, perks of Christmas light installation</td></tr>
+        <tr><td><strong>Old utility pages</strong></td><td>6</td><td>0</td><td style="color: var(--rose-accent); font-weight: 700;">6</td><td>/about-us, /contact-us, /faq, /service-area, /sitemap</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="advisory-box"><strong>Also found:</strong> a live URL <code>/near-me/SERVICELINK</code> (a template placeholder that was never filled in), leftover <code>/sample-post/</code> and <code>/home/</code> pages that duplicate the homepage, and only two surviving town pages (Birmingham and West Bloomfield), neither of which is near the Richmond base.</div>
+
+  <div class="section-heading"><span class="section-num">03</span> Google Map Listing</div>
+  <p class="section-sub">Public Google Maps data for Clean View Services, 35672 Woodside Dr, Richmond, MI 48062.</p>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-header">Reviews on the Listing</div>
+      <div class="stat-huge" style="color: var(--rose-accent);">2</div>
+      <div class="stat-context">5.0 stars. The website homepage claims <strong>200+ reviews</strong> and its FAQ says <strong>130+</strong>. A homeowner comparing companies on the map sees two.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Hours Listed</div>
+      <div class="stat-huge" style="color: var(--amber-accent);">None</div>
+      <div class="stat-context">No business hours on the listing. The nearest competitor lists hours seven days a week.</div>
+    </div>
+    <div class="card">
+      <div class="card-header">Other Profiles</div>
+      <div class="stat-huge">13</div>
+      <div class="stat-context">Recommendations on Facebook, where the listed contact email is a personal Yahoo address rather than a business address.</div>
+    </div>
+  </div>
+
+  <div class="section-heading"><span class="section-num">04</span> Website Conversion Check</div>
+  <p class="section-sub">What happens when a homeowner tries to get a price.</p>
+  <div class="card" style="margin-bottom: 24px; overflow-x: auto;">
+    <table class="custom-table">
+      <thead><tr><th style="width: 30%;">Item</th><th style="width: 35%;">What the site says</th><th style="width: 35%;">What actually happens</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Quote speed</strong></td><td>"Get An Instant Quote · It Takes Only 5 Seconds"</td><td>Quote page says requests are usually answered within an hour</td></tr>
+        <tr><td><strong>Review count</strong></td><td>200+ (homepage) and 130+ (FAQ)</td><td>2 on the Google listing</td></tr>
+        <tr><td><strong>Window cleaning</strong></td><td>Listed in the FAQ and praised in reviews</td><td>No service page (old /services/window-cleaning redirects away)</td></tr>
+        <tr><td><strong>Christmas lighting</strong></td><td>In the menu</td><td>Not on the homepage, with the season about six weeks out</td></tr>
+        <tr><td><strong>Customer photos</strong></td><td>Testimonials from real named customers</td><td>Paired with stock family photos</td></tr>
+        <tr><td><strong>Repeat customers</strong></td><td>Reviews mention third year of service</td><td>No maintenance plan or rebooking offer anywhere on the site</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-heading"><span class="section-num">05</span> Competitor Benchmark</div>
+  <p class="section-sub">Pristine Power Washing, 55951 Gratiot Ave, New Baltimore. Serves Macomb and St. Clair counties.</p>
+  <div class="card" style="margin-bottom: 24px; overflow-x: auto;">
+    <table class="custom-table">
+      <thead><tr><th>Measure</th><th>Clean View</th><th>Pristine Power Washing</th></tr></thead>
+      <tbody>
+        <tr><td>Google reviews</td><td>2 (5.0★)</td><td>443 (5.0★)</td></tr>
+        <tr><td>Monthly organic visits</td><td>2</td><td>about 77</td></tr>
+        <tr><td>Keywords ranking</td><td>29</td><td>158</td></tr>
+        <tr><td>Town pages</td><td>2 live, 25 broken</td><td>Live (New Baltimore, Troy, Shelby Twp, Center Line and more)</td></tr>
+        <tr><td>Pricing content</td><td>Minimum job stated on the pressure washing page</td><td>Dedicated "how much does power washing cost in Macomb County" article ranking for 36 searches</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="advisory-box" style="background: rgba(124, 58, 237, 0.06); border-color: rgba(124, 58, 237, 0.3);"><strong style="color: var(--purple-light);">Link profile note:</strong> 453 backlinks from 278 domains, but most are low quality directory and scraper sites. The strongest real references are Nextdoor and Superpages. The quickest authority gain is restoring the pages those links already point to.</div>
+
+  <div class="card" style="text-align: center; padding: 36px; background: radial-gradient(circle at center, rgba(124, 58, 237, 0.08), transparent 70%), var(--bg-card);">
+    <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">That's the gap. The summary page shows how we close it.</h2>
+    <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px; max-width: 640px; margin-left: auto; margin-right: auto;">Every figure above is a live measurement of the Clean View website, its Google listing and its nearest competitor, taken September 23, 2026.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 8px;"><a class="export-btn pay-btn" href="#" target="_blank" rel="noopener" style="display: none; text-decoration: none;">Get my calls back · $499/mo &rarr;</a><a class="back-link" href="./" style="display: inline-flex; padding: 10px 16px; border: 1px solid var(--border-highlight); border-radius: 8px;">&larr; Back to the summary</a></div>
+    <div style="font-weight: 800; font-size: 16px; color: var(--purple-light);"><img id="footer-logo" src="https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png" alt="Auto8.ai" style="height: 32px; vertical-align: middle;"></div>
+  </div>
+  <p class="source-note">Data sources: site crawl and organic search data for cleanviewwashing.com and pristinepowerwashingco.com, 2026-09-23 · Google Maps public listing data, 2026-09-23 · website review, 2026-09-23. Figures are point in time and will move with every monthly scan.</p>
+</div>
+<script>
+  const DARK_LOGO = 'https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f8762.png';
+  const LIGHT_LOGO = 'https://assets.cdn.filesafe.space/bgJlG66yBBWsAdgtyFep/media/6a594d469c9b37b5fd4f875d.png';
+
+  function applyTheme(newTheme) {
+    const htmlEl = document.documentElement;
+    htmlEl.setAttribute('data-theme', newTheme);
+    try { localStorage.setItem('auto8_theme', newTheme); } catch (e) {}
+    
+    const iconEl = document.getElementById('theme-icon');
+    const textEl = document.getElementById('theme-text');
+    const navLogo = document.getElementById('nav-logo');
+    const footerLogo = document.getElementById('footer-logo');
+    
+    if (newTheme === 'dark') {
+      iconEl.textContent = '☀️';
+      textEl.textContent = 'Light Mode';
+      if (navLogo) navLogo.src = DARK_LOGO;
+      if (footerLogo) footerLogo.src = DARK_LOGO;
+    } else {
+      iconEl.textContent = '🌙';
+      textEl.textContent = 'Dark Mode';
+      if (navLogo) navLogo.src = LIGHT_LOGO;
+      if (footerLogo) footerLogo.src = LIGHT_LOGO;
+    }
+  }
+
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    applyTheme(currentTheme === 'light' ? 'dark' : 'light');
+  }
+
+  try {
+    const saved = localStorage.getItem('auto8_theme');
+    if (saved === 'dark' || saved === 'light') applyTheme(saved);
+  } catch (e) {}
+
+  (function () {
+    var url = (window.AUTO8_PAYMENT_URL || '').trim();
+    var btns = document.querySelectorAll('.pay-btn');
+    for (var i = 0; i < btns.length; i++) {
+      if (url) { if (btns[i].tagName === 'A') btns[i].href = url; btns[i].style.display = ''; } else { btns[i].style.display = 'none'; }
+    }
+  })();
+
+  (function () {
+    var hook = (window.AUTO8_OPEN_WEBHOOK || '').trim();
+    var PAGE = 'audit';
+    try {
+      if (new URLSearchParams(location.search).get('me') === '1') localStorage.setItem('auto8_owner', '1');
+      if (localStorage.getItem('auto8_owner') === '1') return;
+    } catch (e) {}
+    if (!hook) return;
+    function send(ev) {
+      var data = { client: 'cleanview', page: PAGE, event: ev, when: new Date().toISOString(),
+        device: window.innerWidth < 720 ? 'phone' : 'desktop', referrer: document.referrer || '', url: location.href };
+      var qs = Object.keys(data).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]); }).join('&');
+      var target = hook + (hook.indexOf('?') === -1 ? '?' : '&') + qs;
+      try { fetch(target, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).catch(function () {}); } catch (e) {}
+    }
+    try {
+      var last = parseInt(localStorage.getItem('auto8_open_' + PAGE) || '0', 10);
+      if (Date.now() - last > 6 * 3600 * 1000) { send('opened'); localStorage.setItem('auto8_open_' + PAGE, String(Date.now())); }
+    } catch (e) { send('opened'); }
+    var btns = document.querySelectorAll('a.pay-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].addEventListener('click', function () { send('pay_click'); });
+  })();
+</script>
+</body>
+</html>
